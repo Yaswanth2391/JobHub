@@ -20,6 +20,7 @@ import {
 } from "react-router-dom";
 
 import jobHubLogo from "../../assets/images/jobhub-logo.png";
+import AccountTypeModal from "../Auth/AccountTypeModal";
 
 import "./Navbar.css";
 
@@ -39,6 +40,9 @@ const Navbar = () => {
     useState(false);
 
   const [candidate, setCandidate] =
+    useState(null);
+
+  const [accountTypeMode, setAccountTypeMode] =
     useState(null);
 
   /* =====================================
@@ -90,19 +94,9 @@ const Navbar = () => {
       updateCandidate
     );
 
-    window.addEventListener(
-      "jobhub:candidateUpdated",
-      updateCandidate
-    );
-
     return () => {
       window.removeEventListener(
         "storage",
-        updateCandidate
-      );
-
-      window.removeEventListener(
-        "jobhub:candidateUpdated",
         updateCandidate
       );
     };
@@ -138,10 +132,8 @@ const Navbar = () => {
 
   const handleLogin = () => {
     closeMenu();
-
     setProfileOpen(false);
-
-    navigate("/login");
+    setAccountTypeMode("login");
   };
 
   /* =====================================
@@ -150,10 +142,8 @@ const Navbar = () => {
 
   const handleRegister = () => {
     closeMenu();
-
     setProfileOpen(false);
-
-    navigate("/register");
+    setAccountTypeMode("register");
   };
 
   /* =====================================
@@ -350,16 +340,8 @@ const Navbar = () => {
               <div className="mobileCandidateInfo">
 
                 <div className="mobileCandidateAvatar">
-                  {candidate?.profileImage ? (
-                    <img
-                      src={candidate.profileImage}
-                      alt="Candidate profile"
-                      onError={(event) => {
-                        event.currentTarget.style.display = "none";
-                      }}
-                    />
-                  ) : (
-                    getInitials(candidate.fullName)
+                  {getInitials(
+                    candidate.fullName
                   )}
                 </div>
 
@@ -539,16 +521,8 @@ const Navbar = () => {
               }
             >
               <span className="candidateAvatar">
-                {candidate?.profileImage ? (
-                  <img
-                    src={candidate.profileImage}
-                    alt="Candidate profile"
-                    onError={(event) => {
-                      event.currentTarget.style.display = "none";
-                    }}
-                  />
-                ) : (
-                  getInitials(candidate.fullName)
+                {getInitials(
+                  candidate.fullName
                 )}
               </span>
 
@@ -740,6 +714,13 @@ const Navbar = () => {
             <Menu size={24} />
           )}
         </button>
+
+        {accountTypeMode && (
+          <AccountTypeModal
+            mode={accountTypeMode}
+            onClose={() => setAccountTypeMode(null)}
+          />
+        )}
 
       </div>
     </header>

@@ -1,0 +1,86 @@
+.accountTypeOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.accountTypeModal {
+  position: relative;
+  width: min(620px, 100%);
+  padding: 34px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.25);
+  animation: accountTypeModalIn 180ms ease-out;
+}
+
+@keyframes accountTypeModalIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.accountTypeClose {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  background: #fff;
+  color: #475569;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.accountTypeClose:hover { background: #f8fafc; color: #0f172a; transform: rotate(4deg); }
+
+.accountTypeHeader { padding-right: 42px; margin-bottom: 24px; }
+.accountTypeEyebrow { display: inline-block; margin-bottom: 8px; color: #2563eb; font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+.accountTypeHeader h2 { margin: 0 0 8px; color: #0f172a; font-size: clamp(24px, 4vw, 30px); line-height: 1.2; }
+.accountTypeHeader p { margin: 0; color: #64748b; font-size: 14px; line-height: 1.6; }
+.accountTypeOptions { display: grid; gap: 14px; }
+
+.accountTypeCard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.accountTypeCard:hover { transform: translateY(-2px); border-color: #93c5fd; background: #f8fbff; box-shadow: 0 12px 28px rgba(37, 99, 235, .10); }
+.accountTypeIcon { width: 52px; height: 52px; display: grid; place-items: center; flex-shrink: 0; border-radius: 15px; color: #2563eb; background: #eff6ff; }
+.accountTypeBusiness .accountTypeIcon { color: #0f766e; background: #ecfdf5; }
+.accountTypeContent { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+.accountTypeContent strong { color: #0f172a; font-size: 17px; }
+.accountTypeContent span { color: #64748b; font-size: 13px; line-height: 1.55; }
+.accountTypeArrow { color: #94a3b8; font-size: 22px; transition: transform .2s ease, color .2s ease; }
+.accountTypeCard:hover .accountTypeArrow { color: #2563eb; transform: translateX(3px); }
+.accountTypeFooter { margin: 20px 0 0; color: #94a3b8; font-size: 12px; line-height: 1.5; text-align: center; }
+
+@media (max-width: 600px) {
+  .accountTypeOverlay { padding: 14px; align-items: flex-end; }
+  .accountTypeModal { padding: 26px 18px 20px; border-radius: 22px; max-height: 92vh; overflow-y: auto; }
+  .accountTypeHeader { padding-right: 36px; }
+  .accountTypeCard { grid-template-columns: auto 1fr; gap: 12px; padding: 15px; }
+  .accountTypeIcon { width: 46px; height: 46px; border-radius: 13px; }
+  .accountTypeArrow { display: none; }
+}
