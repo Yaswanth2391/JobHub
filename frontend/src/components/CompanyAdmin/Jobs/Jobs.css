@@ -1,0 +1,1446 @@
+/* =====================================
+   COMPANY JOBS PAGE
+===================================== */
+
+.companyJobsPage {
+  min-height: 100vh;
+  background: #f7f9fc;
+  display: flex;
+}
+
+.companyJobsMain {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =====================================
+   TOPBAR
+===================================== */
+
+.companyJobsTopbar {
+  min-height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e9f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  position: sticky;
+  top: 0;
+  z-index: 30;
+
+  gap: 20px;
+}
+
+.companyJobsMobileLogo {
+  display: none;
+
+  font-size: 21px;
+  font-weight: 700;
+  color: #172033;
+
+  white-space: nowrap;
+}
+
+.companyJobsMobileLogo span {
+  color: #2563eb;
+}
+
+/* =====================================
+   JOB TABS
+===================================== */
+
+.companyJobsTabs {
+  height: 64px;
+
+  display: flex;
+  align-items: stretch;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+}
+
+.companyJobsTabs button {
+  position: relative;
+
+  border: none;
+  background: transparent;
+
+  padding: 0 12px;
+
+  color: #64748b;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.companyJobsTabs button:hover {
+  color: #2563eb;
+}
+
+.companyJobsTabs button.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.companyJobsTabs button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+
+  height: 2px;
+
+  background: #2563eb;
+
+  border-radius: 2px 2px 0 0;
+}
+
+/* =====================================
+   SEARCH + FILTER
+===================================== */
+
+.companyJobsToolbar {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-left: auto;
+
+  flex-shrink: 0;
+}
+
+.companyJobsSearch {
+  width: 210px;
+  height: 36px;
+
+  border: 1px solid #dce2eb;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+
+  gap: 7px;
+
+  color: #94a3b8;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.companyJobsSearch:focus-within {
+  border-color: #93b4f8;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.companyJobsSearch input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.companyJobsSearch input::placeholder {
+  color: #94a3b8;
+}
+
+.companyJobsSearchClear {
+  width: 20px;
+  height: 20px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 4px;
+
+  background: transparent;
+  color: #94a3b8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.companyJobsSearchClear:hover {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* =====================================
+   FILTER
+===================================== */
+
+.companyJobsFilterWrapper {
+  position: relative;
+}
+
+.companyJobsFilterButton {
+  height: 36px;
+
+  padding: 0 11px;
+
+  border: 1px solid #dce2eb;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #475569;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.companyJobsFilterButton:hover,
+.companyJobsFilterButton.active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+/* =====================================
+   FILTER MENU
+===================================== */
+
+.companyJobsFilterMenu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 190px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+
+  padding: 7px;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.12);
+
+  z-index: 50;
+}
+
+.companyJobsFilterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 7px 8px 9px;
+
+  border-bottom: 1px solid #eef2f6;
+
+  margin-bottom: 5px;
+}
+
+.companyJobsFilterHeader strong {
+  font-size: 11px;
+  color: #334155;
+}
+
+.companyJobsFilterHeader button {
+  width: 24px;
+  height: 24px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: transparent;
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.companyJobsFilterHeader button:hover {
+  background: #f1f5f9;
+}
+
+.companyJobsFilterMenu > button:not(.companyJobsFilterHeader button) {
+  width: 100%;
+
+  height: 34px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #475569;
+
+  text-align: left;
+
+  padding: 0 9px;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.companyJobsFilterMenu > button:not(.companyJobsFilterHeader button):hover {
+  background: #f8fafc;
+}
+
+.companyJobsFilterMenu > button.selected {
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.companyJobsContent {
+  padding: 28px 30px 35px;
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+}
+
+/* =====================================
+   HEADING
+===================================== */
+
+.companyJobsHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.companyJobsHeading h1 {
+  margin: 0 0 5px;
+
+  color: #172033;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.companyJobsHeading p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.companyJobsDesktopPostButton {
+  height: 40px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.companyJobsDesktopPostButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.companyJobsDesktopPostButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =====================================
+   LOADING
+===================================== */
+
+.companyJobsLoading {
+  min-height: 260px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* =====================================
+   TABLE WRAPPER
+===================================== */
+
+.companyJobsTableWrapper {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  overflow-x: auto;
+
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+/* =====================================
+   TABLE
+===================================== */
+
+.companyJobsTable {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+/* =====================================
+   TABLE HEADER
+===================================== */
+
+.companyJobsTable thead {
+  background: #f8fafc;
+}
+
+.companyJobsTable th {
+  height: 45px;
+
+  padding: 0 14px;
+
+  border-bottom: 1px solid #e5e9f0;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+/* =====================================
+   TABLE BODY
+===================================== */
+
+.companyJobsTable tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+.companyJobsTable tbody tr:hover {
+  background: #fafcff;
+}
+
+.companyJobsTable td {
+  min-height: 54px;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  color: #475569;
+
+  font-size: 12px;
+
+  vertical-align: middle;
+}
+
+.companyJobsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =====================================
+   JOB TITLE
+===================================== */
+
+.companyJobsTableTitle {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 180px;
+}
+
+.companyJobsTableTitle strong {
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.companyJobsTableTitle span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+}
+
+/* =====================================
+   TABLE TEXT
+===================================== */
+
+.companyJobsTableText {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #526174;
+
+  white-space: nowrap;
+}
+
+.companyJobsTableText svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+/* =====================================
+   APPLICATION COUNT
+===================================== */
+
+.companyJobsApplicationCount {
+  display: inline-flex;
+
+  min-width: 25px;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =====================================
+   STATUS
+===================================== */
+
+.companyJobsTableStatus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 54px;
+
+  height: 24px;
+
+  padding: 0 9px;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: capitalize;
+}
+
+.companyJobsTableStatus.published {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.companyJobsTableStatus.closed {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.companyJobsTableStatus.draft {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* =====================================
+   TABLE ACTIONS
+===================================== */
+
+.companyJobsTableActions {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.companyJobsTableActions button {
+  width: 30px;
+  height: 30px;
+
+  padding: 0;
+
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.companyJobsViewButton {
+  border: 1px solid #dbe3f0;
+
+  background: #ffffff;
+  color: #64748b;
+}
+
+.companyJobsViewButton:hover {
+  background: #f8fafc;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.companyJobsEditButton {
+  border: 1px solid #dbe3f0;
+
+  background: #ffffff;
+  color: #2563eb;
+}
+
+.companyJobsEditButton:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.companyJobsDeleteButton {
+  border: 1px solid #fecaca;
+
+  background: #ffffff;
+  color: #dc2626;
+}
+
+.companyJobsDeleteButton:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.companyJobsTableActions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   PAGINATION
+===================================== */
+
+.companyJobsPagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 5px;
+
+  margin-top: 15px;
+}
+
+.companyJobsPagination button {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #dce2eb;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #475569;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.companyJobsPagination button:hover:not(:disabled) {
+  border-color: #bfdbfe;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.companyJobsPagination button.active {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.companyJobsPagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.companyJobsEmpty {
+  min-height: 320px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 35px;
+}
+
+.companyJobsEmptyIcon {
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+}
+
+.companyJobsEmpty h2 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.companyJobsEmpty p {
+  max-width: 420px;
+
+  margin: 0 0 20px;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.companyJobsEmpty button {
+  height: 40px;
+
+  padding: 0 15px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.companyJobsEmpty button:hover {
+  background: #1d4ed8;
+}
+
+/* =====================================
+   MODAL OVERLAY
+===================================== */
+
+.companyJobModalOverlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(15, 23, 42, 0.58);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  z-index: 100;
+}
+
+/* =====================================
+   MODAL
+===================================== */
+
+.companyJobModal {
+  width: min(760px, 100%);
+
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.2);
+
+  padding: 25px;
+}
+
+.companyJobModalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.companyJobModalHeader h2 {
+  margin: 0 0 5px;
+
+  color: #172033;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.companyJobModalHeader p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.companyJobCloseButton {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #dce2eb;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.companyJobCloseButton:hover {
+  background: #f8fafc;
+  color: #172033;
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+.companyJobFormGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.companyJobInputGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-bottom: 16px;
+}
+
+.companyJobInputGroup label {
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.companyJobInputGroup input,
+.companyJobInputGroup select,
+.companyJobInputGroup textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d8dee8;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #172033;
+
+  outline: none;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.companyJobInputGroup input,
+.companyJobInputGroup select {
+  height: 40px;
+
+  padding: 0 11px;
+}
+
+.companyJobInputGroup textarea {
+  min-height: 120px;
+
+  padding: 10px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.companyJobInputGroup input:focus,
+.companyJobInputGroup select:focus,
+.companyJobInputGroup textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.companyJobFullWidth {
+  width: 100%;
+}
+
+/* =====================================
+   SKILLS
+===================================== */
+
+.companyJobSkillsInput {
+  display: flex;
+
+  gap: 8px;
+}
+
+.companyJobSkillsInput input {
+  flex: 1;
+}
+
+.companyJobSkillsInput button {
+  height: 40px;
+
+  padding: 0 14px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #172033;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.companyJobSkillsInput button:hover {
+  background: #0f172a;
+}
+
+.companyJobSkillTags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 8px;
+}
+
+.companyJobSkillTags > span {
+  min-height: 28px;
+
+  padding: 3px 6px 3px 9px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 5px;
+
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 4px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.companyJobSkillTags button {
+  width: 19px;
+  height: 19px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 4px;
+
+  background: transparent;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+/* =====================================
+   FORM ACTIONS
+===================================== */
+
+.companyJobFormActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  padding-top: 10px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.companyJobDraftButton,
+.companyJobPublishButton {
+  height: 40px;
+
+  padding: 0 15px;
+
+  border-radius: 7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.companyJobDraftButton {
+  border: 1px solid #d8dee8;
+
+  background: #ffffff;
+  color: #475569;
+}
+
+.companyJobDraftButton:hover {
+  background: #f8fafc;
+}
+
+.companyJobPublishButton {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.companyJobPublishButton:hover {
+  background: #1d4ed8;
+}
+
+.companyJobDraftButton:disabled,
+.companyJobPublishButton:disabled,
+.companyJobCloseButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1023px) {
+  .companyJobsTopbar {
+    padding: 0 20px;
+
+    gap: 12px;
+  }
+
+  .companyJobsContent {
+    padding: 24px 20px 30px;
+  }
+
+  .companyJobsSearch {
+    width: 170px;
+  }
+
+  .companyJobsTabs button {
+    padding: 0 8px;
+
+    font-size: 12px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+  .companyJobsTopbar {
+    min-height: auto;
+
+    padding: 12px 14px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .companyJobsMobileLogo {
+    display: block;
+  }
+
+  .companyJobsTabs {
+    height: 38px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-bottom: 1px solid #edf0f4;
+  }
+
+  .companyJobsTabs button {
+    height: 38px;
+
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+
+  .companyJobsTabs button.active::after {
+    left: 7px;
+    right: 7px;
+  }
+
+  .companyJobsToolbar {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .companyJobsSearch {
+    flex: 1;
+
+    width: auto;
+  }
+
+  .companyJobsFilterButton {
+    width: 75px;
+  }
+
+  .companyJobsContent {
+    padding: 20px 14px 25px;
+  }
+
+  .companyJobsHeading {
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+  }
+
+  .companyJobsHeading h1 {
+    font-size: 24px;
+  }
+
+  .companyJobsHeading p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .companyJobsDesktopPostButton {
+    height: 38px;
+
+    padding: 0 12px;
+
+    font-size: 11px;
+  }
+
+  .companyJobsTableWrapper {
+    border-radius: 8px;
+  }
+
+  .companyJobsTable {
+    min-width: 850px;
+  }
+
+  .companyJobsTable th {
+    height: 42px;
+
+    padding: 0 11px;
+  }
+
+  .companyJobsTable td {
+    padding: 9px 11px;
+  }
+
+  .companyJobsPagination {
+    justify-content: center;
+  }
+
+  /* MODAL */
+
+  .companyJobModalOverlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .companyJobModal {
+    width: 100%;
+
+    max-height: 94vh;
+
+    border-radius: 14px 14px 0 0;
+
+    padding: 20px 15px 24px;
+  }
+
+  .companyJobFormGrid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .companyJobSkillsInput {
+    flex-direction: column;
+  }
+
+  .companyJobSkillsInput button {
+    width: 100%;
+  }
+
+  .companyJobFormActions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .companyJobDraftButton,
+  .companyJobPublishButton {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   VERY SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+  .companyJobsHeading {
+    display: block;
+  }
+
+  .companyJobsDesktopPostButton {
+    margin-top: 12px;
+  }
+
+  .companyJobsToolbar {
+    gap: 6px;
+  }
+
+  .companyJobsFilterButton {
+    width: 68px;
+    padding: 0 8px;
+  }
+}
+
+/* =========================================================
+   UNIFIED JOBHUB ADMIN TOPBAR
+========================================================= */
+.companyJobsTopbar {
+  min-height: 72px;
+  height: 72px;
+  padding: 0 28px;
+  gap: 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf3;
+}
+.companyJobsTabs { height: 72px; }
+.companyJobsTopbarRight {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  flex-shrink: 0;
+}
+.companyJobsNotification {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.companyJobsNotification:hover { background: #f8f9fc; color: #344054; }
+.companyJobsAdmin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+.companyJobsAdminAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2057bd 0%, #0e3f9c 100%);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.20);
+}
+.companyJobsAdminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.companyJobsAdminInfo strong { max-width: 145px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #172033; font-size: 13px; }
+.companyJobsAdminInfo span { color: #8b95a7; font-size: 11px; }
+@media (max-width: 1200px) {
+  .companyJobsSearch { width: 180px; }
+  .companyJobsAdminInfo strong { max-width: 115px; }
+}
+@media (max-width: 980px) {
+  .companyJobsToolbar { display: none; }
+  .companyJobsTopbarRight { margin-left: auto; }
+}
+@media (max-width: 768px) {
+  .companyJobsTopbar { height: 68px; min-height: 68px; padding: 0 18px; }
+  .companyJobsTabs { height: 68px; }
+  .companyJobsTabs button { padding: 0 8px; font-size: 11px; }
+  .companyJobsAdmin { gap: 8px; padding-left: 13px; }
+  .companyJobsAdminAvatar { width: 38px; height: 38px; font-size: 14px; }
+  .companyJobsAdminInfo { display: none; }
+  .companyJobsNotification { width: 38px; height: 38px; }
+}

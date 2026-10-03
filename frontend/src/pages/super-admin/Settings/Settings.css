@@ -1,0 +1,349 @@
+/* =========================================================
+   SUPER ADMIN SETTINGS
+========================================================= */
+
+.superAdminSettingsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 8px;
+}
+
+.superAdminSettingsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.superAdminSettingsEyebrow {
+  margin: 0 0 6px;
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.2px;
+}
+
+.superAdminSettingsHeader h1 {
+  margin: 0;
+  color: #101d4b;
+  font-size: clamp(23px, 2.2vw, 30px);
+  font-weight: 800;
+  letter-spacing: -.65px;
+}
+
+.superAdminSettingsHeader > div > p:last-child {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.superAdminSettingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.superAdminSettingsCard {
+  min-width: 0;
+  padding: 19px;
+  border: 1px solid #e4ebf4;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 7px 24px rgba(15, 23, 42, .035);
+}
+
+.superAdminSettingsCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 19px;
+}
+
+.superAdminSettingsIcon {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  border-radius: 10px;
+}
+
+.profileIcon {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.securityIcon {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+.accountIcon {
+  color: #059669;
+  background: #ecfdf5;
+}
+
+.sessionIcon {
+  color: #ea580c;
+  background: #fff7ed;
+}
+
+.superAdminSettingsCardHeader h2 {
+  margin: 0;
+  color: #111c4b;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.superAdminSettingsCardHeader p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.superAdminSettingsForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.superAdminSettingsForm label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.superAdminSettingsForm input {
+  width: 100%;
+  min-height: 41px;
+  box-sizing: border-box;
+  padding: 0 11px;
+  border: 1px solid #dbe5f0;
+  border-radius: 8px;
+  outline: 0;
+  color: #0f172a;
+  background: #ffffff;
+  font-size: 11px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.superAdminSettingsForm input:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .07);
+}
+
+.superAdminSettingsForm input:disabled {
+  color: #64748b;
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+.settingsInputWithIcon {
+  position: relative;
+}
+
+.settingsInputWithIcon > svg {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  color: #94a3b8;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.settingsInputWithIcon input {
+  padding-left: 35px;
+}
+
+.settingsStatusField {
+  min-height: 41px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  padding: 0 11px;
+  border: 1px solid #dbe5f0;
+  border-radius: 8px;
+  color: #15803d;
+  background: #f0fdf4;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.settingsStatusDot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.settingsFormActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+.passwordHint {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: -1px;
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.passwordHint svg {
+  flex-shrink: 0;
+  color: #16a34a;
+}
+
+.accountDetailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accountDetailsList > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.accountDetailsList > div:first-child {
+  padding-top: 0;
+}
+
+.accountDetailsList > div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.accountDetailsList span {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.accountDetailsList strong {
+  color: #334155;
+  font-size: 10px;
+  font-weight: 750;
+  text-align: right;
+}
+
+.sessionInfoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #eff6ff;
+}
+
+.sessionOnlineIndicator {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, .12);
+}
+
+.sessionInfoBox strong {
+  display: block;
+  color: #1e3a8a;
+  font-size: 11px;
+}
+
+.sessionInfoBox p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.settingsLogoutButton {
+  width: 100%;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 13px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fffafa;
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.settingsLogoutButton:hover {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.superAdminSettingsLoading {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .superAdminSettingsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .superAdminSettingsCard {
+    padding: 16px;
+  }
+
+  .superAdminSettingsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .settingsFormActions {
+    grid-column: auto;
+    justify-content: stretch;
+  }
+
+  .settingsFormActions .superPrimaryButton {
+    width: 100%;
+  }
+
+  .passwordHint {
+    grid-column: auto;
+  }
+
+  .accountDetailsList > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .accountDetailsList strong {
+    text-align: left;
+  }
+}

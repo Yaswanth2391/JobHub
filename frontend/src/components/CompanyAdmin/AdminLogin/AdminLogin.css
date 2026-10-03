@@ -1,0 +1,533 @@
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.adminLoginPage {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  background: #f5f8fc;
+}
+
+
+/* =========================================
+   LEFT IMAGE SECTION
+========================================= */
+
+.adminLoginLeft {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background-image:
+    url("../../../assets/images/CompanyLoginImage.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+
+/* LIGHT OVERLAY */
+
+.adminLoginOverlay {
+  position: absolute;
+
+  inset: 0;
+
+  padding: 38px 52px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(244, 247, 252, 0.90),
+      rgba(244, 247, 252, 0.30),
+      rgba(244, 247, 252, 0.05)
+    );
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.adminLoginLogo {
+  display: flex;
+
+  align-items: center;
+
+  color: #1f4fa8;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.loginLogoIcon {
+  color: #2f67d8;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.adminLoginContent {
+  max-width: 360px;
+
+  margin-top: 125px;
+}
+
+.adminLoginContent h1 {
+  margin: 0;
+
+  color: #1e2b42;
+
+  font-size: 39px;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+.adminLoginContent h1 span {
+  color: #315fc4;
+}
+
+.adminLoginContent p {
+  margin-top: 18px;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   RIGHT SECTION
+========================================= */
+
+.adminLoginRight {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 35px;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.adminLoginCard {
+  width: 100%;
+
+  max-width: 430px;
+
+  padding: 38px 36px;
+
+  border: 1px solid #e1e8f2;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 45px
+    rgba(36, 59, 99, 0.12);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.adminLoginHeader {
+  margin-bottom: 28px;
+
+  text-align: center;
+}
+
+.adminLoginHeader h2 {
+  margin: 0;
+
+  color: #25324a;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+.adminLoginHeader p {
+  margin: 8px 0 0;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.loginInputGroup {
+  margin-bottom: 18px;
+}
+
+.loginInputGroup label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #475467;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.loginInput {
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 13px;
+
+  border: 1px solid #dce3ee;
+
+  border-radius: 6px;
+
+  background: #fbfcfe;
+
+  transition: 0.2s ease;
+}
+
+.loginInput:focus-within {
+  border-color: #3d67cc;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(61, 103, 204, 0.1);
+}
+
+.loginInput svg {
+  color: #7b879a;
+
+  flex-shrink: 0;
+}
+
+.loginInput input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #25324a;
+
+  font-size: 13px;
+}
+
+.loginInput input::placeholder {
+  color: #a4adbb;
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+========================================= */
+
+.loginPasswordToggle {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.loginPasswordToggle svg {
+  color: #7b879a;
+}
+
+
+/* =========================================
+   FORGOT PASSWORD
+========================================= */
+
+.forgotPasswordRow {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: -5px;
+
+  margin-bottom: 22px;
+}
+
+.forgotPasswordButton {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #315fc4;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.forgotPasswordButton:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.adminLoginButton {
+  width: 100%;
+
+  height: 46px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3e69d2,
+      #2855bd
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.adminLoginButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 20px
+    rgba(40, 85, 189, 0.25);
+}
+
+.adminLoginButton:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   SIGNUP TEXT
+========================================= */
+
+.loginSignupText {
+  margin: 22px 0 0;
+
+  color: #718096;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+.loginSignupText button {
+  margin-left: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #315fc4;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TABLET
+   REMOVE IMAGE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .adminLoginPage {
+    display: block;
+  }
+
+  .adminLoginLeft {
+    display: none;
+  }
+
+  .adminLoginRight {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 25px;
+  }
+
+  .adminLoginCard {
+    max-width: 480px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .adminLoginRight {
+    padding: 25px 16px;
+
+    align-items: flex-start;
+  }
+
+  .adminLoginCard {
+    margin-top: 20px;
+
+    padding: 30px 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+      0 10px 30px
+      rgba(36, 59, 99, 0.10);
+  }
+
+  .adminLoginHeader h2 {
+    font-size: 22px;
+  }
+
+  .adminLoginHeader p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .adminLoginRight {
+    padding: 15px 12px;
+  }
+
+  .adminLoginCard {
+    margin-top: 10px;
+
+    padding: 25px 16px;
+  }
+
+}
+
+/* =========================================================
+   JOBHUB UNIFIED ADMIN THEME — LOGIN
+========================================================= */
+
+.adminLoginPage {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 84%, rgba(37, 99, 235, 0.07), transparent 26%),
+    #f6f8fc;
+}
+
+.adminLoginCard {
+  border: 1px solid #e1e7f0;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.07);
+}
+
+
+/* =========================================================
+   JOBHUB BRAND LOGO
+========================================================= */
+
+.adminLoginLogo {
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 25px rgba(36, 59, 99, 0.08);
+}
+
+.adminLoginBrandLogo {
+  width: 126px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .adminLoginBrandLogo {
+    width: 110px;
+  }
+}

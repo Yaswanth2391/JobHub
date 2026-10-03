@@ -1,0 +1,1924 @@
+/* =========================================================
+   ATS SHORTLISTING PAGE
+========================================================= */
+
+.atsShortlistingPage {
+  min-height: 100vh;
+  display: flex;
+  background: #f6f8fc;
+  color: #172033;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.atsShortlistingMain {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  padding-bottom: 110px;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.atsShortlistingTopbar {
+  height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e7eaf0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.atsShortlistingTopbarLeft,
+.atsShortlistingTopbarRight {
+  display: flex;
+  align-items: center;
+}
+
+.atsShortlistingTopbarRight {
+  gap: 22px;
+}
+
+/* Back button */
+
+.atsBackButton {
+  border: 0;
+  background: transparent;
+  color: #5d6678;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 0;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.atsBackButton:hover {
+  color: #2563eb;
+  transform: translateX(-2px);
+}
+
+/* Notification */
+
+.atsNotificationButton {
+  position: relative;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid #e5e9f0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #596273;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.atsNotificationButton:hover {
+  background: #f8fafc;
+  border-color: #d7dce5;
+}
+
+.atsNotificationButton span {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  top: 7px;
+  right: 7px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+  border: 2px solid #ffffff;
+}
+
+/* Admin */
+
+.atsAdminProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #596273;
+}
+
+.atsAdminAvatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: #eaf1ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.atsAdminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.atsAdminInfo strong {
+  color: #172033;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.atsAdminInfo span {
+  color: #8992a3;
+  font-size: 11px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.atsShortlistingHeader {
+  padding: 32px 34px 22px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+.atsShortlistingHeader h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+}
+
+.atsShortlistingHeader p {
+  max-width: 720px;
+
+  margin: 8px 0 0;
+
+  color: #7a8495;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Refresh */
+
+.atsRefreshButton {
+  flex-shrink: 0;
+
+  height: 40px;
+
+  padding: 0 15px;
+
+  border: 1px solid #dce2ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #4d586b;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.atsRefreshButton:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  background: #f8fbff;
+}
+
+/* =========================================================
+   INFO BANNER
+========================================================= */
+
+.atsInfoBanner {
+  margin: 0 34px 22px;
+
+  min-height: 64px;
+
+  padding: 12px 16px;
+
+  border: 1px solid #dce8ff;
+  border-radius: 11px;
+
+  background: #f3f7ff;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.atsInfoIcon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: #e2ecff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.atsInfoBanner div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.atsInfoBanner strong {
+  color: #234b91;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.atsInfoBanner span {
+  color: #687896;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.atsTabs {
+  margin: 0 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  border-bottom: 1px solid #e3e7ee;
+}
+
+.atsTabs button {
+  position: relative;
+
+  border: 0;
+  background: transparent;
+
+  padding: 13px 2px 14px;
+
+  color: #7c8595;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  cursor: pointer;
+}
+
+.atsTabs button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 2px;
+
+  background: transparent;
+
+  border-radius: 2px 2px 0 0;
+}
+
+.atsTabs button:hover {
+  color: #2563eb;
+}
+
+.atsTabs button.active {
+  color: #2563eb;
+}
+
+.atsTabs button.active::after {
+  background: #2563eb;
+}
+
+.atsTabs button span {
+  min-width: 22px;
+  height: 21px;
+
+  padding: 0 6px;
+
+  border-radius: 11px;
+
+  background: #f0f2f6;
+  color: #727c8e;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.atsTabs button.active span {
+  background: #eaf1ff;
+  color: #2563eb;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.atsToolbar {
+  margin: 20px 34px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+}
+
+.atsSearchBox {
+  width: min(390px, 100%);
+  height: 40px;
+
+  padding: 0 12px;
+
+  border: 1px solid #dfe4ec;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #8992a3;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.atsSearchBox:focus-within {
+  border-color: #8eb4ff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.atsSearchBox input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #273247;
+
+  font-size: 13px;
+}
+
+.atsSearchBox input::placeholder {
+  color: #9ba3b2;
+}
+
+.atsToolbarInfo {
+  color: #7b8494;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.atsTableCard {
+  margin: 0 34px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e7ee;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.025);
+}
+
+.atsTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.atsTable {
+  width: 100%;
+  min-width: 930px;
+
+  border-collapse: collapse;
+
+  text-align: left;
+}
+
+.atsTable thead {
+  background: #f8fafc;
+}
+
+.atsTable th {
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid #e6e9ef;
+
+  color: #6f7889;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+
+  white-space: nowrap;
+}
+
+.atsTable td {
+  padding: 14px 16px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  color: #3e485b;
+
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+.atsTable tbody tr {
+  transition:
+    background 0.18s ease;
+}
+
+.atsTable tbody tr:hover {
+  background: #fafcff;
+}
+
+.atsTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.atsTable tbody tr.selectedRow {
+  background: #f3f7ff;
+}
+
+.atsSelectColumn {
+  width: 70px;
+  text-align: center !important;
+}
+
+.atsSelectColumn input {
+  width: 15px;
+  height: 15px;
+
+  margin: 0;
+
+  accent-color: #2563eb;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   CANDIDATE
+========================================================= */
+
+.atsCandidateCell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 190px;
+}
+
+.atsCandidateAvatar {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #edf3ff;
+  color: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.atsCandidateCell > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.atsCandidateCell strong {
+  color: #1d2638;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.atsCandidateCell span {
+  color: #8b94a4;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   ATS SCORE
+========================================================= */
+
+.atsScore {
+  width: fit-content;
+  min-width: 58px;
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  text-align: center;
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.atsScoreHigh {
+  background: #eaf8f0;
+  color: #15803d;
+}
+
+.atsScoreMedium {
+  background: #fff7e7;
+  color: #b76b00;
+}
+
+.atsScoreLow {
+  background: #fff0f1;
+  color: #dc3545;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.atsSkillsCell {
+  max-width: 300px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.atsSkillsCell span {
+  padding: 4px 7px;
+
+  border: 1px solid #dce5f5;
+  border-radius: 5px;
+
+  background: #f5f8fd;
+  color: #536a8d;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.atsSkillsCell .atsNoSkills {
+  border: 0;
+  background: transparent;
+  color: #9ba3b2;
+  padding: 0;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.atsStatusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 27px;
+
+  padding: 4px 9px;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.atsStatusApplied {
+  background: #eef2f7;
+  color: #687386;
+}
+
+.atsStatusInterview {
+  background: #eaf1ff;
+  color: #2563eb;
+}
+
+.atsStatusHired {
+  background: #eaf8f0;
+  color: #15803d;
+}
+
+.atsStatusRejected {
+  background: #fff0f1;
+  color: #dc3545;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.atsActions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  white-space: nowrap;
+}
+
+.atsIconButton {
+  width: 31px;
+  height: 31px;
+
+  border: 1px solid #dfe4ec;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #657084;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.atsIconButton:hover {
+  color: #2563eb;
+  border-color: #bcd1fa;
+  background: #f5f8ff;
+}
+
+.atsScheduleButton,
+.atsRejectButton {
+  height: 31px;
+
+  padding: 0 9px;
+
+  border-radius: 7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.atsScheduleButton {
+  border: 1px solid #c8d9ff;
+
+  background: #f4f7ff;
+  color: #2563eb;
+}
+
+.atsScheduleButton:hover:not(:disabled) {
+  background: #eaf1ff;
+  border-color: #9fbdf5;
+}
+
+.atsRejectButton {
+  border: 1px solid #f0c9ce;
+
+  background: #fff7f8;
+  color: #dc3545;
+}
+
+.atsRejectButton:hover:not(:disabled) {
+  background: #fff0f1;
+  border-color: #e9aab2;
+}
+
+.atsScheduleButton:disabled,
+.atsRejectButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SELECTED CANDIDATE BAR
+========================================================= */
+
+.atsSelectedBar {
+  position: fixed;
+
+  left: 250px;
+  right: 0;
+  bottom: 0;
+
+  min-height: 72px;
+
+  padding: 12px 34px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #dfe4ec;
+
+  box-shadow:
+    0 -5px 18px rgba(15, 23, 42, 0.06);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  z-index: 50;
+}
+
+.atsSelectedBar > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.atsSelectedBar strong {
+  color: #1c2638;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.atsSelectedBar span {
+  color: #7d8798;
+
+  font-size: 11px;
+}
+
+.atsSelectedActions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.atsSelectedScheduleButton,
+.atsSelectedRejectButton {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border-radius: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.atsSelectedScheduleButton {
+  border: 1px solid #2563eb;
+
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.atsSelectedScheduleButton:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.atsSelectedRejectButton {
+  border: 1px solid #e7b9be;
+
+  background: #ffffff;
+  color: #dc3545;
+}
+
+.atsSelectedRejectButton:hover:not(:disabled) {
+  background: #fff5f6;
+}
+
+.atsSelectedScheduleButton:disabled,
+.atsSelectedRejectButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.atsEmptyCell {
+  height: 300px;
+
+  padding: 0 !important;
+
+  text-align: center;
+}
+
+.atsEmptyState {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #8b94a4;
+}
+
+.atsEmptyState svg {
+  margin-bottom: 12px;
+
+  color: #aab3c2;
+}
+
+.atsEmptyState h3 {
+  margin: 0 0 5px;
+
+  color: #455064;
+
+  font-size: 14px;
+}
+
+.atsEmptyState p {
+  margin: 0;
+
+  color: #929baa;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.atsShortlistingLoading {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  color: #788294;
+}
+
+.atsShortlistingLoading p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+.atsShortlistingSpinner {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid #e4e9f1;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: atsSpinner 0.8s linear infinite;
+}
+
+@keyframes atsSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .atsShortlistingMain {
+    margin-left: 0;
+  }
+
+  .atsShortlistingTopbar {
+    padding: 0 24px;
+  }
+
+  .atsShortlistingHeader {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .atsInfoBanner,
+  .atsTabs,
+  .atsToolbar,
+  .atsTableCard {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .atsSelectedBar {
+    left: 220px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .atsShortlistingPage {
+    background: #f6f8fc;
+  }
+
+  .atsShortlistingMain {
+    margin-left: 0;
+    padding-bottom: 125px;
+  }
+
+  .atsShortlistingTopbar {
+    height: 64px;
+
+    padding: 0 16px;
+  }
+
+  .atsAdminInfo {
+    display: none;
+  }
+
+  .atsAdminProfile > svg {
+    display: none;
+  }
+
+  .atsShortlistingHeader {
+    padding: 22px 16px 18px;
+
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .atsShortlistingHeader h1 {
+    font-size: 21px;
+  }
+
+  .atsShortlistingHeader p {
+    font-size: 12px;
+  }
+
+  .atsRefreshButton {
+    width: 100%;
+  }
+
+  .atsInfoBanner {
+    margin: 0 16px 18px;
+
+    align-items: flex-start;
+  }
+
+  .atsTabs {
+    margin: 0 16px;
+
+    gap: 19px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .atsTabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .atsTabs button {
+    flex-shrink: 0;
+  }
+
+  .atsToolbar {
+    margin: 16px;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .atsSearchBox {
+    width: 100%;
+  }
+
+  .atsToolbarInfo {
+    align-self: flex-end;
+  }
+
+  .atsTableCard {
+    margin: 0 16px;
+
+    border-radius: 10px;
+  }
+
+  .atsSelectedBar {
+    left: 0;
+
+    padding: 12px 16px;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .atsSelectedActions {
+    width: 100%;
+  }
+
+  .atsSelectedScheduleButton,
+  .atsSelectedRejectButton {
+    flex: 1;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .atsShortlistingTopbarRight {
+    gap: 8px;
+  }
+
+  .atsNotificationButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .atsAdminAvatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .atsBackButton span {
+    display: none;
+  }
+
+  .atsShortlistingHeader h1 {
+    font-size: 19px;
+  }
+
+  .atsInfoBanner {
+    padding: 11px;
+  }
+
+  .atsInfoIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .atsTabs {
+    gap: 15px;
+  }
+
+  .atsSelectedActions {
+    flex-direction: column !important;
+  }
+
+  .atsSelectedScheduleButton,
+  .atsSelectedRejectButton {
+    width: 100%;
+    flex: none;
+  }
+}
+
+/* =========================================================
+   ATS REPORT POPUP / MODAL
+   ========================================================= */
+
+.atsScoreButton {
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.atsScoreButton:hover {
+  transform: scale(1.06);
+  opacity: 0.9;
+}
+
+.atsReportButton {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.atsReportButton:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #111827;
+}
+
+.atsReportOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.64);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: atsOverlayFadeIn 0.2s ease;
+}
+
+.atsReportModal {
+  position: relative;
+  width: min(980px, 100%);
+  max-height: calc(100vh - 48px);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.25),
+    0 8px 24px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: atsModalSlideIn 0.25s ease;
+}
+
+.atsReportHeader {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.atsReportHeaderInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.atsReportCandidateAvatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.atsReportHeaderInfo h2 {
+  margin: 0 0 4px;
+  color: #111827;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.atsReportHeaderInfo p {
+  margin: 0 0 2px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.atsReportHeaderInfo span {
+  display: block;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.atsReportCloseButton {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.atsReportCloseButton:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #111827;
+  transform: rotate(3deg);
+}
+
+.atsReportBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 26px;
+  background: #f8fafc;
+}
+
+.atsReportBody::-webkit-scrollbar {
+  width: 7px;
+}
+
+.atsReportBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.atsReportBody::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.atsReportBody::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.atsReportOverview {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.atsReportScoreCircle {
+  width: 104px;
+  height: 104px;
+  min-width: 104px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 7px solid #e5e7eb;
+}
+
+.atsReportScoreCircle strong {
+  color: #111827;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.atsReportScoreCircle span {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.atsReportScoreCircle.atsScoreHigh {
+  border-color: #16a34a;
+}
+
+.atsReportScoreCircle.atsScoreHigh strong {
+  color: #15803d;
+}
+
+.atsReportScoreCircle.atsScoreMedium {
+  border-color: #d97706;
+}
+
+.atsReportScoreCircle.atsScoreMedium strong {
+  color: #b45309;
+}
+
+.atsReportScoreCircle.atsScoreLow {
+  border-color: #dc2626;
+}
+
+.atsReportScoreCircle.atsScoreLow strong {
+  color: #b91c1c;
+}
+
+.atsReportOverviewText {
+  min-width: 0;
+}
+
+.atsReportOverviewText > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.atsReportOverviewText > strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #111827;
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.atsReportOverviewText p {
+  max-width: 650px;
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.atsReportSection {
+  margin-bottom: 18px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+.atsReportSection:last-child {
+  margin-bottom: 0;
+}
+
+.atsReportSectionHeader {
+  margin-bottom: 18px;
+}
+
+.atsReportSectionHeader h3 {
+  margin: 0 0 4px;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.atsReportSectionHeader p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.atsReportBreakdown {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.atsReportMetric {
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.atsReportMetricTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.atsReportMetricTop span {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.atsReportMetricTop strong {
+  color: #111827;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.atsReportProgress {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  background: #e5e7eb;
+  border-radius: 20px;
+}
+
+.atsReportProgress > div {
+  height: 100%;
+  background: #2563eb;
+  border-radius: inherit;
+  transition: width 0.4s ease;
+}
+
+.atsReportMetric small {
+  display: block;
+  margin-top: 9px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.atsReportSkillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.atsReportSkillsBlock {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.atsReportSkillsBlock.matched {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.atsReportSkillsBlock.missing {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.atsReportSkillsBlock h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.atsReportSkillsBlock.matched h4 {
+  color: #15803d;
+}
+
+.atsReportSkillsBlock.missing h4 {
+  color: #c2410c;
+}
+
+.atsReportSkillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.atsReportSkillTags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.atsReportSkillsBlock.matched .atsReportSkillTags span {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.atsReportSkillsBlock.missing .atsReportSkillTags span {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.atsReportSkillTags em {
+  color: #64748b;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.atsReportDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.atsReportDetailsGrid > div {
+  padding: 15px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+}
+
+.atsReportDetailsGrid span {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.atsReportDetailsGrid strong {
+  display: block;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.atsResumeChecks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.atsResumeCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 12px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.atsResumeCheck.passed {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.atsResumeCheck.failed {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.atsReportKeywordList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atsReportKeywordList span {
+  padding: 7px 10px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.atsReportKeywordList p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.atsEducationResult {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 12px;
+}
+
+.atsEducationResult > div {
+  padding: 15px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+}
+
+.atsEducationResult span {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.atsEducationResult strong {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.atsReportFooter {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 26px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.atsReportCloseFooterButton,
+.atsReportViewApplicationButton {
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.atsReportCloseFooterButton {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.atsReportCloseFooterButton:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.atsReportViewApplicationButton {
+  background: #111827;
+  border: 1px solid #111827;
+  color: #ffffff;
+}
+
+.atsReportViewApplicationButton:hover {
+  background: #1f2937;
+  border-color: #1f2937;
+}
+
+@keyframes atsOverlayFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes atsModalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .atsReportModal {
+    width: min(760px, 100%);
+  }
+
+  .atsReportBreakdown {
+    grid-template-columns: 1fr;
+  }
+
+  .atsReportDetailsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atsResumeChecks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .atsReportOverlay {
+    padding: 10px;
+  }
+
+  .atsReportModal {
+    width: 100%;
+    max-height: calc(100vh - 20px);
+    border-radius: 14px;
+  }
+
+  .atsReportHeader {
+    padding: 16px;
+  }
+
+  .atsReportBody {
+    padding: 14px;
+  }
+
+  .atsReportFooter {
+    padding: 13px 16px;
+  }
+
+  .atsReportOverview {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .atsReportScoreCircle {
+    width: 88px;
+    height: 88px;
+    min-width: 88px;
+  }
+
+  .atsReportScoreCircle strong {
+    font-size: 24px;
+  }
+
+  .atsReportSection {
+    padding: 16px;
+  }
+
+  .atsReportSkillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .atsReportDetailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .atsResumeChecks {
+    grid-template-columns: 1fr;
+  }
+
+  .atsEducationResult {
+    grid-template-columns: 1fr;
+  }
+
+  .atsReportFooter {
+    flex-direction: column-reverse;
+  }
+
+  .atsReportCloseFooterButton,
+  .atsReportViewApplicationButton {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   UNIFIED JOBHUB ADMIN TOPBAR
+========================================================= */
+.atsShortlistingTopbar {
+  height: 72px;
+  min-height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf3;
+}
+.atsShortlistingTopbarRight { gap: 17px; }
+.atsNotificationButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+}
+.atsNotificationButton:hover {
+  background: #f8f9fc;
+  border-color: transparent;
+  color: #344054;
+}
+.atsNotificationButton span { display: none; }
+.atsAdminProfile {
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+  color: #172033;
+}
+.atsAdminAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2057bd 0%, #0e3f9c 100%);
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.20);
+}
+.atsAdminInfo strong { font-size: 13px; color: #172033; }
+.atsAdminInfo span { font-size: 11px; color: #8b95a7; }
+.atsAdminProfile > svg { display: none; }
+@media (max-width: 768px) {
+  .atsShortlistingTopbar { padding: 0 18px; }
+  .atsAdminProfile { gap: 8px; padding-left: 13px; }
+  .atsAdminAvatar { width: 38px; height: 38px; }
+  .atsAdminInfo { display: none; }
+}

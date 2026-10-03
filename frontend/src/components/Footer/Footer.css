@@ -1,0 +1,507 @@
+/* =========================================================
+   JOBHUB FOOTER
+========================================================= */
+
+.jobhubFooter {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #0f172a;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.footerContainer {
+  width: min(1540px, 100%);
+  margin: 0 auto;
+  padding: 70px clamp(24px, 4vw, 70px) 24px;
+}
+
+/* =========================================================
+   FOOTER TOP
+========================================================= */
+
+.footerTop {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr 1fr;
+  gap: 55px;
+  padding-bottom: 55px;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footerBrand {
+  max-width: 390px;
+}
+
+.footerLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+.footerLogoIcon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+.footerLogoText {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.7px;
+}
+
+.footerLogoText span {
+  color: #fbbf24;
+}
+
+.footerDescription {
+  margin: 0;
+  max-width: 360px;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.footerSocials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.footerSocialLink {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footerSocialLink:hover {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerColumn h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 4px 0 22px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footerColumn h3 svg {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+.footerColumn a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin-bottom: 9px;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footerColumn a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.footerMailLink {
+  gap: 8px;
+}
+
+.footerMailLink svg {
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   FOOTER CTA
+========================================================= */
+
+.footerCta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 32px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.footerCtaContent {
+  min-width: 0;
+}
+
+.footerCtaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.08);
+  color: #fbbf24;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footerCtaContent h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.footerCtaContent p {
+  margin: 9px 0 0;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footerCtaButton {
+  min-width: 150px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 19px;
+  border-radius: 11px;
+  background: #fbbf24;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.footerCtaButton:hover {
+  background: #f59e0b;
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.2);
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footerBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 26px;
+  margin-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.footerBottom p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.footerBottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footerBottomLinks a {
+  color: #64748b;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerBottomLinks a:hover {
+  color: #ffffff;
+}
+
+.footerDot {
+  color: #475569;
+  font-size: 12px;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+  .footerContainer {
+    padding-top: 80px;
+  }
+
+  .footerTop {
+    gap: 70px;
+  }
+
+  .footerDescription {
+    font-size: 16px;
+  }
+
+  .footerColumn a {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .footerTop {
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: 42px;
+  }
+
+  .footerBrand {
+    grid-row: span 2;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .footerContainer {
+    padding: 55px 28px 22px;
+  }
+
+  .footerTop {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 35px;
+    padding-bottom: 42px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    max-width: 620px;
+  }
+
+  .footerCta {
+    padding: 27px 25px;
+  }
+
+  .footerCtaContent h2 {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .footerContainer {
+    padding: 48px 20px 20px;
+  }
+
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 22px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+  }
+
+  .footerDescription {
+    font-size: 14px;
+  }
+
+  .footerColumn h3 {
+    margin-bottom: 17px;
+    font-size: 15px;
+  }
+
+  .footerColumn a {
+    margin-bottom: 7px;
+    font-size: 13px;
+  }
+
+  .footerCta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 21px;
+    padding: 24px 21px;
+    border-radius: 18px;
+  }
+
+  .footerCtaContent h2 {
+    font-size: 22px;
+  }
+
+  .footerCtaButton {
+    width: 100%;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 13px;
+    margin-top: 24px;
+    padding-top: 22px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .footerContainer {
+    padding: 42px 16px 18px;
+  }
+
+  .footerTop {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footerBrand {
+    grid-column: auto;
+  }
+
+  .footerLogoText {
+    font-size: 25px;
+  }
+
+  .footerLogoIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footerSocials {
+    margin-top: 20px;
+  }
+
+  .footerColumn h3 {
+    margin-bottom: 14px;
+  }
+
+  .footerColumn a {
+    min-height: 29px;
+  }
+
+  .footerCta {
+    margin-top: 3px;
+    padding: 22px 18px;
+  }
+
+  .footerCtaBadge {
+    font-size: 11px;
+  }
+
+  .footerCtaContent h2 {
+    font-size: 20px;
+  }
+
+  .footerCtaContent p {
+    font-size: 13px;
+  }
+
+  .footerBottomLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+  .footerContainer {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .footerCtaContent h2 {
+    font-size: 18px;
+  }
+
+  .footerBottom p,
+  .footerBottomLinks a {
+    font-size: 12px;
+  }
+}
+/* =========================================================
+   JOBHUB BRAND LOGO
+========================================================= */
+
+.footerBrandLogo {
+  width: 136px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 650px) {
+  .footerBrandLogo {
+    width: 124px;
+  }
+}

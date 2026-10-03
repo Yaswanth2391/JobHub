@@ -1,0 +1,997 @@
+/* =========================================================
+   JOBHUB COMPANY ADMIN - SETTINGS
+   ========================================================= */
+
+.companySettingsPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #f6f8fc;
+  color: #172033;
+  overflow-x: hidden;
+}
+
+.companySettingsMain {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  background: #f6f8fc;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.companySettingsTopbar {
+  width: 100%;
+  height: 72px;
+  min-height: 72px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e7ebf2;
+  box-sizing: border-box;
+}
+
+.companySettingsTopbarLeft {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.companySettingsMenuButton {
+  display: none;
+}
+
+.companySettingsTopbarTitle span {
+  display: block;
+  margin-bottom: 3px;
+  color: #7a8699;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.companySettingsTopbarTitle h1 {
+  margin: 0;
+  color: #12213b;
+  font-size: 25px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.companySettingsTopbarRight {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.companySettingsNotificationButton {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.companySettingsNotificationButton:hover {
+  background: #f8f9fc;
+  color: #344054;
+  transform: translateY(-1px);
+}
+
+.companySettingsAdmin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+
+.companySettingsAdminAvatar {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    145deg,
+    #2057bd 0%,
+    #0e3f9c 100%
+  );
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 800;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.2);
+}
+
+.companySettingsAdminInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.companySettingsAdminInfo strong {
+  max-width: 190px;
+  color: #172033;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companySettingsAdminInfo span {
+  color: #8b95a7;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.companySettingsContent {
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 34px 32px 50px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.companySettingsIntro {
+  min-height: 128px;
+  margin-bottom: 24px;
+  padding: 26px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid #e1e7f0;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 90% 5%,
+      rgba(99, 102, 241, 0.11),
+      transparent 30%
+    ),
+    linear-gradient(
+      120deg,
+      #ffffff 0%,
+      #fbfcff 65%,
+      #f4f6ff 100%
+    );
+  box-shadow: 0 12px 32px rgba(16, 24, 40, 0.04);
+  box-sizing: border-box;
+}
+
+.companySettingsEyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0 11px;
+  border: 1px solid #dddfff;
+  border-radius: 999px;
+  background: #f4f4ff;
+  color: #5b4de7;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.companySettingsIntro h2 {
+  margin: 10px 0 0;
+  color: #12213b;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.companySettingsIntro p {
+  margin: 7px 0 0;
+  color: #727e93;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.companySettingsIntroBadge {
+  flex-shrink: 0;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid #dcefe8;
+  border-radius: 11px;
+  background: #f2fbf7;
+  color: #148763;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   BODY LAYOUT
+   ========================================================= */
+
+.companySettingsLayout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.companySettingsNav {
+  position: sticky;
+  top: 92px;
+  padding: 14px;
+  border: 1px solid #e2e7ef;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 8px 26px rgba(16, 24, 40, 0.035);
+}
+
+.companySettingsNavHeading {
+  padding: 4px 10px 10px;
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.companySettingsNavItem {
+  width: 100%;
+  min-height: 43px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #667085;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.companySettingsNavItem svg:last-child {
+  margin-left: auto;
+  opacity: 0.4;
+}
+
+.companySettingsNavItem:hover {
+  background: #f6f8fc;
+  color: #344054;
+}
+
+.companySettingsNavItem.active {
+  background: #edf3ff;
+  color: #2563eb;
+  font-weight: 750;
+}
+
+.companySettingsNavItem.active svg:last-child {
+  opacity: 0.9;
+}
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.companySettingsPanels {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.companySettingsPanel {
+  scroll-margin-top: 92px;
+  overflow: hidden;
+  border: 1px solid #e2e7ef;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 26px rgba(16, 24, 40, 0.035);
+}
+
+.companySettingsPanelHeader {
+  min-height: 86px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-bottom: 1px solid #edf0f5;
+  box-sizing: border-box;
+}
+
+.companySettingsPanelIcon {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.companySettingsPanelIcon.blue {
+  background: #edf3ff;
+  color: #2563eb;
+}
+
+.companySettingsPanelIcon.purple {
+  background: #f3efff;
+  color: #6955d9;
+}
+
+.companySettingsPanelIcon.green {
+  background: #edf8f1;
+  color: #2d9149;
+}
+
+.companySettingsPanelHeader h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.companySettingsPanelHeader p {
+  margin: 5px 0 0;
+  color: #98a2b3;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACCOUNT
+   ========================================================= */
+
+.companySettingsAccountCard {
+  margin: 20px 22px 0;
+  padding: 16px;
+  border: 1px solid #e8ecf2;
+  border-radius: 14px;
+  background: #fafbfd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.companySettingsAccountIdentity {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.companySettingsCompanyAvatar {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #edf3ff;
+  color: #2563eb;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.companySettingsAccountIdentity > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.companySettingsAccountIdentity strong {
+  color: #1d2939;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 800;
+}
+
+.companySettingsAccountIdentity span {
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.companySettingsSecondaryButton {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid #dce2ea;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #344054;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.companySettingsSecondaryButton:hover {
+  border-color: #c9d2df;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   INFO GRID
+   ========================================================= */
+
+.companySettingsInfoGrid {
+  padding: 18px 22px 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.companySettingsInfoItem {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.companySettingsInfoIcon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f4f6fb;
+  color: #667085;
+  display: grid;
+  place-items: center;
+}
+
+.companySettingsInfoItem > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.companySettingsInfoItem span {
+  color: #98a2b3;
+  font-size: 9px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.companySettingsInfoItem strong {
+  min-width: 0;
+  color: #344054;
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   NOTIFICATION OPTIONS
+   ========================================================= */
+
+.companySettingsOptionList {
+  padding: 4px 22px;
+}
+
+.companySettingsOption {
+  min-width: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0f5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.companySettingsOption:last-child {
+  border-bottom: none;
+}
+
+.companySettingsOptionIcon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f4f6fb;
+  color: #667085;
+  display: grid;
+  place-items: center;
+}
+
+.companySettingsOptionText {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.companySettingsOptionText strong {
+  color: #344054;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+.companySettingsOptionText span {
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.companySettingsToggle {
+  width: 43px;
+  height: 24px;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 0;
+  border-radius: 999px;
+  background: #d7dce5;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.companySettingsToggle span {
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(16, 24, 40, 0.18);
+  transition: transform 0.2s ease;
+}
+
+.companySettingsToggle.on {
+  background: #2563eb;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.companySettingsToggle.on span {
+  transform: translateX(19px);
+}
+
+/* =========================================================
+   SAVE BAR
+   ========================================================= */
+
+.companySettingsSaveBar {
+  min-height: 70px;
+  padding: 14px 22px;
+  border-top: 1px solid #edf0f5;
+  background: #fbfcfe;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.companySettingsSaveMessage {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2d9149;
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.companySettingsSaveMessage.visible {
+  opacity: 1;
+}
+
+.companySettingsPrimaryButton {
+  min-height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    #5a4de8 0%,
+    #4c3fe0 100%
+  );
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(76, 63, 224, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.companySettingsPrimaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 21px rgba(76, 63, 224, 0.24);
+}
+
+/* =========================================================
+   SECURITY
+   ========================================================= */
+
+.companySettingsSecurityCard {
+  margin: 20px 22px 0;
+  padding: 16px;
+  border: 1px solid #e5ebef;
+  border-radius: 14px;
+  background: #fafdfb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.companySettingsSecurityStatus {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.companySettingsSecurityCheck {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #edf8f1;
+  color: #2d9149;
+  display: grid;
+  place-items: center;
+}
+
+.companySettingsSecurityStatus > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.companySettingsSecurityStatus strong {
+  color: #344054;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 750;
+}
+
+.companySettingsSecurityStatus span {
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.companySettingsProtectedBadge {
+  min-height: 26px;
+  padding: 0 9px;
+  border: 1px solid #d5eadb;
+  border-radius: 999px;
+  background: #eef9f1;
+  color: #2d9149;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.companySettingsSecurityNote {
+  margin: 14px 22px 22px;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f2;
+  border-radius: 11px;
+  background: #f8faff;
+  color: #667085;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.companySettingsSecurityNote svg {
+  margin-top: 1px;
+  flex-shrink: 0;
+  color: #5f76a3;
+}
+
+.companySettingsSecurityNote p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .companySettingsContent {
+    padding: 28px 24px 42px;
+  }
+
+  .companySettingsLayout {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .companySettingsIntro {
+    padding: 24px;
+  }
+
+  .companySettingsIntro h2 {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   MOBILE SIDEBAR / TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .companySettingsTopbar {
+    padding: 0 22px;
+  }
+
+  .companySettingsMenuButton {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #e2e7ef;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #344054;
+    cursor: pointer;
+  }
+
+  .companySettingsSidebarOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(15, 23, 42, 0.34);
+  }
+
+  .companySettingsContent {
+    padding: 24px 22px 40px;
+  }
+
+  .companySettingsLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .companySettingsNav {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    overflow-x: auto;
+  }
+
+  .companySettingsNavHeading {
+    display: none;
+  }
+
+  .companySettingsNavItem {
+    width: auto;
+    min-width: max-content;
+    padding: 0 12px;
+  }
+
+  .companySettingsNavItem svg:last-child {
+    display: none;
+  }
+
+  .companySettingsNavItem.active {
+    background: #edf3ff;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .companySettingsTopbar {
+    height: 68px;
+    min-height: 68px;
+    padding: 0 15px;
+  }
+
+  .companySettingsTopbarTitle h1 {
+    font-size: 21px;
+  }
+
+  .companySettingsTopbarTitle span {
+    font-size: 8px;
+  }
+
+  .companySettingsTopbarRight {
+    gap: 10px;
+  }
+
+  .companySettingsNotificationButton {
+    width: 38px;
+    height: 38px;
+  }
+
+  .companySettingsAdmin {
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .companySettingsAdminAvatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .companySettingsAdminInfo {
+    display: none;
+  }
+
+  .companySettingsContent {
+    padding: 16px;
+  }
+
+  .companySettingsIntro {
+    min-height: auto;
+    margin-bottom: 16px;
+    padding: 20px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .companySettingsIntro h2 {
+    font-size: 23px;
+  }
+
+  .companySettingsIntro p {
+    font-size: 11px;
+  }
+
+  .companySettingsIntroBadge {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .companySettingsLayout {
+    gap: 14px;
+  }
+
+  .companySettingsNav {
+    border-radius: 14px;
+  }
+
+  .companySettingsPanel {
+    border-radius: 16px;
+  }
+
+  .companySettingsPanelHeader {
+    min-height: 78px;
+    padding: 17px;
+  }
+
+  .companySettingsPanelHeader h3 {
+    font-size: 14px;
+  }
+
+  .companySettingsPanelHeader p {
+    font-size: 10px;
+  }
+
+  .companySettingsAccountCard {
+    margin: 16px 17px 0;
+    padding: 14px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .companySettingsSecondaryButton {
+    width: 100%;
+  }
+
+  .companySettingsInfoGrid {
+    padding: 14px 17px 17px;
+    grid-template-columns: 1fr;
+  }
+
+  .companySettingsOptionList {
+    padding: 2px 17px;
+  }
+
+  .companySettingsOption {
+    padding: 14px 0;
+    align-items: flex-start;
+  }
+
+  .companySettingsOptionText span {
+    font-size: 9px;
+  }
+
+  .companySettingsToggle {
+    margin-top: 3px;
+  }
+
+  .companySettingsSaveBar {
+    padding: 13px 17px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .companySettingsSaveMessage {
+    justify-content: center;
+  }
+
+  .companySettingsPrimaryButton {
+    width: 100%;
+  }
+
+  .companySettingsSecurityCard {
+    margin: 16px 17px 0;
+    padding: 14px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .companySettingsSecurityNote {
+    margin: 12px 17px 17px;
+  }
+}

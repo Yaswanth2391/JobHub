@@ -1,0 +1,2056 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.heroSection {
+  position: relative;
+  z-index: 20;
+
+  width: 100%;
+
+  overflow: visible;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f9fbff 0%,
+      #f6f9fe 48%,
+      #edf4ff 100%
+    );
+}
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.heroContainer {
+  position: relative;
+  z-index: 21;
+
+  width: 100%;
+  max-width: 1540px;
+
+  min-height: 540px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(430px, 0.82fr);
+
+  align-items: center;
+
+  column-gap: clamp(45px, 5vw, 90px);
+
+  padding:
+    48px
+    clamp(24px, 4vw, 70px)
+    38px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.heroContent {
+  position: relative;
+  z-index: 30;
+
+  width: 100%;
+  max-width: 760px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.heroTitle {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  color: #1e2b43;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size:
+    clamp(
+      46px,
+      4.1vw,
+      70px
+    );
+
+  font-weight: 800;
+
+  line-height: 1.12;
+
+  letter-spacing: -2.6px;
+}
+
+.heroTitle span {
+  display: block;
+}
+
+.heroTitle strong {
+  color: #345db8;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.heroDescription {
+  width: min(
+    100%,
+    650px
+  );
+
+  margin:
+    20px
+    0
+    0;
+
+  color: #667085;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.85;
+
+  letter-spacing: 0.05px;
+}
+
+/* =========================================================
+   SEARCH WRAPPER
+========================================================= */
+
+.heroSearchWrapper {
+  position: relative;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  max-width: 700px;
+}
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.heroSearch {
+  width: 100%;
+
+  min-height: 60px;
+
+  margin-top: 34px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 6px;
+
+  border:
+    1px solid
+    #e1e7f0;
+
+  border-radius: 10px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.95
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(
+      41,
+      62,
+      102,
+      0.1
+    );
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SEARCH FIELDS
+========================================================= */
+
+.searchField {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    0
+    12px;
+
+  color: #8490a3;
+}
+
+.searchField svg {
+  flex-shrink: 0;
+}
+
+.searchField input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #344054;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+.searchField input::placeholder {
+  color: #98a2b3;
+
+  opacity: 1;
+}
+
+.searchKeyword {
+  flex: 1.35;
+}
+
+.searchLocation {
+  flex: 0.7;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.searchDivider {
+  width: 1px;
+
+  height: 28px;
+
+  flex-shrink: 0;
+
+  background: #e4e9f1;
+}
+
+/* =========================================================
+   FILTER BUTTON
+========================================================= */
+
+.heroFilterButton {
+  height: 46px;
+
+  min-width: 84px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding:
+    0
+    8px;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #475467;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.heroFilterButton:hover {
+  background: #f5f8fd;
+
+  color: #315ab7;
+}
+
+.heroFilterButton.active {
+  border-color: #d6e2fb;
+
+  background: #f0f5fd;
+
+  color: #315ab7;
+}
+
+.heroFilterButton > svg {
+  flex-shrink: 0;
+}
+
+.heroFilterButton
+  > svg:last-child {
+  transition:
+    transform 0.2s ease;
+}
+
+.heroFilterButton
+  > svg:last-child.rotate {
+  transform:
+    rotate(180deg);
+}
+
+.heroFilterCount {
+  min-width: 17px;
+
+  height: 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    0
+    4px;
+
+  border-radius: 50px;
+
+  background: #315bd0;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.heroSearchButton {
+  height: 46px;
+
+  flex-shrink: 0;
+
+  padding:
+    0
+    17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #426bd0 0%,
+      #315ab7 100%
+    );
+
+  box-shadow:
+    0 7px 15px
+    rgba(
+      49,
+      90,
+      183,
+      0.22
+    );
+
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.heroSearchButton:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 11px 22px
+    rgba(
+      49,
+      90,
+      183,
+      0.3
+    );
+}
+
+/* =========================================================
+   FILTER PANEL
+========================================================= */
+
+.heroFiltersPanel {
+  position: absolute;
+
+  top:
+    calc(
+      100% + 10px
+    );
+
+  left: 0;
+
+  z-index: 99999;
+
+  width:
+    min(
+      650px,
+      calc(100vw - 40px)
+    );
+
+  padding: 20px;
+
+  border:
+    1px solid
+    #e7ebf2;
+
+  border-radius: 17px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 50px
+    rgba(
+      16,
+      24,
+      40,
+      0.18
+    );
+
+  box-sizing: border-box;
+
+  animation:
+    heroFilterPanelIn
+    0.2s
+    ease
+    both;
+}
+
+@keyframes heroFilterPanelIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+/* =========================================================
+   FILTER HEADER
+========================================================= */
+
+.heroFiltersHeader {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-bottom: 16px;
+
+  border-bottom:
+    1px solid
+    #eef1f5;
+}
+
+.heroFiltersHeader h3 {
+  margin:
+    0
+    0
+    4px;
+
+  color: #101828;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.heroFiltersHeader p {
+  margin: 0;
+
+  color: #667085;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.heroFilterClose {
+  width: 32px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border:
+    1px solid
+    #e4e7ec;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #667085;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.heroFilterClose:hover {
+  background: #f7f9fc;
+
+  color: #101828;
+
+  border-color: #d0d5dd;
+}
+
+/* =========================================================
+   FILTER GRID
+========================================================= */
+
+.heroFiltersGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap:
+    16px
+    14px;
+
+  padding:
+    18px
+    0;
+}
+
+.heroFilterGroup {
+  min-width: 0;
+}
+
+.heroFilterGroup label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #344054;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.heroFilterGroup input,
+.heroFilterGroup select {
+  width: 100%;
+
+  height: 40px;
+
+  padding:
+    0
+    11px;
+
+  border:
+    1px solid
+    #d0d5dd;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #344054;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.heroFilterGroup input::placeholder {
+  color: #98a2b3;
+}
+
+.heroFilterGroup input:focus,
+.heroFilterGroup select:focus {
+  border-color: #315bd0;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      49,
+      91,
+      208,
+      0.1
+    );
+}
+
+.heroFilterGroup select {
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  cursor: pointer;
+
+  padding-right: 35px;
+}
+
+.heroSelectWrapper {
+  position: relative;
+}
+
+.heroSelectWrapper > svg {
+  position: absolute;
+
+  top: 50%;
+
+  right: 10px;
+
+  transform:
+    translateY(-50%);
+
+  color: #667085;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   SALARY
+========================================================= */
+
+.heroInputWithPrefix {
+  position: relative;
+}
+
+.heroInputWithPrefix > span {
+  position: absolute;
+
+  top: 50%;
+
+  left: 11px;
+
+  z-index: 1;
+
+  transform:
+    translateY(-50%);
+
+  color: #667085;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  pointer-events: none;
+}
+
+.heroInputWithPrefix input {
+  padding-left: 25px;
+}
+
+.heroInputWithPrefix
+  input::-webkit-outer-spin-button,
+.heroInputWithPrefix
+  input::-webkit-inner-spin-button {
+  margin: 0;
+
+  -webkit-appearance: none;
+}
+
+.heroInputWithPrefix
+  input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* =========================================================
+   FRESHER
+========================================================= */
+
+.heroFresherRow {
+  padding:
+    2px
+    0
+    16px;
+}
+
+.heroCheckbox {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #344054;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.heroCheckbox input {
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.heroCheckboxCustom {
+  width: 16px;
+
+  height: 16px;
+
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border:
+    1.5px solid
+    #d0d5dd;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+}
+
+.heroCheckbox
+  input:checked
+  + .heroCheckboxCustom {
+  border-color: #315bd0;
+
+  background: #315bd0;
+}
+
+.heroCheckbox
+  input:checked
+  + .heroCheckboxCustom::after {
+  content: "";
+
+  width: 7px;
+
+  height: 4px;
+
+  margin-top: -2px;
+
+  border-left:
+    1.5px solid
+    #ffffff;
+
+  border-bottom:
+    1.5px solid
+    #ffffff;
+
+  transform:
+    rotate(-45deg);
+}
+
+/* =========================================================
+   FILTER FOOTER
+========================================================= */
+
+.heroFiltersFooter {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid
+    #eef1f5;
+}
+
+.heroFilterFooterActions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.heroResetButton,
+.heroClearButton,
+.heroApplyFiltersButton {
+  min-height: 36px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  padding:
+    0
+    13px;
+
+  border-radius: 8px;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.heroResetButton {
+  padding-left: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+}
+
+.heroResetButton:hover {
+  color: #315bd0;
+}
+
+.heroClearButton {
+  border:
+    1px solid
+    #d0d5dd;
+
+  background: #ffffff;
+
+  color: #344054;
+}
+
+.heroClearButton:hover {
+  background: #f8fafc;
+}
+
+.heroApplyFiltersButton {
+  border:
+    1px solid
+    #315bd0;
+
+  background: #315bd0;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 12px
+    rgba(
+      49,
+      91,
+      208,
+      0.18
+    );
+}
+
+.heroApplyFiltersButton:hover {
+  background: #254bb5;
+
+  border-color: #254bb5;
+}
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.heroStats {
+  width: min(
+    100%,
+    700px
+  );
+
+  margin-top: 54px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1px
+    1fr
+    1px
+    1.25fr
+    1px
+    1fr;
+
+  align-items: center;
+}
+
+.heroStat {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  text-align: center;
+}
+
+.heroStat strong {
+  color: #284b9d;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 26px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.heroStat span {
+  color: #667085;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.statDivider {
+  width: 1px;
+
+  height: 36px;
+
+  background: #dbe2ed;
+}
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.heroVisual {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  min-height: 470px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   LIGHT BLUE BACKGROUND
+========================================================= */
+
+.heroVisualBackground {
+  position: absolute;
+
+  top: 20px;
+
+  right: 0;
+
+  width: 80%;
+
+  height: 82%;
+
+  border-radius:
+    45px
+    45px
+    105px
+    45px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        221,
+        233,
+        255,
+        0.75
+      ),
+      rgba(
+        202,
+        220,
+        252,
+        0.85
+      )
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(
+      255,
+      255,
+      255,
+      0.5
+    );
+}
+
+/* =========================================================
+   PERSON IMAGE
+========================================================= */
+
+.heroPersonImage {
+  position: absolute;
+
+  z-index: 2;
+
+  bottom: 0;
+
+  left: 11%;
+
+  width: 76%;
+
+  height: 92%;
+
+  object-fit: cover;
+
+  object-position:
+    center top;
+
+  filter:
+    drop-shadow(
+      0 14px 22px
+      rgba(
+        31,
+        48,
+        80,
+        0.1
+      )
+    );
+}
+
+/* =========================================================
+   HANDWRITTEN TEXT
+========================================================= */
+
+.heroHandwrittenText {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 28px;
+
+  right: 4%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  color: #5d7fc5;
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size:
+    clamp(
+      34px,
+      3.1vw,
+      52px
+    );
+
+  font-weight: 600;
+
+  line-height: 0.88;
+
+  transform:
+    rotate(-2deg);
+}
+
+.heroHandwrittenText
+  span:last-child {
+  align-self: center;
+}
+
+/* =========================================================
+   YELLOW ACCENT
+========================================================= */
+
+.heroYellowAccent {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 205px;
+
+  right: 1%;
+
+  width: 35px;
+
+  height: 5px;
+
+  border-radius: 10px;
+
+  background: #f2bb19;
+
+  transform:
+    rotate(-13deg);
+}
+
+/* =========================================================
+   IMAGE BOTTOM FADE
+========================================================= */
+
+.heroImageFade {
+  position: absolute;
+
+  z-index: 3;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: -1px;
+
+  height: 115px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(
+        247,
+        250,
+        255,
+        0
+      ),
+      #f7faff 96%
+    );
+}
+
+/* =========================================================
+   LARGE DESKTOP / TV
+========================================================= */
+
+@media (min-width: 1700px) {
+  .heroContainer {
+    max-width: 1700px;
+
+    min-height: 610px;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(500px, 0.82fr);
+
+    column-gap: 100px;
+
+    padding-top: 55px;
+
+    padding-bottom: 40px;
+  }
+
+  .heroContent {
+    max-width: 820px;
+  }
+
+  .heroTitle {
+    font-size: 72px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+  }
+
+  .heroSearch {
+    max-width: 730px;
+  }
+
+  .heroStats {
+    width: 750px;
+  }
+
+  .heroVisual {
+    min-height: 560px;
+  }
+
+  .heroVisualBackground {
+    width: 78%;
+  }
+
+  .heroPersonImage {
+    left: 22%;
+
+    width: 64%;
+  }
+
+  .heroHandwrittenText {
+    right: 5%;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (max-width: 1500px) {
+  .heroContainer {
+    column-gap: clamp(
+      45px,
+      5vw,
+      75px
+    );
+  }
+
+  .heroPersonImage {
+    left: 10%;
+
+    width: 78%;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+  .heroContainer {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(390px, 0.8fr);
+
+    column-gap: 42px;
+
+    padding:
+      40px
+      32px
+      32px;
+  }
+
+  .heroContent {
+    max-width: 670px;
+  }
+
+  .heroTitle {
+    font-size:
+      clamp(
+        42px,
+        5vw,
+        60px
+      );
+
+    letter-spacing: -2.2px;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .heroSearch {
+    margin-top: 30px;
+  }
+
+  .heroFilterButton {
+    min-width: 78px;
+
+    padding:
+      0
+      6px;
+  }
+
+  .heroSearchButton {
+    padding:
+      0
+      14px;
+  }
+
+  .heroStats {
+    margin-top: 48px;
+  }
+
+  .heroVisual {
+    min-height: 430px;
+  }
+
+  .heroVisualBackground {
+    width: 82%;
+  }
+
+  .heroPersonImage {
+    left: 5%;
+
+    width: 87%;
+  }
+
+  .heroHandwrittenText {
+    right: 0;
+
+    font-size:
+      clamp(
+        33px,
+        3vw,
+        46px
+      );
+  }
+}
+
+/* =========================================================
+   SMALL LAPTOP / LARGE TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .heroContainer {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(350px, 0.78fr);
+
+    column-gap: 30px;
+
+    padding:
+      36px
+      24px
+      32px;
+  }
+
+  .heroTitle {
+    font-size:
+      clamp(
+        40px,
+        4.8vw,
+        54px
+      );
+  }
+
+  .heroDescription {
+    max-width: 560px;
+  }
+
+  .heroSearch {
+    min-height: 58px;
+  }
+
+  .heroFilterButton {
+    min-width: 72px;
+
+    font-size: 10px;
+  }
+
+  .heroFilterButton
+    span:not(
+      .heroFilterCount
+    ) {
+    display: none;
+  }
+
+  .heroSearchButton {
+    padding:
+      0
+      12px;
+
+    font-size: 11px;
+  }
+
+  .heroSearchButton
+    span {
+    display: none;
+  }
+
+  .heroVisual {
+    min-height: 400px;
+  }
+
+  .heroPersonImage {
+    left: 1%;
+
+    width: 94%;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .heroContainer {
+    width: 100%;
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    padding:
+      50px
+      30px
+      40px;
+  }
+
+  .heroContent {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .heroTitle {
+    align-items: center;
+
+    font-size:
+      clamp(
+        42px,
+        7vw,
+        60px
+      );
+  }
+
+  .heroDescription {
+    width: min(
+      100%,
+      650px
+    );
+
+    margin-top: 18px;
+  }
+
+  .heroSearchWrapper {
+    width: min(
+      100%,
+      700px
+    );
+  }
+
+  .heroSearch {
+    margin-top: 30px;
+  }
+
+  .heroFiltersPanel {
+    left: 50%;
+
+    transform:
+      translateX(-50%);
+  }
+
+  @keyframes heroFilterPanelIn {
+    from {
+      opacity: 0;
+
+      transform:
+        translate(
+          -50%,
+          -7px
+        );
+    }
+
+    to {
+      opacity: 1;
+
+      transform:
+        translate(
+          -50%,
+          0
+        );
+    }
+  }
+
+  .heroStats {
+    width: min(
+      100%,
+      700px
+    );
+
+    margin-top: 45px;
+  }
+
+  .heroVisual {
+    width: min(
+      100%,
+      650px
+    );
+
+    min-height: 470px;
+
+    margin:
+      35px
+      auto
+      0;
+  }
+
+  .heroVisualBackground {
+    width: 76%;
+  }
+
+  .heroPersonImage {
+    left: 13%;
+
+    width: 67%;
+  }
+
+  .heroHandwrittenText {
+    right: 3%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .heroSection {
+    background:
+      linear-gradient(
+        180deg,
+        #f9fbff 0%,
+        #edf4ff 100%
+      );
+  }
+
+  .heroContainer {
+    width: 100%;
+
+    padding:
+      36px
+      16px
+      0;
+  }
+
+  .heroTitle {
+    width: 100%;
+
+    font-size:
+      clamp(
+        35px,
+        10.5vw,
+        50px
+      );
+
+    letter-spacing: -1.7px;
+
+    line-height: 1.12;
+  }
+
+  .heroDescription {
+    width: 100%;
+
+    padding:
+      0
+      5px;
+
+    font-size: 13.5px;
+
+    line-height: 1.75;
+  }
+
+  /* =====================================
+     SEARCH
+  ===================================== */
+
+  .heroSearchWrapper {
+    width: 100%;
+  }
+
+  .heroSearch {
+    width: 100%;
+
+    min-height: auto;
+
+    margin-top: 27px;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 9px;
+
+    border-radius: 11px;
+  }
+
+  .searchField {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+      0
+      10px;
+
+    box-sizing: border-box;
+  }
+
+  .searchField input {
+    font-size: 12px;
+  }
+
+  .searchDivider {
+    width: 100%;
+
+    height: 1px;
+  }
+
+  .heroFilterButton {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 43px;
+
+    margin-top: 4px;
+
+    border:
+      1px solid
+      #e4e7ec;
+
+    background: #ffffff;
+
+    font-size: 11px;
+  }
+
+  .heroFilterButton
+    span:not(
+      .heroFilterCount
+    ) {
+    display: inline;
+  }
+
+  .heroSearchButton {
+    width: 100%;
+
+    height: 49px;
+
+    margin-top: 8px;
+
+    padding:
+      0
+      16px;
+
+    font-size: 12px;
+  }
+
+  .heroSearchButton
+    span {
+    display: inline;
+  }
+
+  /* =====================================
+     FILTER PANEL
+  ===================================== */
+
+  .heroFiltersPanel {
+    position: relative;
+
+    top: auto;
+
+    left: auto;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 16px;
+
+    transform: none;
+
+    border-radius: 14px;
+  }
+
+  @keyframes heroFilterPanelIn {
+    from {
+      opacity: 0;
+
+      transform:
+        translateY(-7px);
+    }
+
+    to {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+  }
+
+  .heroFiltersHeader {
+    gap: 10px;
+  }
+
+  .heroFiltersHeader h3 {
+    font-size: 16px;
+  }
+
+  .heroFiltersHeader p {
+    max-width: 230px;
+
+    font-size: 10px;
+  }
+
+  .heroFiltersGrid {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+  .heroFilterGroup input,
+  .heroFilterGroup select {
+    height: 41px;
+  }
+
+  .heroFiltersFooter {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .heroFilterFooterActions {
+    width: 100%;
+  }
+
+  .heroResetButton {
+    justify-content: flex-start;
+  }
+
+  .heroClearButton,
+  .heroApplyFiltersButton {
+    flex: 1;
+  }
+
+  /* =====================================
+     STATS
+  ===================================== */
+
+  .heroStats {
+    width: 100%;
+
+    margin-top: 40px;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap:
+      25px
+      0;
+  }
+
+  .statDivider {
+    display: none;
+  }
+
+  .heroStat strong {
+    font-size: 23px;
+  }
+
+  .heroStat span {
+    font-size: 10.5px;
+  }
+
+  /* =====================================
+     VISUAL
+  ===================================== */
+
+  .heroVisual {
+    width: 100%;
+
+    min-height: 380px;
+
+    margin:
+      25px
+      auto
+      0;
+  }
+
+  .heroVisualBackground {
+    top: 15px;
+
+    right: 3%;
+
+    width: 84%;
+
+    height: 83%;
+
+    border-radius:
+      34px
+      34px
+      85px
+      34px;
+  }
+
+  .heroPersonImage {
+    left: 13%;
+
+    width: 72%;
+
+    height: 90%;
+  }
+
+  .heroHandwrittenText {
+    top: 32px;
+
+    right: 2%;
+
+    font-size: 35px;
+  }
+
+  .heroYellowAccent {
+    top: 164px;
+
+    right: 2%;
+
+    width: 27px;
+  }
+
+  .heroImageFade {
+    height: 84px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .heroContainer {
+    padding:
+      30px
+      13px
+      0;
+  }
+
+  .heroTitle {
+    font-size: 35px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .heroDescription {
+    font-size: 13px;
+  }
+
+  .heroSearch {
+    margin-top: 25px;
+  }
+
+  .heroStats {
+    margin-top: 36px;
+  }
+
+  .heroVisual {
+    min-height: 345px;
+
+    margin-top: 22px;
+  }
+
+  .heroVisualBackground {
+    width: 86%;
+
+    right: 2%;
+  }
+
+  .heroPersonImage {
+    left: 12%;
+
+    width: 75%;
+  }
+
+  .heroHandwrittenText {
+    top: 29px;
+
+    font-size: 31px;
+  }
+
+  .heroYellowAccent {
+    top: 148px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .heroContainer {
+    padding:
+      27px
+      11px
+      0;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroDescription {
+    font-size: 12.5px;
+  }
+
+  .heroVisual {
+    min-height: 320px;
+  }
+
+  .heroHandwrittenText {
+    font-size: 28px;
+  }
+
+  .heroYellowAccent {
+    top: 137px;
+  }
+}

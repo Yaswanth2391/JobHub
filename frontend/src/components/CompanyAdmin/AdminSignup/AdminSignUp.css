@@ -1,0 +1,647 @@
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.adminSignUpPage {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  background: #f7f9fc;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.adminSignUpLeft {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 34px 52px;
+
+  overflow: hidden;
+
+  /*
+    IMAGE IS SET FROM JSX
+
+    IMPORTANT:
+    Do not use background-size: cover.
+    It will crop your illustration.
+
+    contain keeps the full image visible.
+  */
+
+  background-repeat: no-repeat;
+
+  background-size: 100% auto;
+
+  background-position:
+    center bottom;
+
+  background-color: #eef3fa;
+}
+
+
+/* =========================================
+   OPTIONAL SOFT OVERLAY
+========================================= */
+
+.adminSignUpLeft::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(248, 251, 255, 0.05) 0%,
+      rgba(248, 251, 255, 0) 55%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.adminSignUpLogo {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  color: #1e4fa8;
+
+  font-size: 26px;
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+.logoJ {
+  color: #2f67d8;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.adminSignUpContent {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 430px;
+
+  margin-top: 120px;
+}
+
+
+.adminSignUpContent h1 {
+  margin: 0;
+
+  color: #24324a;
+
+  font-size: clamp(
+    38px,
+    3vw,
+    54px
+  );
+
+  font-weight: 750;
+
+  line-height: 1.18;
+
+  letter-spacing: -1.5px;
+}
+
+
+.adminSignUpContent h1 span {
+  color: #315fc4;
+}
+
+
+.adminSignUpContent p {
+  max-width: 360px;
+
+  margin-top: 20px;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.adminSignUpRight {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fbfcfe,
+      #f5f7fb
+    );
+}
+
+
+/* =========================================
+   SIGNUP CARD
+========================================= */
+
+.adminSignUpCard {
+  width: 100%;
+  max-width: 445px;
+
+  padding: 36px 38px;
+
+  border: 1px solid #e0e7f0;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 20px 50px
+    rgba(25, 45, 80, 0.1);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.adminSignUpHeader {
+  margin-bottom: 26px;
+
+  text-align: center;
+}
+
+
+.adminSignUpHeader h2 {
+  margin: 0;
+
+  color: #26364f;
+
+  font-size: 25px;
+
+  font-weight: 700;
+}
+
+
+.adminSignUpHeader p {
+  margin: 9px 0 0;
+
+  color: #7a8699;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.signupInputGroup {
+  margin-bottom: 15px;
+}
+
+
+.signupInputGroup label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #475467;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.signupInput {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d8e0eb;
+
+  border-radius: 7px;
+
+  background: #fbfcfe;
+
+  transition: 0.2s ease;
+}
+
+
+.signupInput:focus-within {
+  border-color: #3d67cc;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(61, 103, 204, 0.1);
+}
+
+
+.signupInput svg {
+  flex-shrink: 0;
+
+  color: #7b879a;
+}
+
+
+.signupInput input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #26364f;
+
+  font-size: 13px;
+}
+
+
+.signupInput input::placeholder {
+  color: #a0aaba;
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+========================================= */
+
+.passwordToggle {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #748197;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TERMS
+========================================= */
+
+.signupTerms {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 5px 0 20px;
+
+  color: #667085;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+.signupTerms input {
+  width: 15px;
+  height: 15px;
+
+  margin: 0;
+
+  accent-color: #315fc4;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.adminSignUpButton {
+  width: 100%;
+  height: 47px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #416ed5,
+      #2855bd
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.adminSignUpButton:hover:not(:disabled) {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(40, 85, 189, 0.28);
+}
+
+
+.adminSignUpButton:disabled {
+  opacity: 0.7;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.signupLoginText {
+  margin: 20px 0 0;
+
+  color: #748197;
+
+  font-size: 12px;
+
+  text-align: center;
+}
+
+
+.signupLoginText button {
+  margin-left: 5px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #315fc4;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .adminSignUpPage {
+    grid-template-columns:
+      1fr
+      0.9fr;
+  }
+
+  .adminSignUpLeft {
+    padding:
+      32px
+      40px;
+
+    background-size:
+      auto 52%;
+  }
+
+  .adminSignUpContent {
+    margin-top: 105px;
+  }
+
+  .adminSignUpRight {
+    padding: 30px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .adminSignUpPage {
+    grid-template-columns:
+      1fr;
+  }
+
+  .adminSignUpLeft {
+    min-height: 420px;
+
+    padding:
+      30px
+      40px;
+
+    background-size:
+      auto 65%;
+
+    background-position:
+      right bottom;
+  }
+
+  .adminSignUpContent {
+    margin-top: 55px;
+  }
+
+  .adminSignUpContent h1 {
+    font-size: 42px;
+  }
+
+  .adminSignUpRight {
+    min-height: auto;
+
+    padding:
+      50px
+      30px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .adminSignUpLeft {
+    min-height: 300px;
+
+    padding:
+      25px
+      24px;
+
+    background-size:
+      auto 48%;
+
+    background-position:
+      right bottom;
+  }
+
+  .adminSignUpContent {
+    margin-top: 40px;
+
+    max-width: 300px;
+  }
+
+  .adminSignUpContent h1 {
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+  }
+
+  .adminSignUpContent p {
+    margin-top: 14px;
+
+    font-size: 13px;
+  }
+
+  .adminSignUpRight {
+    padding:
+      28px
+      16px;
+  }
+
+  .adminSignUpCard {
+    padding:
+      28px
+      20px;
+  }
+
+  .adminSignUpHeader h2 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .adminSignUpLeft {
+    min-height: 270px;
+
+    padding:
+      22px
+      18px;
+  }
+
+  .adminSignUpContent h1 {
+    font-size: 29px;
+  }
+
+  .adminSignUpCard {
+    padding:
+      25px
+      16px;
+  }
+
+}
+
+/* =========================================================
+   JOBHUB UNIFIED ADMIN THEME — SIGNUP
+========================================================= */
+
+.adminSignUpPage {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(79, 70, 229, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 84%, rgba(37, 99, 235, 0.07), transparent 26%),
+    #f6f8fc;
+}
+
+.adminSignUpCard {
+  border: 1px solid #e1e7f0;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.07);
+}
+
+
+/* =========================================================
+   JOBHUB BRAND LOGO
+========================================================= */
+
+.adminSignUpLogo {
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 25px rgba(36, 59, 99, 0.08);
+  text-decoration: none;
+}
+
+.adminSignUpBrandLogo {
+  width: 126px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .adminSignUpBrandLogo {
+    width: 110px;
+  }
+}

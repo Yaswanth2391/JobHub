@@ -1,0 +1,64 @@
+.superAdminShell {
+  min-height: 100vh;
+  background: #f6f9fd;
+  color: #0f172a;
+}
+
+.superAdminMainArea {
+  min-height: 100vh;
+  margin-left: 250px;
+}
+
+.superAdminPageContent {
+  width: min(100%, 1600px);
+  margin: 0 auto;
+  padding: 26px;
+}
+
+.superAdminAuthLoader {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #f6f9fd;
+  color: #334155;
+}
+
+.superAdminAuthLoader p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.superAdminLoaderSpinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #dbeafe;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: superAdminSpin .8s linear infinite;
+}
+
+@keyframes superAdminSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .superAdminMainArea {
+    margin-left: 0;
+  }
+
+  .superAdminPageContent {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .superAdminPageContent {
+    padding: 16px 12px;
+  }
+}

@@ -1,0 +1,493 @@
+.superAdminNavbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e6edf7;
+  backdrop-filter: blur(14px);
+}
+
+.superAdminNavbarLeft,
+.superAdminNavbarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.superAdminMenuButton {
+  width: 36px;
+  height: 36px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.superAdminGlobalSearch {
+  width: 300px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid #dbe5f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #64748b;
+}
+
+.superAdminGlobalSearch:focus-within {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.superAdminGlobalSearch input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #0f172a;
+  background: transparent;
+  font-size: 12px;
+}
+
+.superAdminGlobalSearch input::placeholder {
+  color: #94a3b8;
+}
+
+.superAdminNotificationButton {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: #334155;
+  cursor: pointer;
+}
+
+.superAdminNotificationDot {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+.superAdminProfileCompact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #1e293b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.superAdminAvatar {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .superAdminNavbar {
+    padding: 0 16px;
+  }
+
+  .superAdminMenuButton {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 650px) {
+  .superAdminGlobalSearch {
+    width: 220px;
+  }
+
+  .superAdminProfileName,
+  .superAdminProfileCompact > svg {
+    display: none;
+  }
+}
+
+@media (max-width: 470px) {
+  .superAdminGlobalSearch {
+    width: min(54vw, 190px);
+  }
+
+  .superAdminNavbar {
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .superAdminNavbarLeft,
+  .superAdminNavbarRight {
+    gap: 6px;
+  }
+}
+
+/* =========================================================
+   INTERACTIVE MENUS
+========================================================= */
+
+.superAdminNavbarMenuWrap {
+  position: relative;
+}
+
+.superAdminNotificationButton.isOpen {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.superAdminNotificationPanel {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: min(390px, calc(100vw - 24px));
+  overflow: hidden;
+  border: 1px solid #e5ebf4;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.superAdminNotificationPanel::before,
+.superAdminProfileDropdown::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  right: 18px;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-left: 1px solid #e5ebf4;
+  border-top: 1px solid #e5ebf4;
+  background: #ffffff;
+}
+
+.superAdminNotificationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 16px 13px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.superAdminNotificationHeader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.superAdminNotificationHeader strong {
+  color: #14213d;
+  font-size: 13px;
+}
+
+.superAdminNotificationHeader span {
+  color: #8a97aa;
+  font-size: 10px;
+}
+
+.superAdminNotificationRefresh {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: #f5f8fd;
+  color: #315fc7;
+  cursor: pointer;
+}
+
+.superAdminNotificationRefresh:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.isSpinning {
+  animation: superAdminSpin 0.8s linear infinite;
+}
+
+.superAdminNotificationList {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.superAdminNotificationItem {
+  display: flex;
+  gap: 11px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #f0f3f8;
+}
+
+.superAdminNotificationItem:last-child {
+  border-bottom: 0;
+}
+
+.superAdminNotificationItemIcon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #eef4ff;
+  color: #2563eb;
+}
+
+.superAdminNotificationItemIcon.company {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.superAdminNotificationItemIcon.admin {
+  background: #ecfdf3;
+  color: #039855;
+}
+
+.superAdminNotificationItemIcon.user {
+  background: #f4edff;
+  color: #7a3df0;
+}
+
+.superAdminNotificationItemIcon.job {
+  background: #fff5e6;
+  color: #f79009;
+}
+
+.superAdminNotificationItemContent {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.superAdminNotificationItemContent strong {
+  color: #1d2b45;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.superAdminNotificationItemContent span {
+  overflow: hidden;
+  color: #6b778a;
+  font-size: 10px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.superAdminNotificationItemContent small {
+  color: #99a3b2;
+  font-size: 9px;
+}
+
+.superAdminNotificationState,
+.superAdminNotificationEmpty {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  padding: 25px;
+  color: #7b8798;
+  font-size: 11px;
+  text-align: center;
+}
+
+.superAdminNotificationState.error {
+  color: #b42318;
+}
+
+.superAdminMiniSpinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: superAdminSpin 0.8s linear infinite;
+}
+
+.superAdminNotificationEmpty svg {
+  color: #12b76a;
+}
+
+.superAdminNotificationEmpty strong {
+  color: #344054;
+  font-size: 12px;
+}
+
+.superAdminNotificationFooter {
+  display: block;
+  padding: 12px 16px;
+  border-top: 1px solid #eef2f7;
+  background: #fbfcfe;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.superAdminNotificationFooter:hover {
+  background: #f5f8ff;
+}
+
+.superAdminProfileCompact {
+  position: relative;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.superAdminProfileCompact.isOpen {
+  background: #f4f7fc;
+  border-radius: 12px;
+}
+
+.superAdminProfileChevron {
+  transition: transform 0.2s ease;
+}
+
+.superAdminProfileChevron.open {
+  transform: rotate(180deg);
+}
+
+.superAdminProfileDropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 245px;
+  overflow: hidden;
+  border: 1px solid #e5ebf4;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.superAdminProfileDropdownUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.superAdminDropdownAvatar {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.superAdminProfileDropdownUser > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.superAdminProfileDropdownUser strong {
+  overflow: hidden;
+  color: #1e293b;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.superAdminProfileDropdownUser span {
+  overflow: hidden;
+  color: #8792a5;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.superAdminProfileDropdownDivider {
+  height: 1px;
+  background: #eef2f7;
+}
+
+.superAdminProfileDropdownItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border: 0;
+  background: #ffffff;
+  color: #475467;
+  font-size: 11px;
+  font-weight: 650;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.superAdminProfileDropdownItem:hover {
+  background: #f7f9fc;
+  color: #2563eb;
+}
+
+.superAdminProfileDropdownItem.danger:hover {
+  color: #d92d20;
+  background: #fff6f5;
+}
+
+@keyframes superAdminSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 650px) {
+  .superAdminNotificationPanel {
+    position: fixed;
+    top: 67px;
+    right: 10px;
+    width: min(390px, calc(100vw - 20px));
+  }
+
+  .superAdminProfileDropdown {
+    right: 0;
+  }
+}
+
+@media (max-width: 470px) {
+  .superAdminNotificationPanel {
+    top: 64px;
+  }
+
+  .superAdminProfileDropdown {
+    width: 220px;
+  }
+}

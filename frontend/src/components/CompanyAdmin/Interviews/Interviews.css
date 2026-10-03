@@ -1,0 +1,3271 @@
+/* =========================================================
+   INTERVIEWS PAGE
+   ========================================================= */
+
+.interviewsPage {
+  min-height: 100vh;
+  width: 100%;
+  background: #f6f8fb;
+  color: #172033;
+  display: flex;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.interviewsMain {
+  min-height: 100vh;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  margin-left: 0;
+  padding: 0 32px;
+  box-sizing: border-box;
+  transition: margin-left 0.25s ease;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.interviewsTopbar {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  
+  height: 72px;
+    min-height: 72px;
+    padding: 0 32px;
+    background: #ffffff;
+    border-bottom: 1px solid #e9edf3;
+}
+
+.interviewsTopbarLabel {
+  display: block;
+  margin-bottom: 3px;
+  color: #8a94a7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.interviewsTopbar h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.interviewsAdmin {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.interviewsAdminAvatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #172033;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.interviewsAdminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.interviewsAdminInfo strong {
+  color: #172033;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.interviewsAdminInfo span {
+  color: #8a94a7;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.interviewsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 0 24px;
+}
+
+.interviewsEyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #68748a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.interviewsHeader h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 29px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.interviewsHeader p {
+  margin: 8px 0 0;
+  color: #7d8799;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.interviewsRefreshButton {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid #dce2e9;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #46536a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.interviewsRefreshButton:hover {
+  background: #f4f6f8;
+  border-color: #cbd3de;
+  color: #26344a;
+}
+
+.interviewsRefreshButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.interviewsRefreshButton.refreshing svg {
+  animation: interviewRefreshSpin 0.9s linear infinite;
+}
+
+@keyframes interviewRefreshSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.interviewsStats {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 19px;
+}
+
+.interviewsStatCard {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 19px;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(28, 39, 61, 0.03);
+}
+
+.interviewsStatIcon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.interviewsStatIcon.upcoming {
+  background: #eef2f7;
+  color: #536177;
+}
+
+.interviewsStatIcon.completed {
+  background: #edf6f1;
+  color: #2c7550;
+}
+
+.interviewsStatIcon.total {
+  background: #f2eff8;
+  color: #65547f;
+}
+
+.interviewsStatCard > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.interviewsStatCard span {
+  color: #8992a3;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.interviewsStatCard strong {
+  color: #202b40;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.interviewsToolbar {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+}
+
+.interviewsTabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.interviewsTabs button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #7d8799;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.interviewsTabs button:hover {
+  background: #f3f5f8;
+  color: #3a465b;
+}
+
+.interviewsTabs button.active {
+  background: #172033;
+  color: #ffffff;
+}
+
+.interviewsTabs button span {
+  min-width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border-radius: 6px;
+  background: #eef1f5;
+  color: #68758a;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.interviewsTabs button.active span {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.interviewsSearch {
+  width: min(310px, 100%);
+  height: 39px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.interviewsSearch svg {
+  position: absolute;
+  left: 12px;
+  color: #929aaa;
+  pointer-events: none;
+}
+
+.interviewsSearch input {
+  width: 100%;
+  height: 100%;
+  padding: 0 12px 0 37px;
+  border: 1px solid #dfe4eb;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #28354a;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.interviewsSearch input::placeholder {
+  color: #a3aab7;
+}
+
+.interviewsSearch input:focus {
+  border-color: #68758a;
+  box-shadow: 0 0 0 3px rgba(104, 117, 138, 0.08);
+}
+
+/* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+.interviewsTableCard {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(28, 39, 61, 0.03);
+}
+
+.interviewsTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.interviewsTable {
+  width: 100%;
+  min-width: 1060px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.interviewsTable thead th {
+  height: 51px;
+  padding: 0 15px;
+  border-bottom: 1px solid #e8ecf1;
+  background: #fafbfc;
+  color: #788397;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.055em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.interviewsTable tbody td {
+  min-height: 76px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #edf0f4;
+  vertical-align: middle;
+}
+
+.interviewsTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.interviewsTable tbody tr {
+  transition: background 0.18s ease;
+}
+
+.interviewsTable tbody tr:hover {
+  background: #fbfcfd;
+}
+
+/* =========================================================
+   CANDIDATE
+   ========================================================= */
+
+.interviewCandidate {
+  min-width: 190px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.interviewCandidateAvatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eef2f6;
+  color: #334157;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.interviewCandidateInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.interviewCandidateInfo strong {
+  overflow: hidden;
+  color: #263249;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.interviewCandidateInfo span {
+  overflow: hidden;
+  max-width: 170px;
+  color: #9099a9;
+  font-size: 10px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   POSITION
+   ========================================================= */
+
+.interviewPosition {
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.interviewPosition strong {
+  color: #354158;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.interviewPosition span {
+  color: #949cac;
+  font-size: 10px;
+}
+
+/* =========================================================
+   INTERVIEW TYPE
+   ========================================================= */
+
+.interviewTypeBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  padding: 5px 9px;
+  border: 1px solid #e0e5ec;
+  border-radius: 7px;
+  background: #f7f9fb;
+  color: #536075;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DATE / TIME
+   ========================================================= */
+
+.interviewDateTime {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 110px;
+}
+
+.interviewDateTime span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #5e6a7e;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.interviewDateTime svg {
+  color: #8a94a5;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   MODE
+   ========================================================= */
+
+.interviewMode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #59667a;
+  font-size: 10px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.interviewMode svg {
+  color: #7f8a9d;
+}
+
+/* =========================================================
+   INTERVIEWERS
+   ========================================================= */
+
+.interviewInterviewers {
+  min-width: 125px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.interviewInterviewers span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  max-width: 110px;
+  overflow: hidden;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: #f2f4f7;
+  color: #667287;
+  font-size: 9px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.interviewInterviewers .interviewMore {
+  background: #e9edf2;
+  color: #536075;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.interviewActions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.interviewActionButton {
+  width: 31px;
+  height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.interviewActionButton:active {
+  transform: translateY(1px);
+}
+
+.interviewActionButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.interviewActionButton.view {
+  border-color: #e0e5eb;
+  background: #ffffff;
+  color: #657287;
+}
+
+.interviewActionButton.view:hover {
+  background: #f2f5f8;
+  border-color: #cfd6df;
+  color: #344158;
+}
+
+.interviewActionButton.meeting {
+  border-color: #dbe2e9;
+  background: #f5f7f9;
+  color: #556278;
+}
+
+.interviewActionButton.meeting:hover {
+  background: #e9edf2;
+  border-color: #cbd3dd;
+  color: #28364b;
+}
+
+.interviewActionButton.hire {
+  border-color: #d7e8de;
+  background: #f1f8f4;
+  color: #337653;
+}
+
+.interviewActionButton.hire:hover {
+  background: #e5f3eb;
+  border-color: #bddcc9;
+}
+
+.interviewActionButton.reject {
+  border-color: #eadcdf;
+  background: #faf3f4;
+  color: #9a5d65;
+}
+
+.interviewActionButton.reject:hover {
+  background: #f6e9eb;
+  border-color: #e0c5c9;
+}
+
+.interviewSpinner {
+  animation: interviewSpinner 0.8s linear infinite;
+}
+
+@keyframes interviewSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.interviewsPagination {
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 16px;
+  border-top: 1px solid #edf0f4;
+}
+
+.interviewsPagination > span {
+  color: #8992a3;
+  font-size: 10px;
+}
+
+.interviewsPaginationButtons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.interviewsPaginationButtons > span {
+  min-width: 48px;
+  color: #667287;
+  font-size: 10px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.interviewsPaginationButtons button {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe4eb;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #667287;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.interviewsPaginationButtons button:hover:not(:disabled) {
+  background: #f3f5f8;
+  border-color: #ccd4de;
+}
+
+.interviewsPaginationButtons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.interviewsEmpty {
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.interviewsEmptyIcon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border: 1px solid #e2e7ed;
+  border-radius: 14px;
+  background: #f8fafb;
+  color: #7b879a;
+}
+
+.interviewsEmpty h3 {
+  margin: 0;
+  color: #354158;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.interviewsEmpty p {
+  max-width: 360px;
+  margin: 7px 0 15px;
+  color: #919aaa;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.interviewsClearSearch {
+  min-height: 35px;
+  padding: 0 12px;
+  border: 1px solid #dce2e9;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #526076;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.interviewsClearSearch:hover {
+  background: #f4f6f8;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.interviewsLoading {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.interviewsLoadingIcon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border: 1px solid #e1e6ed;
+  border-radius: 15px;
+  background: #ffffff;
+  color: #566378;
+  box-shadow: 0 6px 24px rgba(28, 39, 61, 0.04);
+}
+
+.interviewsLoadingIcon svg {
+  animation: interviewLoadingSpin 0.9s linear infinite;
+}
+
+.interviewsLoading h3 {
+  margin: 0;
+  color: #354158;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.interviewsLoading p {
+  margin: 7px 0 0;
+  color: #919aaa;
+  font-size: 11px;
+}
+
+@keyframes interviewLoadingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   DETAILS MODAL OVERLAY
+   ========================================================= */
+
+.interviewDetailsOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(16, 24, 39, 0.57);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: interviewOverlayIn 0.18s ease-out;
+}
+
+@keyframes interviewOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   DETAILS MODAL
+   ========================================================= */
+
+.interviewDetailsModal {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e2e7ee;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.2),
+    0 8px 25px rgba(15, 23, 42, 0.08);
+  animation: interviewModalIn 0.22s ease-out;
+}
+
+@keyframes interviewModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.interviewDetailsHeader {
+  min-height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 17px 21px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.interviewDetailsHeader > div:first-child {
+  min-width: 0;
+}
+
+.interviewDetailsHeader span {
+  display: block;
+  margin-bottom: 4px;
+  color: #8b94a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.interviewDetailsHeader h2 {
+  margin: 0;
+  overflow: hidden;
+  color: #1d293c;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.interviewDetailsClose {
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #68758a;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.interviewDetailsClose:hover {
+  background: #f3f5f7;
+  border-color: #ccd4de;
+  color: #27344a;
+}
+
+/* =========================================================
+   MODAL BODY
+   ========================================================= */
+
+.interviewDetailsBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 22px;
+}
+
+.interviewDetailsBody::-webkit-scrollbar {
+  width: 6px;
+}
+
+.interviewDetailsBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.interviewDetailsBody::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d7dce4;
+}
+
+.interviewDetailsBody::-webkit-scrollbar-thumb:hover {
+  background: #c4cbd5;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.interviewDetailsProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  margin-bottom: 18px;
+  border: 1px solid #e7ebf0;
+  border-radius: 11px;
+  background: #fafbfc;
+}
+
+.interviewDetailsAvatar {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #e9edf2;
+  color: #334157;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.interviewDetailsProfile > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.interviewDetailsProfile strong {
+  color: #27344a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.interviewDetailsProfile span {
+  overflow: hidden;
+  color: #8b94a5;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DETAILS GRID
+   ========================================================= */
+
+.interviewDetailsGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-bottom: 19px;
+}
+
+.interviewDetailItem {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #e7ebf0;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.interviewDetailItem span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: #8a94a6;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.interviewDetailItem span svg {
+  flex-shrink: 0;
+}
+
+.interviewDetailItem strong {
+  display: block;
+  overflow: hidden;
+  color: #3d495e;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DETAILS SECTIONS
+   ========================================================= */
+
+.interviewDetailsSection {
+  margin-top: 17px;
+}
+
+.interviewDetailsSection h3 {
+  margin: 0 0 9px;
+  color: #435067;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   INTERVIEWERS LIST
+   ========================================================= */
+
+.interviewDetailsInterviewerList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.interviewDetailsInterviewerList span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 29px;
+  padding: 5px 9px;
+  border: 1px solid #e0e5eb;
+  border-radius: 7px;
+  background: #f7f9fb;
+  color: #58657a;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.interviewDetailsInterviewerList p {
+  margin: 0;
+  color: #9aa2b0;
+  font-size: 10px;
+}
+
+/* =========================================================
+   MEETING BOX
+   ========================================================= */
+
+.interviewMeetingBox {
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px 8px 13px;
+  border: 1px solid #e0e6ed;
+  border-radius: 9px;
+  background: #f9fafb;
+}
+
+.interviewMeetingBox > span {
+  min-width: 0;
+  overflow: hidden;
+  color: #69758a;
+  font-size: 10px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.interviewMeetingBox button {
+  min-width: 105px;
+  height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 9px;
+  border: 1px solid #d8dfe7;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #4b5870;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.interviewMeetingBox button:hover {
+  background: #f1f4f7;
+}
+
+/* =========================================================
+   LOCATION BOX
+   ========================================================= */
+
+.interviewLocationBox {
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 13px;
+  border: 1px solid #e0e6ed;
+  border-radius: 9px;
+  background: #f9fafb;
+  color: #657187;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.interviewLocationBox svg {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.interviewNotesBox {
+  padding: 12px 13px;
+  border: 1px solid #e0e6ed;
+  border-radius: 9px;
+  background: #f9fafb;
+}
+
+.interviewNotesBox p {
+  margin: 0;
+  color: #68758a;
+  font-size: 10px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.interviewNotesBox p.empty {
+  color: #9aa2b0;
+}
+
+/* =========================================================
+   MODAL FOOTER
+   ========================================================= */
+
+.interviewDetailsFooter {
+  min-height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 21px;
+  border-top: 1px solid #edf0f4;
+  background: #ffffff;
+}
+
+.interviewDetailsFooter > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interviewModalCloseButton,
+.interviewModalRejectButton,
+.interviewModalHireButton {
+  min-height: 37px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.interviewModalCloseButton {
+  border: 1px solid #dce2e9;
+  background: #ffffff;
+  color: #5d697d;
+}
+
+.interviewModalCloseButton:hover {
+  background: #f4f6f8;
+}
+
+.interviewModalRejectButton {
+  border: 1px solid #e8d8db;
+  background: #faf4f5;
+  color: #98606a;
+}
+
+.interviewModalRejectButton:hover {
+  background: #f5e8ea;
+  border-color: #dec4c8;
+}
+
+.interviewModalHireButton {
+  border: 1px solid #172033;
+  background: #172033;
+  color: #ffffff;
+}
+
+.interviewModalHireButton:hover {
+  background: #28354a;
+  border-color: #28354a;
+}
+
+.interviewModalCloseButton:disabled,
+.interviewModalRejectButton:disabled,
+.interviewModalHireButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* 1024px - 1199px */
+
+@media (max-width: 1199px) {
+  .interviewsMain {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .interviewsTopbar {
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .interviewsHeader h2 {
+    font-size: 27px;
+  }
+
+  .interviewsTable {
+    min-width: 1000px;
+  }
+}
+
+/* 768px - 1023px */
+
+@media (max-width: 1023px) {
+  .interviewsMain {
+    margin-left: 0;
+    padding: 0 22px 40px;
+  }
+
+  .interviewsTopbar {
+    margin-left: -22px;
+    margin-right: -22px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .interviewsStats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .interviewsToolbar {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .interviewsTabs {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .interviewsTabs button {
+    flex-shrink: 0;
+  }
+
+  .interviewsSearch {
+    width: 100%;
+  }
+}
+
+/* 601px - 767px */
+
+@media (max-width: 767px) {
+  .interviewsMain {
+    padding: 0 16px 32px;
+  }
+
+  .interviewsTopbar {
+    min-height: 68px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .interviewsAdminInfo {
+    display: none;
+  }
+
+  .interviewsAdminAvatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .interviewsHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 0 19px;
+  }
+
+  .interviewsHeader h2 {
+    font-size: 24px;
+  }
+
+  .interviewsRefreshButton {
+    align-self: flex-start;
+  }
+
+  .interviewsStats {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .interviewsStatCard {
+    min-height: 78px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .interviewsStatIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .interviewsStatCard span {
+    font-size: 9px;
+  }
+
+  .interviewsStatCard strong {
+    font-size: 19px;
+  }
+
+  .interviewsToolbar {
+    margin-bottom: 12px;
+  }
+
+  .interviewsTable {
+    min-width: 980px;
+  }
+
+  .interviewDetailsOverlay {
+    padding: 14px;
+  }
+
+  .interviewDetailsModal {
+    max-height: calc(100vh - 28px);
+    border-radius: 13px;
+  }
+}
+
+/* 100px - 600px */
+
+@media (max-width: 600px) {
+  .interviewsMain {
+    padding: 0 12px 26px;
+  }
+
+  .interviewsTopbar {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .interviewsTopbarLabel {
+    font-size: 9px;
+  }
+
+  .interviewsTopbar h1 {
+    font-size: 16px;
+  }
+
+  .interviewsHeader {
+    padding-top: 21px;
+  }
+
+  .interviewsEyebrow {
+    font-size: 9px;
+  }
+
+  .interviewsHeader h2 {
+    font-size: 21px;
+  }
+
+  .interviewsHeader p {
+    font-size: 11px;
+  }
+
+  .interviewsStats {
+    grid-template-columns: 1fr;
+  }
+
+  .interviewsStatCard {
+    min-height: 67px;
+  }
+
+  .interviewsStatIcon {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+  }
+
+  .interviewsStatCard strong {
+    font-size: 20px;
+  }
+
+  .interviewsToolbar {
+    padding: 9px;
+  }
+
+  .interviewsTabs {
+    gap: 2px;
+  }
+
+  .interviewsTabs button {
+    min-height: 35px;
+    padding: 0 9px;
+    font-size: 10px;
+  }
+
+  .interviewsSearch {
+    height: 37px;
+  }
+
+  .interviewsSearch input {
+    font-size: 11px;
+  }
+
+  .interviewsTable {
+    min-width: 920px;
+  }
+
+  .interviewsPagination {
+    min-height: 53px;
+    padding: 0 10px;
+  }
+
+  .interviewDetailsOverlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .interviewDetailsModal {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .interviewDetailsHeader {
+    min-height: 67px;
+    padding: 14px 16px;
+  }
+
+  .interviewDetailsHeader h2 {
+    font-size: 17px;
+  }
+
+  .interviewDetailsBody {
+    padding: 16px;
+  }
+
+  .interviewDetailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .interviewDetailsFooter {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 11px 16px;
+  }
+
+  .interviewDetailsFooter > div {
+    width: 100%;
+  }
+
+  .interviewModalCloseButton,
+  .interviewModalRejectButton,
+  .interviewModalHireButton {
+    flex: 1;
+  }
+
+  .interviewDetailsFooter
+    > .interviewModalCloseButton {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .interviewsMain {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .interviewsTopbar {
+    margin-left: -9px;
+    margin-right: -9px;
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .interviewsHeader h2 {
+    font-size: 19px;
+  }
+
+  .interviewsTable {
+    min-width: 880px;
+  }
+
+  .interviewDetailsBody {
+    padding: 13px;
+  }
+}
+
+/* =========================================================
+   HIRING DETAILS MODAL
+   ========================================================= */
+
+.hiringDetailsOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  animation: hiringOverlayIn 0.2s ease-out;
+}
+
+@keyframes hiringOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.hiringDetailsModal {
+  width: min(1180px, 100%);
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #dfe7f2;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow:
+    0 35px 100px rgba(15, 23, 42, 0.24),
+    0 12px 35px rgba(15, 23, 42, 0.10);
+  animation: hiringModalIn 0.24s ease-out;
+}
+
+@keyframes hiringModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.hiringDetailsHeader {
+  position: relative;
+  min-height: 106px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 32px;
+  border-bottom: 1px solid #e9eef5;
+  background: #ffffff;
+}
+
+.hiringHeaderContent {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hiringHeaderIcon {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #e9f8f0, #d9f3e6);
+  color: #138a4b;
+  box-shadow: inset 0 0 0 1px rgba(19, 138, 75, 0.06);
+}
+
+.hiringHeaderEyebrow {
+  display: block;
+  margin-bottom: 4px;
+  color: #6c7a91;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.hiringDetailsHeader h2 {
+  margin: 0;
+  color: #13234a;
+  font-size: 27px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.hiringDetailsHeader p {
+  margin: 6px 0 0;
+  color: #6f7d94;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.hiringAutomaticNotice {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 265px;
+  padding: 12px 14px;
+  border: 1px solid #dbe8f9;
+  border-radius: 12px;
+  background: #eef6ff;
+  color: #28568d;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.hiringAutomaticNotice svg {
+  flex-shrink: 0;
+  color: #1f6ee5;
+}
+
+.hiringDetailsClose {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dce4ee;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #63718a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hiringDetailsClose:hover {
+  border-color: #c5d0df;
+  background: #f6f8fb;
+  color: #1b2b4d;
+  transform: translateY(-1px);
+}
+
+.hiringDetailsClose:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   FORM / TWO COLUMN LAYOUT
+   ========================================================= */
+
+.hiringDetailsForm {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 26px 28px 28px;
+}
+
+.hiringDetailsForm::-webkit-scrollbar {
+  width: 7px;
+}
+
+.hiringDetailsForm::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hiringDetailsForm::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d4dce8;
+}
+
+.hiringDetailsLayout {
+  display: grid;
+  grid-template-columns: 365px minmax(0, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* =========================================================
+   LEFT CANDIDATE PANEL
+   ========================================================= */
+
+.hiringCandidatePanel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border: 1px solid #e3eaf4;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f7faff 100%);
+  box-shadow: 0 8px 25px rgba(34, 63, 103, 0.035);
+}
+
+.hiringCandidateTop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hiringCandidateAvatar {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #1f5fe4, #285de8);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  box-shadow: 0 7px 18px rgba(31, 95, 228, 0.22);
+}
+
+.hiringCandidateIdentity {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hiringCandidateIdentity strong {
+  overflow: hidden;
+  color: #13234a;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hiringCandidateIdentity span {
+  color: #64738b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hiringCandidateContact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hiringCandidateContact div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #53627a;
+  font-size: 11px;
+}
+
+.hiringCandidateContact svg {
+  flex-shrink: 0;
+  color: #5b6d88;
+}
+
+.hiringCandidateContact span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hiringCandidateDivider {
+  height: 1px;
+  margin: 20px 0;
+  background: #e4eaf2;
+}
+
+.hiringCandidateMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hiringMetaItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.hiringMetaItem > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #55708f;
+}
+
+.hiringMetaItem > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hiringMetaItem span {
+  color: #78869b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.hiringMetaItem strong {
+  overflow: hidden;
+  color: #293b5e;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.hiringCandidateStatus {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 22px;
+  padding: 12px 13px;
+  border: 1px solid #cfeedd;
+  border-radius: 12px;
+  background: #f0fbf5;
+}
+
+.hiringStatusIcon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #1aa05a;
+  color: #ffffff;
+}
+
+.hiringCandidateStatus div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hiringCandidateStatus span {
+  color: #6c7d76;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.hiringCandidateStatus strong {
+  color: #16834a;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hiringCandidateInfoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: auto;
+  padding: 15px;
+  border-radius: 13px;
+  background: #eaf9f1;
+  color: #16794a;
+}
+
+.hiringCandidateInfoBox svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hiringCandidateInfoBox p {
+  margin: 0;
+  color: #496a59;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.hiringCandidateInfoBox strong {
+  color: #13824a;
+  font-weight: 800;
+}
+
+/* =========================================================
+   RIGHT EMPLOYMENT PANEL
+   ========================================================= */
+
+.hiringEmploymentPanel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3px 2px 0;
+}
+
+.hiringEmploymentHeading {
+  margin-bottom: 24px;
+}
+
+.hiringEmploymentHeading h3 {
+  margin: 0;
+  color: #132d5d;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.hiringEmploymentHeading p {
+  margin: 6px 0 0;
+  color: #73829a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hiringDetailsFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 21px 22px;
+}
+
+.hiringField {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hiringField.hiringFieldFull {
+  grid-column: 1 / -1;
+}
+
+.hiringField label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #2d3e5c;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.hiringField label svg {
+  color: #2a66dd;
+  flex-shrink: 0;
+}
+
+.hiringField label span {
+  color: #e05252;
+}
+
+.hiringField input,
+.hiringField select,
+.hiringField textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d5dfec;
+  border-radius: 11px;
+  outline: none;
+  background: #ffffff;
+  color: #263957;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.hiringField input,
+.hiringField select {
+  height: 49px;
+  padding: 0 14px;
+}
+
+.hiringField textarea {
+  min-height: 116px;
+  padding: 13px 14px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.hiringField input::placeholder,
+.hiringField textarea::placeholder {
+  color: #9aa7b9;
+}
+
+.hiringField input:hover,
+.hiringField select:hover,
+.hiringField textarea:hover {
+  border-color: #c5d2e2;
+}
+
+.hiringField input:focus,
+.hiringField select:focus,
+.hiringField textarea:focus {
+  border-color: #3d76e8;
+  box-shadow: 0 0 0 4px rgba(61, 118, 232, 0.09);
+  background: #ffffff;
+}
+
+.hiringField input:disabled,
+.hiringField select:disabled,
+.hiringField textarea:disabled {
+  background: #f7f9fc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.hiringField small {
+  color: #8795a9;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.hiringEmploymentDivider {
+  height: 1px;
+  margin: 25px 0 18px;
+  background: #e8edf4;
+}
+
+/* =========================================================
+   FOOTER BUTTONS
+   ========================================================= */
+
+.hiringDetailsFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.hiringCancelButton,
+.hiringConfirmButton {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 21px;
+  border-radius: 11px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.hiringCancelButton {
+  min-width: 116px;
+  border: 1px solid #d6dfeb;
+  background: #ffffff;
+  color: #53627a;
+}
+
+.hiringCancelButton:hover:not(:disabled) {
+  border-color: #c2cedd;
+  background: #f7f9fc;
+  transform: translateY(-1px);
+}
+
+.hiringConfirmButton {
+  min-width: 180px;
+  border: 1px solid #2464df;
+  background: linear-gradient(135deg, #2f6fe5, #2059d6);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(40, 98, 220, 0.2);
+}
+
+.hiringConfirmButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2868dc, #1b51c8);
+  box-shadow: 0 11px 22px rgba(40, 98, 220, 0.25);
+  transform: translateY(-1px);
+}
+
+.hiringCancelButton:disabled,
+.hiringConfirmButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .hiringDetailsModal {
+    width: min(940px, 100%);
+  }
+
+  .hiringDetailsLayout {
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .hiringCandidatePanel {
+    padding: 20px;
+  }
+
+  .hiringAutomaticNotice {
+    display: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .hiringDetailsOverlay {
+    padding: 14px;
+  }
+
+  .hiringDetailsModal {
+    max-height: calc(100vh - 28px);
+    border-radius: 18px;
+  }
+
+  .hiringDetailsHeader {
+    padding: 18px 20px;
+  }
+
+  .hiringHeaderIcon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 15px;
+  }
+
+  .hiringDetailsHeader h2 {
+    font-size: 21px;
+  }
+
+  .hiringDetailsForm {
+    padding: 20px;
+  }
+
+  .hiringDetailsLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .hiringCandidatePanel {
+    padding: 20px;
+  }
+
+  .hiringCandidateInfoBox {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hiringDetailsOverlay {
+    align-items: flex-end;
+    padding: 8px;
+  }
+
+  .hiringDetailsModal {
+    max-height: calc(100vh - 16px);
+    border-radius: 16px 16px 12px 12px;
+  }
+
+  .hiringDetailsHeader {
+    align-items: flex-start;
+    padding: 17px 16px;
+  }
+
+  .hiringHeaderContent {
+    gap: 11px;
+  }
+
+  .hiringHeaderIcon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    border-radius: 12px;
+  }
+
+  .hiringHeaderIcon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .hiringHeaderEyebrow {
+    font-size: 9px;
+  }
+
+  .hiringDetailsHeader h2 {
+    font-size: 18px;
+  }
+
+  .hiringDetailsHeader p {
+    max-width: 230px;
+    font-size: 10px;
+  }
+
+  .hiringDetailsClose {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .hiringDetailsForm {
+    padding: 15px;
+  }
+
+  .hiringDetailsFields {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .hiringField.hiringFieldFull {
+    grid-column: auto;
+  }
+
+  .hiringEmploymentHeading h3 {
+    font-size: 18px;
+  }
+
+  .hiringDetailsFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .hiringCancelButton,
+  .hiringConfirmButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hiringCandidateTop {
+    align-items: flex-start;
+  }
+
+  .hiringCandidateAvatar {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .hiringCandidateIdentity strong {
+    font-size: 15px;
+  }
+
+  .hiringCandidateContact div {
+    font-size: 10px;
+  }
+
+  .hiringField input,
+  .hiringField select {
+    height: 46px;
+  }
+}
+
+/* ======================================
+   REJECT CANDIDATE MODAL
+====================================== */
+
+.rejectCandidateOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: rejectOverlayIn 0.18s ease-out;
+}
+
+@keyframes rejectOverlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rejectCandidateModal {
+  width: min(1040px, 100%);
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e1e7ef;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.24),
+    0 10px 30px rgba(15, 23, 42, 0.08);
+  animation: rejectModalIn 0.22s ease-out;
+}
+
+@keyframes rejectModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.rejectCandidateHeader {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e9edf3;
+  background: #ffffff;
+}
+
+.rejectCandidateHeaderContent {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rejectCandidateIcon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+.rejectCandidateHeaderContent > div:last-child {
+  min-width: 0;
+}
+
+.rejectCandidateEyebrow {
+  display: block;
+  margin-bottom: 4px;
+  color: #7b8799;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.rejectCandidateHeader h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 21px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+}
+
+.rejectCandidateHeader p {
+  margin: 5px 0 0;
+  color: #7d8798;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.rejectCandidateClose {
+  width: 37px;
+  height: 37px;
+  min-width: 37px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe5ec;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #667287;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rejectCandidateClose:hover:not(:disabled) {
+  background: #f7f9fb;
+  border-color: #cbd4df;
+  color: #25344b;
+  transform: translateY(-1px);
+}
+
+.rejectCandidateClose:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.rejectCandidateForm {
+  min-height: 0;
+  overflow: auto;
+}
+
+.rejectCandidateLayout {
+  display: grid;
+  grid-template-columns: 350px minmax(0, 1fr);
+  min-height: 470px;
+}
+
+/* LEFT: CANDIDATE SUMMARY */
+
+.rejectCandidatePanel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border-right: 1px solid #e9edf3;
+  background: #f8fafc;
+}
+
+.rejectCandidateSummary {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.rejectCandidateAvatar {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #e9efff;
+  color: #2458ce;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.rejectCandidateIdentity {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rejectCandidateIdentity strong {
+  overflow: hidden;
+  color: #1d2b43;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rejectCandidateIdentity span {
+  overflow: hidden;
+  color: #5d6b80;
+  font-size: 11px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rejectCandidateContact {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.rejectCandidateContact div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #68768b;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.rejectCandidateContact svg {
+  flex: 0 0 auto;
+  color: #7a8799;
+}
+
+.rejectCandidateContact span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rejectCandidateDivider {
+  height: 1px;
+  margin: 19px 0;
+  background: #e2e8ef;
+}
+
+.rejectCandidateMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.rejectMetaItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.rejectMetaItem > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #677991;
+}
+
+.rejectMetaItem > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rejectMetaItem span {
+  color: #8691a2;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.rejectMetaItem strong {
+  overflow: hidden;
+  color: #34445c;
+  font-size: 10px;
+  line-height: 1.45;
+  font-weight: 750;
+  text-overflow: ellipsis;
+}
+
+.rejectCandidateStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 21px;
+  padding: 11px 12px;
+  border: 1px solid #dfe5ec;
+  border-radius: 11px;
+  background: #ffffff;
+}
+
+.rejectStatusIcon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff1f2;
+  color: #d63b48;
+}
+
+.rejectCandidateStatus > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rejectCandidateStatus span {
+  color: #8994a5;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.rejectCandidateStatus strong {
+  color: #6f3840;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.rejectCandidateInfoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: auto;
+  padding: 12px 13px;
+  border: 1px solid #f2d4d7;
+  border-radius: 11px;
+  background: #fff8f8;
+}
+
+.rejectCandidateInfoBox svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+  color: #c7434d;
+}
+
+.rejectCandidateInfoBox p {
+  margin: 0;
+  color: #7b5960;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.rejectCandidateInfoBox strong {
+  color: #9f343f;
+  font-weight: 800;
+}
+
+/* RIGHT: REJECTION DETAILS */
+
+.rejectCandidateDetailsPanel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 26px 21px;
+}
+
+.rejectCandidateDetailsHeading {
+  margin-bottom: 21px;
+}
+
+.rejectCandidateDetailsHeading h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.rejectCandidateDetailsHeading p {
+  margin: 6px 0 0;
+  color: #7c8799;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.rejectCandidateFields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 19px;
+}
+
+.rejectCandidateField {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.rejectCandidateField label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #33435c;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.rejectCandidateField label svg {
+  flex: 0 0 auto;
+  color: #d23b48;
+}
+
+.rejectCandidateField label span {
+  color: #dc2626;
+}
+
+.rejectCandidateField select,
+.rejectCandidateField textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d7dfe9;
+  border-radius: 11px;
+  outline: none;
+  background: #ffffff;
+  color: #2c3b52;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.rejectCandidateField select {
+  height: 49px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.rejectCandidateField textarea {
+  min-height: 156px;
+  padding: 13px 14px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.rejectCandidateField select:hover,
+.rejectCandidateField textarea:hover {
+  border-color: #c6d0dd;
+}
+
+.rejectCandidateField select:focus,
+.rejectCandidateField textarea:focus {
+  border-color: #d0525c;
+  box-shadow: 0 0 0 4px rgba(208, 82, 92, 0.09);
+  background: #ffffff;
+}
+
+.rejectCandidateField select:disabled,
+.rejectCandidateField textarea:disabled {
+  background: #f7f9fb;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.rejectCandidateField textarea::placeholder {
+  color: #a0a9b6;
+}
+
+.rejectCandidateField small {
+  color: #8a95a6;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.rejectNotificationCheckbox {
+  position: relative;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e1e6ed;
+  border-radius: 11px;
+  background: #fbfcfd;
+  color: #4e5d73;
+  font-size: 11px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.rejectNotificationCheckbox:hover {
+  border-color: #cfd7e2;
+  background: #f8fafc;
+}
+
+.rejectNotificationCheckbox input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rejectCheckboxBox {
+  width: 19px;
+  height: 19px;
+  min-width: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cdd6e1;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #ffffff;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.rejectNotificationCheckbox input:checked + .rejectCheckboxBox {
+  border-color: #d23b48;
+  background: #d23b48;
+  box-shadow: 0 3px 8px rgba(210, 59, 72, 0.15);
+}
+
+.rejectNotificationCheckbox input:focus-visible + .rejectCheckboxBox {
+  box-shadow: 0 0 0 4px rgba(210, 59, 72, 0.1);
+}
+
+.rejectNotificationCheckbox input:not(:checked) + .rejectCheckboxBox svg {
+  opacity: 0;
+}
+
+.rejectCandidateDividerBottom {
+  height: 1px;
+  margin: 24px 0 17px;
+  background: #e9edf3;
+}
+
+.rejectCandidateFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.rejectCancelButton,
+.rejectConfirmButton {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 19px;
+  border-radius: 11px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.rejectCancelButton {
+  min-width: 112px;
+  border: 1px solid #d6dee8;
+  background: #ffffff;
+  color: #536178;
+}
+
+.rejectCancelButton:hover:not(:disabled) {
+  background: #f7f9fb;
+  border-color: #c3ceda;
+  color: #27364c;
+  transform: translateY(-1px);
+}
+
+.rejectConfirmButton {
+  min-width: 170px;
+  border: 1px solid #d43d4c;
+  background: linear-gradient(135deg, #dc4755, #c82f3e);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(208, 58, 72, 0.2);
+}
+
+.rejectConfirmButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d43d4c, #b92535);
+  border-color: #b92535;
+  box-shadow: 0 11px 22px rgba(208, 58, 72, 0.25);
+  transform: translateY(-1px);
+}
+
+.rejectCancelButton:disabled,
+.rejectConfirmButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ======================================
+   REJECT MODAL RESPONSIVE
+====================================== */
+
+@media (max-width: 950px) {
+  .rejectCandidateModal {
+    width: min(920px, 100%);
+  }
+
+  .rejectCandidateLayout {
+    grid-template-columns: 305px minmax(0, 1fr);
+  }
+
+  .rejectCandidatePanel {
+    padding: 20px;
+  }
+
+  .rejectCandidateDetailsPanel {
+    padding: 22px 21px 19px;
+  }
+}
+
+@media (max-width: 780px) {
+  .rejectCandidateOverlay {
+    padding: 14px;
+  }
+
+  .rejectCandidateModal {
+    max-height: calc(100vh - 28px);
+    border-radius: 18px;
+  }
+
+  .rejectCandidateHeader {
+    min-height: 78px;
+    padding: 16px 18px;
+  }
+
+  .rejectCandidateIcon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 12px;
+  }
+
+  .rejectCandidateHeader h2 {
+    font-size: 19px;
+  }
+
+  .rejectCandidateLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .rejectCandidatePanel {
+    border-right: 0;
+    border-bottom: 1px solid #e9edf3;
+  }
+
+  .rejectCandidateInfoBox {
+    margin-top: 20px;
+  }
+
+  .rejectCandidateDetailsPanel {
+    padding: 21px 20px 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rejectCandidateOverlay {
+    align-items: flex-end;
+    padding: 8px;
+  }
+
+  .rejectCandidateModal {
+    max-height: calc(100vh - 16px);
+    border-radius: 16px 16px 12px 12px;
+  }
+
+  .rejectCandidateHeader {
+    align-items: flex-start;
+    padding: 15px 15px 14px;
+  }
+
+  .rejectCandidateHeaderContent {
+    gap: 10px;
+  }
+
+  .rejectCandidateIcon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 11px;
+  }
+
+  .rejectCandidateIcon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .rejectCandidateEyebrow {
+    font-size: 8px;
+  }
+
+  .rejectCandidateHeader h2 {
+    font-size: 17px;
+  }
+
+  .rejectCandidateHeader p {
+    max-width: 245px;
+    font-size: 9px;
+  }
+
+  .rejectCandidateClose {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+  }
+
+  .rejectCandidatePanel {
+    padding: 16px;
+  }
+
+  .rejectCandidateAvatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+  }
+
+  .rejectCandidateIdentity strong {
+    font-size: 14px;
+  }
+
+  .rejectCandidateIdentity span {
+    font-size: 10px;
+  }
+
+  .rejectCandidateContact {
+    margin-top: 14px;
+  }
+
+  .rejectCandidateMeta {
+    gap: 14px;
+  }
+
+  .rejectCandidateDetailsPanel {
+    padding: 17px 16px 16px;
+  }
+
+  .rejectCandidateDetailsHeading {
+    margin-bottom: 17px;
+  }
+
+  .rejectCandidateDetailsHeading h3 {
+    font-size: 17px;
+  }
+
+  .rejectCandidateFields {
+    gap: 16px;
+  }
+
+  .rejectCandidateField select {
+    height: 46px;
+  }
+
+  .rejectCandidateField textarea {
+    min-height: 130px;
+  }
+
+  .rejectCandidateDividerBottom {
+    margin: 19px 0 15px;
+  }
+
+  .rejectCandidateFooter {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .rejectCancelButton,
+  .rejectConfirmButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .rejectCandidateHeader p {
+    display: none;
+  }
+
+  .rejectCandidateSummary {
+    align-items: flex-start;
+  }
+
+  .rejectCandidateContact div {
+    font-size: 9px;
+  }
+
+  .rejectMetaItem span {
+    font-size: 8px;
+  }
+
+  .rejectMetaItem strong {
+    font-size: 9px;
+  }
+
+  .rejectCandidateInfoBox p {
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   UNIFIED JOBHUB ADMIN TOPBAR
+========================================================= */
+.interviewsTopbar {
+  height: 72px;
+  min-height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf3;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.interviewsAdminRight {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.interviewsNotification {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.interviewsNotification:hover { background: #f8f9fc; color: #344054; }
+.interviewsAdmin {
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+.interviewsAdminAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2057bd 0%, #0e3f9c 100%);
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.20);
+}
+.interviewsAdminInfo strong { font-size: 13px; color: #172033; }
+.interviewsAdminInfo span { font-size: 11px; color: #8b95a7; }
+@media (max-width: 768px) {
+  .interviewsTopbar { padding: 0 18px; }
+  .interviewsAdminRight { gap: 10px; }
+  .interviewsAdmin { gap: 8px; padding-left: 13px; }
+  .interviewsAdminAvatar { width: 38px; height: 38px; }
+  .interviewsAdminInfo { display: none; }
+  .interviewsNotification { width: 38px; height: 38px; }
+}

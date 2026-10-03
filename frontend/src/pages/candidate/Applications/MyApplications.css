@@ -1,0 +1,1207 @@
+/* =====================================
+   PAGE
+===================================== */
+
+.myApplicationsPage {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f6f8fc;
+
+  color: #344054;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.dashboardSidebar {
+  width: 210px;
+  min-width: 210px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e7ebf2;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1200;
+}
+
+/* =====================================
+   SIDEBAR LOGO
+===================================== */
+
+.dashboardLogo {
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid #edf0f5;
+
+  color: #2556b8;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.dashboardLogoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #2456ba;
+}
+
+/* =====================================
+   CLOSE BUTTON
+===================================== */
+
+.sidebarCloseButton {
+  display: none;
+
+  margin-left: auto;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  cursor: pointer;
+}
+
+/* =====================================
+   SIDEBAR NAVIGATION
+===================================== */
+
+.dashboardNavigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 14px 10px;
+}
+
+.dashboardNavItem {
+  width: 100%;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 11px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.dashboardNavItem:hover {
+  background: #f5f7fb;
+
+  color: #315bd0;
+}
+
+.dashboardNavItemActive {
+  background: #eaf0ff;
+
+  color: #315bd0;
+
+  font-weight: 600;
+}
+
+.dashboardNavItemActive svg {
+  stroke-width: 2.2;
+}
+
+/* =====================================
+   SIDEBAR BOTTOM
+===================================== */
+
+.dashboardSidebarBottom {
+  margin-top: auto;
+
+  padding: 14px 10px;
+
+  border-top: 1px solid #edf0f5;
+}
+
+.dashboardLogoutButton {
+  width: 100%;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 11px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.dashboardLogoutButton:hover {
+  background: #fff3f2;
+
+  color: #d92d20;
+}
+
+/* =====================================
+   MAIN AREA
+===================================== */
+
+.dashboardMainArea {
+  width: calc(100% - 210px);
+
+  min-height: 100vh;
+
+  margin-left: 210px;
+}
+
+/* =====================================
+   TOP HEADER
+===================================== */
+
+.dashboardTopHeader {
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 26px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border-bottom: 1px solid #e9edf3;
+
+  backdrop-filter: blur(12px);
+}
+
+.dashboardHeaderLeft {
+  display: flex;
+  align-items: center;
+}
+
+.dashboardHeaderRight {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.headerNotificationButton {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  cursor: pointer;
+}
+
+.headerNotificationButton:hover {
+  color: #315bd0;
+}
+
+/* =====================================
+   CANDIDATE INFO
+===================================== */
+
+.headerCandidateInfo {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.headerCandidateAvatar {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e7eefc;
+
+  color: #315bd0;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.headerCandidateText {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1px;
+}
+
+.headerCandidateText strong {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #344054;
+}
+
+.headerCandidateText span {
+  font-size: 8px;
+
+  color: #98a2b3;
+}
+
+/* =====================================
+   MOBILE SIDEBAR BUTTON
+===================================== */
+
+.mobileSidebarButton {
+  width: 38px;
+  height: 38px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #344054;
+
+  cursor: pointer;
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.applicationsContent {
+  width: 100%;
+
+  max-width: 1450px;
+
+  margin: 0 auto;
+
+  padding: 18px 26px 28px;
+
+  box-sizing: border-box;
+}
+
+/* =====================================
+   PAGE HEADER
+===================================== */
+
+.applicationsPageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.applicationsPageHeader h1 {
+  margin: 0;
+
+  color: #344054;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+/* =====================================
+   HEADER ACTIONS
+===================================== */
+
+.applicationsHeaderActions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.applicationsSearch {
+  width: 205px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dfe5ee;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #98a2b3;
+}
+
+.applicationsSearch input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #344054;
+
+  font-family: inherit;
+
+  font-size: 10px;
+}
+
+.applicationsSearch input::placeholder {
+  color: #98a2b3;
+}
+
+/* =====================================
+   FILTER
+===================================== */
+
+.applicationsFilterWrapper {
+  position: relative;
+}
+
+.applicationsFilterButton {
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0 12px;
+
+  border: 1px solid #dfe5ee;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #475467;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.applicationsFilterButton:hover {
+  background: #f8fafc;
+}
+
+/* =====================================
+   FILTER MENU
+===================================== */
+
+.applicationsFilterMenu {
+  width: 155px;
+
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  right: 0;
+
+  z-index: 100;
+
+  padding: 8px;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  box-shadow: 0 12px 28px rgba(16, 24, 40, 0.12);
+}
+
+.applicationsFilterMenu p {
+  margin: 5px 7px 8px;
+
+  color: #667085;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.applicationsFilterMenu button {
+  width: 100%;
+
+  padding: 8px 7px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #475467;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.applicationsFilterMenu button:hover,
+.applicationsFilterMenu .filterStatusActive {
+  background: #edf3ff;
+
+  color: #315bd0;
+}
+
+/* =====================================
+   APPLICATION CARD
+===================================== */
+
+.applicationsCard {
+  overflow: hidden;
+
+  border: 1px solid #e6eaf1;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.02);
+}
+
+/* =====================================
+   TABS
+===================================== */
+
+.applicationTabs {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 0 18px;
+
+  overflow-x: auto;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.applicationTab {
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.applicationTabActive {
+  color: #315bd0;
+
+  font-weight: 600;
+}
+
+.applicationTabActive::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  border-radius: 10px 10px 0 0;
+
+  background: #315bd0;
+}
+
+/* =====================================
+   TABLE
+===================================== */
+
+.applicationsTableWrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.applicationsTable {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.applicationsTable th {
+  height: 34px;
+
+  padding: 0 18px;
+
+  background: #f9fafb;
+
+  color: #475467;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.applicationsTable td {
+  height: 38px;
+
+  padding: 0 18px;
+
+  color: #667085;
+
+  font-size: 10px;
+
+  border-bottom: 1px solid #edf0f4;
+
+  white-space: nowrap;
+}
+
+.applicationsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.applicationsTable tbody tr:hover {
+  background: #fbfcfe;
+}
+
+.applicationJobTitle {
+  color: #344054 !important;
+
+  font-weight: 500;
+}
+
+/* =====================================
+   STATUS BADGES
+===================================== */
+
+.applicationStatus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 50px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+.statusApplied {
+  background: #eaf0ff;
+
+  color: #3d67c9;
+}
+
+.statusInterview {
+  background: #eee9ff;
+
+  color: #7655c9;
+}
+
+.statusHired {
+  background: #e4f5eb;
+
+  color: #398b5e;
+}
+
+.statusRejected {
+  background: #fdebec;
+
+  color: #d85858;
+}
+
+.statusShortlisted {
+  background: #fff5dd;
+
+  color: #c1841c;
+}
+
+/* =====================================
+   ACTIONS
+===================================== */
+
+.applicationActions {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.viewApplicationButton {
+  height: 26px;
+
+  padding: 0 12px;
+
+  border: 1px solid #dfe5ee;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #475467;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.viewApplicationButton:hover {
+  border-color: #b8c6e5;
+
+  color: #315bd0;
+}
+
+.moreApplicationButton {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  cursor: pointer;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.applicationsEmpty {
+  height: 220px !important;
+
+  text-align: center !important;
+
+  white-space: normal !important;
+}
+
+.applicationsEmpty svg {
+  color: #b8c1cf;
+
+  margin-bottom: 8px;
+}
+
+.applicationsEmpty h3 {
+  margin: 0 0 5px;
+
+  color: #475467;
+
+  font-size: 14px;
+}
+
+.applicationsEmpty p {
+  margin: 0;
+
+  color: #98a2b3;
+}
+
+/* =====================================
+   MOBILE LIST
+===================================== */
+
+.applicationsMobileList {
+  display: none;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.applicationsFooter {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 0 18px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.applicationsFooter p {
+  margin: 0;
+
+  color: #98a2b3;
+
+  font-size: 9px;
+}
+
+.applicationsFooter strong {
+  color: #667085;
+
+  font-weight: 600;
+}
+
+/* =====================================
+   PAGINATION
+===================================== */
+
+.applicationPagination {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.applicationPagination button {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e0e5ed;
+
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+.applicationPagination button:hover {
+  background: #f5f7fb;
+}
+
+.applicationPagination .paginationActive {
+  border-color: #315bd0;
+
+  background: #315bd0;
+
+  color: #ffffff;
+}
+
+/* =====================================
+   OVERLAY
+===================================== */
+
+.dashboardOverlay {
+  display: none;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+  .dashboardSidebar {
+    width: 190px;
+    min-width: 190px;
+  }
+
+  .dashboardMainArea {
+    width: calc(100% - 190px);
+
+    margin-left: 190px;
+  }
+
+  .applicationsContent {
+    padding: 18px 20px 24px;
+  }
+
+  .applicationsSearch {
+    width: 180px;
+  }
+}
+
+/* =====================================
+   MOBILE / SMALL TABLET
+===================================== */
+
+@media (max-width: 768px) {
+  .dashboardSidebar {
+    width: 260px;
+
+    min-width: 260px;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.25s ease;
+
+    box-shadow: 15px 0 40px rgba(16, 24, 40, 0.12);
+  }
+
+  .dashboardSidebarOpen {
+    transform: translateX(0);
+  }
+
+  .sidebarCloseButton {
+    display: flex;
+  }
+
+  .dashboardMainArea {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .dashboardOverlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1100;
+
+    background: rgba(16, 24, 40, 0.35);
+  }
+
+  .mobileSidebarButton {
+    display: flex;
+  }
+
+  .dashboardTopHeader {
+    padding: 0 18px;
+  }
+
+  .applicationsContent {
+    padding: 18px;
+  }
+
+  .applicationsPageHeader {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .applicationsHeaderActions {
+    width: 100%;
+  }
+
+  .applicationsSearch {
+    flex: 1;
+
+    width: auto;
+  }
+
+  .applicationsTableWrapper {
+    display: none;
+  }
+
+  .applicationsMobileList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 12px;
+  }
+
+  .applicationMobileCard {
+    padding: 15px;
+
+    border: 1px solid #e8ecf2;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+  }
+
+  .applicationMobileTop {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+  }
+
+  .applicationMobileTop h3 {
+    margin: 0 0 5px;
+
+    color: #344054;
+
+    font-size: 14px;
+
+    font-weight: 650;
+  }
+
+  .applicationMobileTop p {
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 12px;
+  }
+
+  .applicationMobileDetails {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 14px;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+  }
+
+  .applicationMobileDetails span {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+  }
+
+  .mobileViewJobButton {
+    width: 100%;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+    border: 1px solid #dbe3f0;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #315bd0;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+  }
+
+  .applicationsFooter {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 15px;
+  }
+
+  .applicationPagination {
+    width: 100%;
+
+    justify-content: flex-end;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 520px) {
+  .dashboardTopHeader {
+    height: 58px;
+  }
+
+  .headerNotificationButton {
+    display: none;
+  }
+
+  .headerCandidateText {
+    display: none;
+  }
+
+  .applicationsContent {
+    padding: 14px 12px 20px;
+  }
+
+  .applicationsPageHeader h1 {
+    font-size: 18px;
+  }
+
+  .applicationsHeaderActions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .applicationsSearch {
+    width: 100%;
+  }
+
+  .applicationsFilterWrapper {
+    width: 100%;
+  }
+
+  .applicationsFilterButton {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .applicationsFilterMenu {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .applicationTabs {
+    gap: 20px;
+
+    padding: 0 14px;
+  }
+
+  .applicationTab {
+    height: 42px;
+
+    font-size: 10px;
+  }
+
+  .applicationMobileCard {
+    padding: 13px;
+  }
+
+  .applicationMobileTop {
+    flex-direction: column;
+  }
+
+  .applicationsFooter p {
+    font-size: 10px;
+  }
+}
+
+/* JobHub mobile/sidebar branding */
+.dashboardLogoImage {
+  width: 118px;
+  max-width: calc(100% - 48px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+}

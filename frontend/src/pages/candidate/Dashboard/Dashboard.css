@@ -1,0 +1,2319 @@
+/* =========================================================
+   JOBHUB CANDIDATE DASHBOARD
+   ========================================================= */
+
+.candidateDashboardPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #f7f9fc;
+  color: #172033;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.candidateDashboardMain {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 0;
+  background: #f7f9fc;
+}
+
+.candidateDashboardContent {
+  width: 100%;
+  max-width: 1580px;
+  margin: 0 auto;
+  padding: 28px 34px 55px;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.candidateDashboardTopbar {
+  height: 66px;
+  min-height: 66px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e6ebf2;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.candidateDashboardTopbarLeft {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.candidateDashboardSearch {
+  width: min(600px, 100%);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 13px;
+  border: 1px solid #e1e6ee;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #8d97a8;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.candidateDashboardSearch:focus-within {
+  border-color: #315bd0;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(49, 91, 208, 0.07);
+}
+
+.candidateDashboardSearch input {
+  width: 100%;
+  height: 38px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #273147;
+  font-size: 12px;
+}
+
+.candidateDashboardSearch input::placeholder {
+  color: #9aa3b0;
+}
+
+.candidateDashboardSearchClear {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #8b95a5;
+  cursor: pointer;
+}
+
+.candidateDashboardSearchClear:hover {
+  background: #eef2f7;
+}
+
+.candidateDashboardTopbarRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.candidateDashboardNotificationButton {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #59667c;
+  cursor: pointer;
+}
+
+.candidateDashboardNotificationButton:hover {
+  background: #f3f6fb;
+  color: #315bd0;
+}
+
+.candidateDashboardNotificationBadge {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  min-width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  background: #315bd0;
+  color: #ffffff;
+  font-size: 7px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.candidateDashboardTopbarCandidate {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 16px;
+  border: none;
+  border-left: 1px solid #e8ecf2;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.candidateDashboardAvatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      145deg,
+      #3768db,
+      #234ca9
+    );
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow:
+    0 7px 15px rgba(49, 91, 208, 0.18);
+}
+
+.candidateDashboardCandidateInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+}
+
+.candidateDashboardCandidateInfo strong {
+  color: #1f2a3d;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+.candidateDashboardCandidateInfo span {
+  margin-top: 2px;
+  color: #9099a8;
+  font-size: 9.5px;
+  line-height: 1.2;
+}
+
+.candidateDashboardMobileBrand {
+  display: none;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.candidateDashboardHero {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #e5ebf4;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      120deg,
+      #edf4ff 0%,
+      #f7faff 58%,
+      #eef4ff 100%
+    );
+  box-shadow:
+    0 9px 26px rgba(32, 53, 88, 0.045);
+}
+
+.candidateDashboardHeroText {
+  position: relative;
+  z-index: 3;
+  width: 56%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px 25px 34px 38px;
+}
+
+.candidateDashboardHeroEyebrow {
+  width: fit-content;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgba(49, 91, 208, 0.08);
+  color: #315bd0;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.05px;
+}
+
+.candidateDashboardHeroText h1 {
+  margin: 13px 0 0;
+  color: #18233a;
+  font-size: clamp(
+    30px,
+    3vw,
+    43px
+  );
+  line-height: 1.05;
+  font-weight: 820;
+  letter-spacing: -1px;
+}
+
+.candidateDashboardHeroText p {
+  max-width: 580px;
+  margin: 12px 0 18px;
+  color: #6f7c91;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+.candidateDashboardPrimaryButton {
+  width: fit-content;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 9px;
+  background: #315bd0;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow:
+    0 8px 18px rgba(49, 91, 208, 0.19);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.candidateDashboardPrimaryButton:hover {
+  background: #284fbf;
+  transform: translateY(-1px);
+}
+
+.candidateDashboardHeroVisual {
+  position: relative;
+  flex: 1;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+.candidateDashboardHeroImage {
+  position: absolute;
+  right: 7%;
+  bottom: -8px;
+  width: 300px;
+  max-height: 280px;
+  object-fit: contain;
+  object-position: center bottom;
+  z-index: 2;
+  filter:
+    drop-shadow(
+      0 13px 20px rgba(31, 55, 92, 0.07)
+    );
+}
+
+.candidateDashboardHeroMessage {
+  position: absolute;
+  z-index: 4;
+  top: 42px;
+  right: 4%;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-4deg);
+}
+
+.candidateDashboardHeroMessage span {
+  color: #7785a0;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.candidateDashboardHeroMessage strong {
+  margin-top: 3px;
+  color: #315bd0;
+  font-size: 20px;
+  line-height: 1.02;
+  font-weight: 800;
+}
+
+.candidateDashboardHeroCircle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.candidateDashboardHeroCircleOne {
+  width: 220px;
+  height: 220px;
+  right: 8%;
+  bottom: -110px;
+  background: rgba(
+    49,
+    91,
+    208,
+    0.07
+  );
+}
+
+.candidateDashboardHeroCircleTwo {
+  width: 130px;
+  height: 130px;
+  top: -65px;
+  right: 28%;
+  background: rgba(
+    117,
+    86,
+    216,
+    0.05
+  );
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.candidateDashboardStats {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 17px;
+}
+
+.candidateDashboardStatCard {
+  min-height: 102px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid #e7ebf1;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow:
+    0 6px 20px rgba(30, 44, 69, 0.032);
+}
+
+.candidateDashboardStatIcon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.candidateDashboardStatBlue {
+  background: #eaf1ff;
+  color: #315bd0;
+}
+
+.candidateDashboardStatPurple {
+  background: #f0ebff;
+  color: #7556d8;
+}
+
+.candidateDashboardStatOrange {
+  background: #fff2e3;
+  color: #d88b39;
+}
+
+.candidateDashboardStatGreen {
+  background: #e8f8ef;
+  color: #27a866;
+}
+
+.candidateDashboardStatInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.candidateDashboardStatInfo strong {
+  color: #172033;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.candidateDashboardStatInfo span {
+  margin-top: 6px;
+  color: #808a9a;
+  font-size: 9.5px;
+}
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.candidateDashboardMainGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(350px, 0.85fr);
+  gap: 17px;
+  margin-top: 17px;
+}
+
+.candidateDashboardCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e6ebf1;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow:
+    0 7px 21px rgba(30, 45, 73, 0.032);
+}
+
+.candidateDashboardCardHeader {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 19px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.candidateDashboardCardHeader span {
+  display: block;
+  color: #9ba4b3;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.candidateDashboardCardHeader h2 {
+  margin: 5px 0 0;
+  color: #202b40;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 770;
+}
+
+.candidateDashboardCardHeader button {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #315bd0;
+  font-size: 9.5px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.candidateDashboardCardHeader button:hover {
+  color: #244aaf;
+}
+
+/* =========================================================
+   RECOMMENDED JOBS
+   ========================================================= */
+
+.candidateDashboardJobsList {
+  padding: 3px 19px 9px;
+}
+
+.candidateDashboardJob {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 0;
+  border-bottom: 1px solid #eff2f6;
+}
+
+.candidateDashboardJob:last-child {
+  border-bottom: none;
+}
+
+.candidateDashboardCompanyLogo {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #e6ebf1;
+  border-radius: 10px;
+  background: #f8f9fc;
+  color: #315bd0;
+  cursor: pointer;
+}
+
+.candidateDashboardCompanyLogo img {
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  object-fit: contain;
+}
+
+.candidateDashboardCompanyLogo span {
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.candidateDashboardJobContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.candidateDashboardJobTitle {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #273147;
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 760;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.candidateDashboardJobTitle:hover {
+  color: #315bd0;
+}
+
+.candidateDashboardCompanyName {
+  display: block;
+  margin-top: 3px;
+  color: #707b8d;
+  font-size: 9px;
+}
+
+.candidateDashboardJobMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  color: #8c96a6;
+  font-size: 8px;
+}
+
+.candidateDashboardJobMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.candidateDashboardJobMeta span:last-child {
+  padding-left: 8px;
+  border-left: 1px solid #dfe4eb;
+}
+
+.candidateDashboardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.candidateDashboardTags span {
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #eff4ff;
+  color: #5770a9;
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.candidateDashboardJobActions {
+  min-width: 44px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.candidateDashboardJobActions > span {
+  color: #9aa3b1;
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.candidateDashboardSaveButton {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  border: 1px solid #e1e6ee;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #8c96a5;
+  cursor: pointer;
+}
+
+.candidateDashboardSaveButton:hover {
+  border-color: #cad5ed;
+  background: #f5f8ff;
+  color: #315bd0;
+}
+
+.candidateDashboardSaveActive {
+  border-color: #d9e3fb;
+  background: #eff4ff;
+  color: #315bd0;
+}
+
+/* =========================================================
+   APPLICATION STATUS
+   ========================================================= */
+
+.candidateDashboardStatusBody {
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 27px;
+  padding: 20px;
+}
+
+.candidateDashboardDonut {
+  width: 166px;
+  height: 166px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.candidateDashboardDonutCenter {
+  width: 111px;
+  height: 111px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 5px 15px rgba(27, 45, 77, 0.05);
+}
+
+.candidateDashboardDonutCenter strong {
+  color: #182238;
+  font-size: 28px;
+  font-weight: 820;
+  line-height: 1;
+}
+
+.candidateDashboardDonutCenter span {
+  margin-top: 5px;
+  color: #9099a8;
+  font-size: 8px;
+}
+
+.candidateDashboardLegend {
+  min-width: 125px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.candidateDashboardLegend > div {
+  display: grid;
+  grid-template-columns:
+    7px 1fr auto;
+  align-items: center;
+  gap: 7px;
+  color: #788396;
+  font-size: 9px;
+}
+
+.candidateDashboardLegend strong {
+  color: #29344a;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.candidateDashboardDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.candidateDashboardDotApplied {
+  background: #315bd0;
+}
+
+.candidateDashboardDotReview {
+  background: #f0ad4e;
+}
+
+.candidateDashboardDotInterview {
+  background: #7556d8;
+}
+
+.candidateDashboardDotHired {
+  background: #27a866;
+}
+
+.candidateDashboardDotRejected {
+  background: #df5b72;
+}
+
+/* =========================================================
+   INTERVIEWS
+   ========================================================= */
+
+.candidateDashboardInterviews {
+  margin-top: 17px;
+}
+
+.candidateDashboardInterviewList {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 16px 19px 19px;
+}
+
+.candidateDashboardInterview {
+  min-height: 91px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #edf0f5;
+  border-radius: 11px;
+  background: #fbfcfe;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.candidateDashboardInterview:hover {
+  border-color: #d2dcf1;
+  transform: translateY(-1px);
+}
+
+.candidateDashboardInterviewIcon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #edf3ff;
+  color: #315bd0;
+}
+
+.candidateDashboardInterviewInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.candidateDashboardInterviewInfo strong {
+  overflow: hidden;
+  color: #273147;
+  font-size: 9.5px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateDashboardInterviewInfo span {
+  margin-top: 3px;
+  overflow: hidden;
+  color: #7d8798;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateDashboardInterviewInfo small {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 6px;
+  color: #8c96a6;
+  font-size: 7px;
+}
+
+/* =========================================================
+   LOWER GRID
+   ========================================================= */
+
+.candidateDashboardLowerGrid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(350px, 0.85fr);
+  gap: 17px;
+  margin-top: 17px;
+}
+
+.candidateDashboardRecent,
+.candidateDashboardSaved {
+  min-height: 330px;
+}
+
+/* =========================================================
+   RECENT APPLICATIONS
+   ========================================================= */
+
+.candidateDashboardRecentList {
+  padding: 3px 19px 10px;
+}
+
+.candidateDashboardApplication {
+  min-height: 70px;
+  display: grid;
+  grid-template-columns:
+    35px minmax(0, 1fr) auto 28px;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.candidateDashboardApplication:last-child {
+  border-bottom: none;
+}
+
+.candidateDashboardApplicationLogo {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #e6ebf1;
+  border-radius: 8px;
+  background: #f8f9fc;
+  color: #315bd0;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.candidateDashboardApplicationLogo img {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  object-fit: contain;
+}
+
+.candidateDashboardApplicationDetails {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.candidateDashboardApplicationDetails strong {
+  overflow: hidden;
+  color: #273147;
+  font-size: 9.5px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateDashboardApplicationDetails span {
+  margin-top: 2px;
+  overflow: hidden;
+  color: #7d8798;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateDashboardApplicationDetails small {
+  margin-top: 2px;
+  color: #99a1ae;
+  font-size: 7px;
+}
+
+.candidateDashboardApplicationRight {
+  min-width: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.candidateDashboardApplicationRight small {
+  color: #99a2ae;
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.candidateDashboardStatusPill {
+  min-height: 21px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 6.8px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.candidateDashboardStatusApplied {
+  background: #edf3ff;
+  color: #315bd0;
+}
+
+.candidateDashboardStatusInReview {
+  background: #fff5e7;
+  color: #b87825;
+}
+
+.candidateDashboardStatusInterview {
+  background: #f1ebff;
+  color: #7556d8;
+}
+
+.candidateDashboardStatusHired {
+  background: #e9f8ef;
+  color: #278b59;
+}
+
+.candidateDashboardStatusRejected {
+  background: #fdecef;
+  color: #cf5369;
+}
+
+.candidateDashboardApplicationArrow {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 7px;
+  background: #f4f7fc;
+  color: #8792a3;
+  cursor: pointer;
+}
+
+.candidateDashboardApplicationArrow:hover {
+  background: #edf3ff;
+  color: #315bd0;
+}
+
+/* =========================================================
+   SAVED JOBS
+   ========================================================= */
+
+.candidateDashboardSavedList {
+  padding: 5px 19px 10px;
+}
+
+.candidateDashboardSavedItem {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.candidateDashboardSavedItem:last-child {
+  border-bottom: none;
+}
+
+.candidateDashboardSavedLogo {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #e6ebf1;
+  border-radius: 9px;
+  background: #f8f9fc;
+  color: #315bd0;
+  cursor: pointer;
+}
+
+.candidateDashboardSavedLogo img {
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  object-fit: contain;
+}
+
+.candidateDashboardSavedLogo span {
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.candidateDashboardSavedContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.candidateDashboardSavedContent strong {
+  overflow: hidden;
+  color: #273147;
+  font-size: 9px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateDashboardSavedContent span {
+  margin-top: 2px;
+  overflow: hidden;
+  color: #7d8798;
+  font-size: 7.8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateDashboardSavedContent small {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 4px;
+  color: #969fac;
+  font-size: 7px;
+}
+
+.candidateDashboardSavedRemove {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 7px;
+  background: #edf3ff;
+  color: #315bd0;
+  cursor: pointer;
+}
+
+.candidateDashboardSavedRemove:hover {
+  background: #e3ecff;
+}
+
+/* =========================================================
+   EMPTY STATE / ERROR
+   ========================================================= */
+
+.candidateDashboardEmptyState {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+  color: #a0a8b6;
+}
+
+.candidateDashboardEmptyState svg {
+  margin-bottom: 10px;
+  color: #afb8c6;
+}
+
+.candidateDashboardEmptyState strong {
+  color: #536077;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.candidateDashboardEmptyState span {
+  max-width: 250px;
+  margin-top: 5px;
+  color: #99a2b0;
+  font-size: 8.5px;
+  line-height: 1.55;
+}
+
+.candidateDashboardEmptyInterview {
+  min-height: 95px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 19px;
+}
+
+.candidateDashboardEmptyInterview > div {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #edf3ff;
+  color: #315bd0;
+}
+
+.candidateDashboardEmptyInterview section {
+  display: flex;
+  flex-direction: column;
+}
+
+.candidateDashboardEmptyInterview strong {
+  color: #4e5b70;
+  font-size: 10px;
+}
+
+.candidateDashboardEmptyInterview span {
+  margin-top: 4px;
+  color: #98a1ae;
+  font-size: 8px;
+}
+
+.candidateDashboardError {
+  margin-bottom: 14px;
+  padding: 10px 13px;
+  border: 1px solid #efd1d7;
+  border-radius: 8px;
+  background: #fff5f7;
+  color: #c55568;
+  font-size: 9px;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.candidateDashboardCTA {
+  position: relative;
+  min-height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 17px;
+  overflow: hidden;
+  padding: 25px 34px;
+  border: 1px solid #dce7fb;
+  border-radius: 17px;
+  background:
+    linear-gradient(
+      110deg,
+      #edf4ff 0%,
+      #f8fbff 58%,
+      #edf4ff 100%
+    );
+}
+
+.candidateDashboardCTAContent {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+}
+
+.candidateDashboardCTAContent > span {
+  display: inline-flex;
+  min-height: 21px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(
+    49,
+    91,
+    208,
+    0.08
+  );
+  color: #315bd0;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.candidateDashboardCTAContent h2 {
+  margin: 8px 0 6px;
+  color: #233250;
+  font-size: 21px;
+  line-height: 1.18;
+  font-weight: 800;
+}
+
+.candidateDashboardCTAContent p {
+  max-width: 600px;
+  margin: 0;
+  color: #768197;
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.candidateDashboardCTAActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.candidateDashboardCTAActions button {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 11px;
+  border-radius: 8px;
+  font-size: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.candidateDashboardCTAActions button:first-child {
+  border: none;
+  background: #315bd0;
+  color: #ffffff;
+  box-shadow:
+    0 7px 15px rgba(49, 91, 208, 0.18);
+}
+
+.candidateDashboardCTAActions button:last-child {
+  border: 1px solid #d6dfed;
+  background: #ffffff;
+  color: #536078;
+}
+
+.candidateDashboardCTAImage {
+  position: relative;
+  width: 220px;
+  height: 175px;
+  flex-shrink: 0;
+}
+
+.candidateDashboardCTAImage img {
+  position: absolute;
+  right: -15px;
+  bottom: -20px;
+  width: 240px;
+  height: 205px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* =========================================================
+   MOBILE DRAWER
+   ========================================================= */
+
+.candidateDashboardOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(
+    17,
+    27,
+    45,
+    0.42
+  );
+  backdrop-filter: blur(2px);
+}
+
+.candidateDashboardMobileDrawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(
+    300px,
+    85vw
+  );
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  background: #ffffff;
+  box-shadow:
+    15px 0 35px rgba(
+      14,
+      31,
+      59,
+      0.14
+    );
+  transform: translateX(-105%);
+  transition: transform 0.24s ease;
+}
+
+.candidateDashboardMobileDrawerOpen {
+  transform: translateX(0);
+}
+
+.candidateDashboardMobileDrawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.candidateDashboardMobileDrawerHeader strong {
+  color: #315bd0;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.candidateDashboardMobileClose {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: #f3f5f9;
+  color: #5c687d;
+  cursor: pointer;
+}
+
+.candidateDashboardMobileCandidate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 17px;
+  padding: 11px;
+  border: 1px solid #edf0f4;
+  border-radius: 10px;
+  background: #fafbfe;
+}
+
+.candidateDashboardMobileCandidateAvatar {
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #315bd0;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.candidateDashboardMobileCandidate > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.candidateDashboardMobileCandidate strong {
+  color: #2a3549;
+  font-size: 10px;
+}
+
+.candidateDashboardMobileCandidate span {
+  margin-top: 3px;
+  color: #939cab;
+  font-size: 8px;
+}
+
+.candidateDashboardMobileNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 17px;
+}
+
+.candidateDashboardMobileNavigation button {
+  width: 100%;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 11px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #627086;
+  font-size: 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.candidateDashboardMobileNavigation button:hover {
+  background: #eef4ff;
+  color: #315bd0;
+}
+
+.candidateDashboardMobileLogout {
+  width: 100%;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 0 11px;
+  border: none;
+  border-top: 1px solid #edf0f5;
+  background: #ffffff;
+  color: #c75869;
+  font-size: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.candidateDashboardMobileMenuButton {
+  width: 37px;
+  height: 37px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e6ed;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4f5c72;
+  cursor: pointer;
+}
+
+/* =========================================================
+   TABLET
+   601 - 1023
+   ========================================================= */
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  .candidateDashboardTopbar {
+    padding: 0 20px;
+  }
+
+  .candidateDashboardMobileMenuButton {
+    display: inline-flex;
+    margin-right: 10px;
+  }
+
+  .candidateDashboardSearch {
+    width: min(
+      430px,
+      100%
+    );
+  }
+
+  .candidateDashboardCandidateInfo {
+    display: none;
+  }
+
+  .candidateDashboardTopbarCandidate {
+    padding-left: 10px;
+  }
+
+  .candidateDashboardContent {
+    padding: 21px 20px 40px;
+  }
+
+  .candidateDashboardHero {
+    min-height: 245px;
+  }
+
+  .candidateDashboardHeroVisual,
+  .candidateDashboardHeroText {
+    min-height: 245px;
+  }
+
+  .candidateDashboardHeroText {
+    width: 61%;
+    padding-left: 27px;
+  }
+
+  .candidateDashboardHeroImage {
+    width: 265px;
+    right: -20px;
+  }
+
+  .candidateDashboardHeroMessage {
+    display: none;
+  }
+
+  .candidateDashboardStats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .candidateDashboardMainGrid,
+  .candidateDashboardLowerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .candidateDashboardStatusBody {
+    min-height: 270px;
+  }
+
+  .candidateDashboardInterviewList {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .candidateDashboardCTAImage {
+    width: 180px;
+  }
+}
+
+/* =========================================================
+   LAPTOP
+   1024 - 1440
+   ========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .candidateDashboardContent {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  .candidateDashboardTopbar {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .candidateDashboardHeroText {
+    width: 57%;
+    padding-left: 31px;
+  }
+
+  .candidateDashboardHeroImage {
+    width: 275px;
+    right: -4px;
+  }
+
+  .candidateDashboardHeroMessage {
+    right: 1%;
+  }
+
+  .candidateDashboardMainGrid,
+  .candidateDashboardLowerGrid {
+    grid-template-columns:
+      minmax(0, 1.35fr)
+      minmax(320px, 0.85fr);
+  }
+
+  .candidateDashboardStatusBody {
+    gap: 17px;
+  }
+
+  .candidateDashboardDonut {
+    width: 148px;
+    height: 148px;
+  }
+
+  .candidateDashboardDonutCenter {
+    width: 99px;
+    height: 99px;
+  }
+
+  .candidateDashboardInterviewList {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .candidateDashboardCTAImage {
+    width: 190px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+   1441 - 2560
+   ========================================================= */
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  .candidateDashboardContent {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .candidateDashboardHero {
+    min-height: 280px;
+  }
+
+  .candidateDashboardHeroVisual,
+  .candidateDashboardHeroText {
+    min-height: 280px;
+  }
+
+  .candidateDashboardHeroImage {
+    width: 330px;
+    max-height: 305px;
+  }
+
+  .candidateDashboardMainGrid,
+  .candidateDashboardLowerGrid {
+    grid-template-columns:
+      minmax(0, 1.6fr)
+      minmax(390px, 0.84fr);
+  }
+
+  .candidateDashboardJob {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   100 - 600
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .candidateDashboardPage {
+    display: block;
+  }
+
+  .candidateDashboardMain {
+    width: 100%;
+  }
+
+  .candidateDashboardTopbar {
+    height: 62px;
+    min-height: 62px;
+    padding: 0 13px;
+    gap: 7px;
+  }
+
+  .candidateDashboardTopbarLeft {
+    gap: 7px;
+  }
+
+  .candidateDashboardMobileMenuButton {
+    display: flex;
+  }
+
+  .candidateDashboardSearch {
+    height: 37px;
+    padding-left: 9px;
+    padding-right: 8px;
+  }
+
+  .candidateDashboardSearch input {
+    font-size: 10px;
+  }
+
+  .candidateDashboardTopbarRight {
+    gap: 5px;
+  }
+
+  .candidateDashboardNotificationButton {
+    width: 35px;
+    height: 35px;
+  }
+
+  .candidateDashboardTopbarCandidate {
+    padding-left: 6px;
+  }
+
+  .candidateDashboardAvatar {
+    width: 33px;
+    height: 33px;
+    font-size: 9px;
+  }
+
+  .candidateDashboardCandidateInfo {
+    display: none;
+  }
+
+  .candidateDashboardContent {
+    padding:
+      12px 11px 30px;
+  }
+
+  /* HERO */
+
+  .candidateDashboardHero {
+    min-height: 205px;
+    border-radius: 15px;
+  }
+
+  .candidateDashboardHeroText {
+    width: 67%;
+    min-height: 205px;
+    padding:
+      20px 5px 20px 17px;
+  }
+
+  .candidateDashboardHeroEyebrow {
+    padding: 5px 7px;
+    font-size: 6.5px;
+  }
+
+  .candidateDashboardHeroText h1 {
+    margin-top: 9px;
+    font-size: 24px;
+  }
+
+  .candidateDashboardHeroText p {
+    margin:
+      8px 0 11px;
+    font-size: 8.5px;
+    line-height: 1.6;
+  }
+
+  .candidateDashboardPrimaryButton {
+    min-height: 32px;
+    padding: 0 9px;
+    border-radius: 7px;
+    font-size: 8px;
+  }
+
+  .candidateDashboardHeroVisual {
+    min-height: 205px;
+  }
+
+  .candidateDashboardHeroImage {
+    width: 205px;
+    right: -43px;
+    bottom: -4px;
+  }
+
+  .candidateDashboardHeroMessage {
+    display: none;
+  }
+
+  .candidateDashboardHeroCircleOne {
+    width: 150px;
+    height: 150px;
+    right: -39px;
+    bottom: -65px;
+  }
+
+  .candidateDashboardHeroCircleTwo {
+    width: 90px;
+    height: 90px;
+    right: 25px;
+    top: -47px;
+  }
+
+  /* STATS */
+
+  .candidateDashboardStats {
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .candidateDashboardStatCard {
+    min-height: 77px;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 11px;
+  }
+
+  .candidateDashboardStatIcon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .candidateDashboardStatIcon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .candidateDashboardStatInfo strong {
+    font-size: 17px;
+  }
+
+  .candidateDashboardStatInfo span {
+    margin-top: 4px;
+    font-size: 7.5px;
+  }
+
+  /* MAIN GRID */
+
+  .candidateDashboardMainGrid,
+  .candidateDashboardLowerGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .candidateDashboardInterviews {
+    margin-top: 10px;
+  }
+
+  .candidateDashboardCardHeader {
+    min-height: 62px;
+    padding:
+      12px 13px;
+  }
+
+  .candidateDashboardCardHeader span {
+    font-size: 6.5px;
+  }
+
+  .candidateDashboardCardHeader h2 {
+    font-size: 13px;
+  }
+
+  .candidateDashboardCardHeader button {
+    font-size: 8px;
+  }
+
+  /* JOBS */
+
+  .candidateDashboardJobsList {
+    padding:
+      1px 13px 6px;
+  }
+
+  .candidateDashboardJob {
+    min-height: 78px;
+    gap: 7px;
+    padding:
+      10px 0;
+  }
+
+  .candidateDashboardCompanyLogo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .candidateDashboardCompanyLogo img {
+    padding: 5px;
+  }
+
+  .candidateDashboardJobTitle {
+    font-size: 9px;
+  }
+
+  .candidateDashboardCompanyName {
+    font-size: 7.5px;
+  }
+
+  .candidateDashboardJobMeta {
+    margin-top: 4px;
+    gap: 5px;
+    font-size: 6.8px;
+  }
+
+  .candidateDashboardJobMeta span:last-child {
+    padding-left: 5px;
+  }
+
+  .candidateDashboardTags {
+    gap: 2px;
+    margin-top: 4px;
+  }
+
+  .candidateDashboardTags span {
+    padding:
+      2.5px 4px;
+    font-size: 6px;
+  }
+
+  .candidateDashboardJobActions {
+    min-width: 32px;
+  }
+
+  .candidateDashboardJobActions > span {
+    font-size: 6px;
+  }
+
+  .candidateDashboardSaveButton {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+  }
+
+  /* STATUS */
+
+  .candidateDashboardStatusBody {
+    min-height: 212px;
+    gap: 17px;
+    padding:
+      15px 13px;
+  }
+
+  .candidateDashboardDonut {
+    width: 125px;
+    height: 125px;
+  }
+
+  .candidateDashboardDonutCenter {
+    width: 83px;
+    height: 83px;
+  }
+
+  .candidateDashboardDonutCenter strong {
+    font-size: 21px;
+  }
+
+  .candidateDashboardDonutCenter span {
+    font-size: 7px;
+  }
+
+  .candidateDashboardLegend {
+    min-width: 100px;
+    gap: 8px;
+  }
+
+  .candidateDashboardLegend > div {
+    grid-template-columns:
+      6px 1fr auto;
+    gap: 5px;
+    font-size: 7.5px;
+  }
+
+  .candidateDashboardLegend strong {
+    font-size: 7.5px;
+  }
+
+  .candidateDashboardDot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* INTERVIEWS */
+
+  .candidateDashboardInterviewList {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding:
+      9px 13px 12px;
+  }
+
+  .candidateDashboardInterview {
+    min-height: 66px;
+    padding: 9px;
+    border-radius: 9px;
+  }
+
+  .candidateDashboardInterviewIcon {
+    width: 31px;
+    height: 31px;
+    border-radius: 8px;
+  }
+
+  .candidateDashboardInterviewInfo strong {
+    font-size: 8.5px;
+  }
+
+  .candidateDashboardInterviewInfo span {
+    font-size: 7px;
+  }
+
+  .candidateDashboardInterviewInfo small {
+    margin-top: 4px;
+    font-size: 6px;
+  }
+
+  /* APPLICATIONS */
+
+  .candidateDashboardRecentList {
+    padding:
+      1px 13px 7px;
+  }
+
+  .candidateDashboardApplication {
+    min-height: 62px;
+    grid-template-columns:
+      30px minmax(0, 1fr) auto 24px;
+    gap: 6px;
+  }
+
+  .candidateDashboardApplicationLogo {
+    width: 29px;
+    height: 29px;
+  }
+
+  .candidateDashboardApplicationDetails strong {
+    font-size: 8px;
+  }
+
+  .candidateDashboardApplicationDetails span {
+    font-size: 6.8px;
+  }
+
+  .candidateDashboardApplicationDetails small {
+    font-size: 6px;
+  }
+
+  .candidateDashboardApplicationRight {
+    min-width: 49px;
+  }
+
+  .candidateDashboardStatusPill {
+    min-height: 18px;
+    padding:
+      0 5px;
+    font-size: 6px;
+  }
+
+  .candidateDashboardApplicationRight small {
+    font-size: 6px;
+  }
+
+  .candidateDashboardApplicationArrow {
+    width: 23px;
+    height: 23px;
+  }
+
+  /* SAVED */
+
+  .candidateDashboardSavedList {
+    padding:
+      2px 13px 7px;
+  }
+
+  .candidateDashboardSavedItem {
+    min-height: 67px;
+    gap: 7px;
+  }
+
+  .candidateDashboardSavedLogo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .candidateDashboardSavedContent strong {
+    font-size: 8px;
+  }
+
+  .candidateDashboardSavedContent span {
+    font-size: 6.8px;
+  }
+
+  .candidateDashboardSavedContent small {
+    font-size: 6px;
+  }
+
+  .candidateDashboardSavedRemove {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* CTA */
+
+  .candidateDashboardCTA {
+    min-height: 165px;
+    margin-top: 10px;
+    padding:
+      18px 16px;
+    border-radius: 13px;
+  }
+
+  .candidateDashboardCTAContent {
+    max-width: 70%;
+  }
+
+  .candidateDashboardCTAContent > span {
+    min-height: 19px;
+    padding:
+      0 7px;
+    font-size: 6px;
+  }
+
+  .candidateDashboardCTAContent h2 {
+    margin:
+      7px 0 5px;
+    font-size: 15px;
+  }
+
+  .candidateDashboardCTAContent p {
+    font-size: 7px;
+    line-height: 1.55;
+  }
+
+  .candidateDashboardCTAActions {
+    gap: 5px;
+    margin-top: 9px;
+  }
+
+  .candidateDashboardCTAActions button {
+    min-height: 29px;
+    padding:
+      0 8px;
+    border-radius: 7px;
+    font-size: 6.5px;
+  }
+
+  .candidateDashboardCTAImage {
+    position: absolute;
+    right: -9px;
+    bottom: 0;
+    width: 125px;
+    height: 145px;
+  }
+
+  .candidateDashboardCTAImage img {
+    right: -15px;
+    bottom: -10px;
+    width: 160px;
+    height: 150px;
+  }
+
+  /* EMPTY */
+
+  .candidateDashboardEmptyState {
+    min-height: 160px;
+    padding: 20px 13px;
+  }
+
+  .candidateDashboardEmptyState strong {
+    font-size: 9px;
+  }
+
+  .candidateDashboardEmptyState span {
+    max-width: 210px;
+    font-size: 7px;
+  }
+}
+
+/* =========================================================
+   2561px+
+   ========================================================= */
+
+@media (min-width: 2561px) {
+  .candidateDashboardContent {
+    max-width: 1880px;
+    padding:
+      38px 46px 65px;
+  }
+
+  .candidateDashboardTopbar {
+    padding:
+      0 44px;
+  }
+
+  .candidateDashboardHero,
+  .candidateDashboardHeroText,
+  .candidateDashboardHeroVisual {
+    min-height: 330px;
+  }
+
+  .candidateDashboardHeroText {
+    padding-left: 52px;
+  }
+
+  .candidateDashboardHeroText h1 {
+    font-size: 50px;
+  }
+
+  .candidateDashboardHeroText p {
+    font-size: 15px;
+  }
+
+  .candidateDashboardHeroImage {
+    width: 400px;
+    max-height: 365px;
+  }
+
+  .candidateDashboardStats,
+  .candidateDashboardMainGrid,
+  .candidateDashboardLowerGrid {
+    gap: 20px;
+  }
+
+  .candidateDashboardStatCard {
+    min-height: 120px;
+  }
+
+  .candidateDashboardStatInfo strong {
+    font-size: 29px;
+  }
+
+  .candidateDashboardCardHeader h2 {
+    font-size: 19px;
+  }
+
+  .candidateDashboardCTA {
+    min-height: 220px;
+    padding:
+      32px 46px;
+  }
+
+  .candidateDashboardCTAContent h2 {
+    font-size: 28px;
+  }
+
+  .candidateDashboardCTAContent p {
+    font-size: 12px;
+  }
+
+  .candidateDashboardCTAImage {
+    width: 300px;
+    height: 215px;
+  }
+
+  .candidateDashboardCTAImage img {
+    width: 320px;
+    height: 240px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .candidateDashboardMobileDrawer,
+  .candidateDashboardPrimaryButton,
+  .candidateDashboardInterview {
+    transition: none;
+  }
+}
+/* =========================================================
+   JOBHUB MOBILE BRANDING
+========================================================= */
+
+.candidateDashboardMobileBrandLogo {
+  width: 102px;
+  max-width: 34vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.candidateDashboardMobileDrawerLogo {
+  width: 116px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 380px) {
+  .candidateDashboardMobileBrandLogo {
+    width: 88px;
+  }
+
+  .candidateDashboardMobileDrawerLogo {
+    width: 104px;
+  }
+}

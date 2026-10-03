@@ -1,0 +1,479 @@
+.platformManagementPage {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.platformHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.platformHeader h1 {
+  margin: 0;
+  color: #101d4b;
+  font-size: clamp(22px, 2.2vw, 29px);
+  font-weight: 800;
+  letter-spacing: -.6px;
+}
+
+.platformHeader p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.platformTabBar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  padding: 4px;
+  border: 1px solid #e4ebf4;
+  border-radius: 11px;
+  background: #ffffff;
+}
+
+.platformTabBar button {
+  min-height: 37px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.platformTabBar button:hover {
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+.platformTabBar button.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.platformSectionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+  gap: 14px;
+}
+
+.platformCard,
+.platformSingleCard {
+  min-width: 0;
+  border: 1px solid #e4ebf4;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 7px 24px rgba(15,23,42,.035);
+}
+
+.platformCard {
+  padding: 18px;
+}
+
+.platformSingleCard {
+  padding: 18px;
+}
+
+.platformCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.platformCardHeader h2 {
+  margin: 0;
+  color: #111c4b;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.platformCardHeader p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.platformCardHeader > svg {
+  color: #2563eb;
+}
+
+.platformFormGrid,
+.systemConfigGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.platformFormGrid label,
+.systemConfigGrid > label,
+.templateCard label,
+.jobsLimitField {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.platformFormGrid input,
+.systemConfigGrid input,
+.templateCard input,
+.templateCard textarea,
+.tagCreateRow input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dbe5f0;
+  border-radius: 8px;
+  outline: 0;
+  color: #0f172a;
+  background: #ffffff;
+  font-size: 11px;
+}
+
+.templateCard textarea {
+  min-height: 110px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.platformFormGrid input:focus,
+.systemConfigGrid input:focus,
+.templateCard input:focus,
+.templateCard textarea:focus,
+.tagCreateRow input:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.07);
+}
+
+.settingRows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.settingRow {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.settingRow:first-child {
+  padding-top: 0;
+}
+
+.settingRow:last-child {
+  border-bottom: 0;
+}
+
+.settingRow > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.settingRow strong {
+  color: #334155;
+  font-size: 11px;
+}
+
+.settingRow small {
+  display: block;
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.onlineStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 7px;
+  color: #16a34a;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.onlineStatus i {
+  width: 7px;
+  height: 7px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.toggle {
+  position: relative;
+  width: 42px;
+  height: 23px;
+  flex: 0 0 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.toggle span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(15,23,42,.15);
+  transition: transform .2s ease;
+}
+
+.toggle.on {
+  background: #2563eb;
+}
+
+.toggle.on span {
+  transform: translateX(19px);
+}
+
+.jobsLimitField {
+  padding-top: 12px;
+}
+
+.tagCreateRow {
+  display: flex;
+  gap: 9px;
+  max-width: 720px;
+}
+
+.tagCreateRow input {
+  flex: 1;
+}
+
+.platformTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.platformTag,
+.platformEmptyTag {
+  min-height: 31px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 9px 0 11px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.platformTag {
+  background: #eef4ff;
+  color: #1d4ed8;
+}
+
+.platformTag button {
+  width: 19px;
+  height: 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  background: rgba(37,99,235,.09);
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.platformEmptyTag {
+  color: #94a3b8;
+  background: #f8fafc;
+}
+
+.templateList {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.platformBlankState {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.templateCard {
+  padding: 15px;
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  background: #fbfdff;
+}
+
+.templateTopRow {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 13px;
+}
+
+.templateDeleteButton {
+  width: 36px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fffafa;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.templateEnabledRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 1px solid #edf2f7;
+}
+
+.templateEnabledRow span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.systemToggleCard {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px;
+  border: 1px solid #edf2f7;
+  border-radius: 9px;
+}
+
+.systemToggleCard > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.systemToggleCard strong {
+  color: #334155;
+  font-size: 11px;
+}
+
+.systemToggleCard span {
+  color: #94a3b8;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.platformSaveBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+.platformSaveBar > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.platformSaveBar svg {
+  flex-shrink: 0;
+}
+
+.platformLoading {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  .platformSectionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .platformHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .platformHeader .superPrimaryButton {
+    width: 100%;
+  }
+
+  .platformFormGrid,
+  .systemConfigGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tagCreateRow {
+    flex-direction: column;
+  }
+
+  .tagCreateRow .superPrimaryButton {
+    width: 100%;
+  }
+
+  .templateTopRow {
+    grid-template-columns: 1fr;
+  }
+
+  .templateDeleteButton {
+    width: 100%;
+  }
+
+  .platformSaveBar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .platformSaveBar .superPrimaryButton {
+    width: 100%;
+  }
+}

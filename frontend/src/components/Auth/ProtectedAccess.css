@@ -1,0 +1,242 @@
+.protectedAccessPage {
+  min-height: 72vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 72px 20px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 100%);
+}
+
+.protectedAccessGlow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.protectedAccessGlowOne {
+  width: 320px;
+  height: 320px;
+  top: -140px;
+  left: -120px;
+  background: rgba(49, 91, 199, 0.08);
+}
+
+.protectedAccessGlowTwo {
+  width: 260px;
+  height: 260px;
+  right: -110px;
+  bottom: -120px;
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.protectedAccessCard {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  padding: 34px 34px 30px;
+  text-align: center;
+  border: 1px solid #e5ebf4;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(33, 62, 110, 0.12);
+}
+
+.protectedAccessBrandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.protectedAccessLogo {
+  width: 122px;
+  height: auto;
+  object-fit: contain;
+}
+
+.protectedAccessSecureBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid #e3ebfb;
+  border-radius: 999px;
+  color: #315fc7;
+  background: #f6f9ff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.protectedAccessIconWrap {
+  width: 72px;
+  height: 72px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  border-radius: 22px;
+  background: #edf4ff;
+  color: #315fc7;
+  animation: protectedAccessFloat 2.8s ease-in-out infinite;
+}
+
+.protectedAccessIconRing {
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(49, 95, 199, 0.12);
+  border-radius: 25px;
+  animation: protectedAccessPulse 2.2s ease-in-out infinite;
+}
+
+.protectedAccessEyebrow {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #315fc7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.protectedAccessCard h1 {
+  margin: 0;
+  color: #17213b;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+
+.protectedAccessCard p {
+  max-width: 455px;
+  margin: 14px auto 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.protectedAccessTarget {
+  width: min(100%, 420px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 22px auto 0;
+  padding: 12px 14px;
+  border: 1px solid #e7edf7;
+  border-radius: 12px;
+  background: #f8faff;
+  color: #526071;
+  font-size: 12px;
+}
+
+.protectedAccessTarget svg {
+  color: #315fc7;
+  flex-shrink: 0;
+}
+
+.protectedAccessTarget strong {
+  color: #253b70;
+}
+
+.protectedAccessActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.protectedAccessPrimary,
+.protectedAccessSecondary {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.protectedAccessPrimary {
+  background: #315fc7;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(49, 95, 199, 0.2);
+}
+
+.protectedAccessPrimary:hover {
+  background: #2751b3;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(49, 95, 199, 0.22);
+}
+
+.protectedAccessSecondary {
+  border: 1px solid #dbe4f1;
+  background: #ffffff;
+  color: #344054;
+}
+
+.protectedAccessSecondary:hover {
+  background: #f8faff;
+  transform: translateY(-1px);
+}
+
+.protectedAccessHome {
+  margin-top: 18px;
+  padding: 4px 8px;
+  background: transparent;
+  color: #7b8798;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.protectedAccessHome:hover {
+  color: #315fc7;
+}
+
+@keyframes protectedAccessFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes protectedAccessPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 0.35; }
+}
+
+@media (max-width: 560px) {
+  .protectedAccessPage {
+    min-height: 68vh;
+    padding: 42px 14px;
+  }
+
+  .protectedAccessCard {
+    padding: 26px 18px 24px;
+    border-radius: 20px;
+  }
+
+  .protectedAccessBrandRow {
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .protectedAccessLogo {
+    width: 108px;
+  }
+
+  .protectedAccessSecureBadge {
+    font-size: 10px;
+  }
+
+  .protectedAccessActions {
+    grid-template-columns: 1fr;
+  }
+
+  .protectedAccessCard p {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,202 @@
+/* =========================================
+   TRUSTED COMPANIES
+========================================= */
+
+.trustedCompanies {
+  width: 100%;
+
+  padding: 26px 0 32px;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.trustedCompaniesContainer {
+  width: 100%;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.trustedCompaniesTitle {
+  margin: 0 0 24px;
+
+  color: #344054;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+
+
+
+/* =========================================
+   LOGOS ROW
+========================================= */
+
+.companyLogos {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  align-items: center;
+
+  gap: 35px;
+}
+
+
+/* =========================================
+   LOGO ITEM
+========================================= */
+
+.companyLogoItem {
+  min-width: 0;
+
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   ORIGINAL PNG LOGOS
+========================================= */
+
+.companyLogoItem img {
+  display: block;
+
+  width: auto;
+
+  max-width: 100%;
+
+  height: 58px;
+
+  max-height: 58px;
+
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
+}
+
+
+.companyLogoItem:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+  .companyLogos {
+    gap: 25px;
+  }
+
+  .companyLogoItem {
+    height: 60px;
+  }
+
+  .companyLogoItem img {
+    height: 48px;
+
+    max-height: 48px;
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .trustedCompanies {
+    padding: 28px 0 34px;
+  }
+  
+  .trustedCompaniesTitle {
+    font-size: 24px;
+  }
+  .companyLogos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 35px 40px;
+  }
+
+  .companyLogoItem {
+    height: 65px;
+  }
+
+  .companyLogoItem img {
+    height: 50px;
+
+    max-height: 50px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .trustedCompanies {
+    padding: 30px 0;
+  }
+
+  .trustedCompaniesTitle {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+  }
+
+  .companyLogos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 32px 25px;
+  }
+
+  .companyLogoItem {
+    height: 60px;
+  }
+
+  .companyLogoItem img {
+    height: 45px;
+
+    max-height: 45px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .companyLogos {
+    gap: 25px 15px;
+  }
+
+  .companyLogoItem img {
+    height: 38px;
+
+    max-height: 38px;
+  }
+}

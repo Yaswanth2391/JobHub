@@ -1,0 +1,104 @@
+.jobhubLoadingScreen {
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  color: #526071;
+  text-align: center;
+}
+
+.jobhubLoaderScene {
+  width: 92px;
+  height: 92px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  background: #f1f6ff;
+  border: 1px solid #e2eafb;
+  color: #315fc7;
+  animation: jobhubLoaderBounce 2.6s ease-in-out infinite;
+}
+
+.jobhubLoaderCircle {
+  position: absolute;
+  inset: 16px;
+  border-radius: 50%;
+  border: 2px dashed rgba(49, 95, 199, 0.22);
+  animation: jobhubLoaderSpin 7s linear infinite;
+}
+
+.jobhubLoaderBriefcase,
+.jobhubLoaderGraduation,
+.jobhubLoaderLaptop {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2eafb;
+  box-shadow: 0 7px 17px rgba(31, 63, 131, 0.08);
+}
+
+.jobhubLoaderBriefcase {
+  left: 8px;
+  bottom: 8px;
+  animation: jobhubLoaderFloat 2.2s ease-in-out infinite;
+}
+
+.jobhubLoaderGraduation {
+  top: 7px;
+  left: 30px;
+  animation: jobhubLoaderFloat 2.2s ease-in-out 0.3s infinite;
+}
+
+.jobhubLoaderLaptop {
+  right: 8px;
+  bottom: 11px;
+  animation: jobhubLoaderFloat 2.2s ease-in-out 0.6s infinite;
+}
+
+.jobhubLoadingScreen strong {
+  color: #23304d;
+  font-size: 13px;
+}
+
+.jobhubLoaderDots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.jobhubLoaderDots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #315fc7;
+  animation: jobhubLoaderDot 1.1s ease-in-out infinite;
+}
+
+.jobhubLoaderDots i:nth-child(2) { animation-delay: 0.16s; }
+.jobhubLoaderDots i:nth-child(3) { animation-delay: 0.32s; }
+
+@keyframes jobhubLoaderBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes jobhubLoaderFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(-2deg); }
+}
+
+@keyframes jobhubLoaderSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes jobhubLoaderDot {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-4px); opacity: 1; }
+}

@@ -1,0 +1,1272 @@
+/* =========================================================
+   JOBHUB — COMPANY PROFILE
+   Redesigned styling — JSX/class names unchanged
+========================================================= */
+
+.companyProfilePage {
+  min-height: 100vh;
+  display: flex;
+  background: #f4f6fb;
+  color: #172033;
+}
+
+.companyProfileMain {
+  flex: 1;
+  min-width: 0;
+  margin-left: 0;
+  padding: 24px 34px 48px;
+}
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.companyProfileTopbar {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 34px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e9f1;
+}
+
+.companyProfileTopbarText {
+  min-width: 0;
+}
+
+.companyProfileTopbarText > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #7f8aa0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.companyProfileTopbarText h1 {
+  margin: 0;
+  color: #13213b;
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.companyProfileTopbarRight {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+.companyProfileTopbarAvatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #e1e7ff;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f0f2ff, #e7eaff);
+  color: #4f46e5;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.companyProfileTopbarAvatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.companyProfileTopbarInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.companyProfileTopbarInfo strong {
+  max-width: 230px;
+  overflow: hidden;
+  color: #1a2740;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.companyProfileTopbarInfo span {
+  margin-top: 3px;
+  color: #8a94a8;
+  font-size: 11px;
+}
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.companyProfileHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 22px;
+}
+
+.companyProfileEyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-bottom: 8px;
+  padding: 0 10px;
+  border: 1px solid #e1defe;
+  border-radius: 999px;
+  background: #f4f2ff;
+  color: #5448e8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.companyProfileHeader h2 {
+  margin: 0;
+  color: #15223a;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 820;
+  letter-spacing: -0.025em;
+}
+
+.companyProfileHeader p {
+  max-width: 720px;
+  margin: 10px 0 0;
+  color: #707b90;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.companyProfileRefreshButton,
+.companyProfileEditButton,
+.companyProfileCancelButton,
+.companyProfileSaveButton {
+  border: 0;
+  outline: 0;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.companyProfileRefreshButton {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 0 15px;
+  border: 1px solid #dce2ec;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #39465c;
+  font-size: 12px;
+  font-weight: 750;
+  box-shadow: 0 4px 12px rgba(28, 40, 66, 0.03);
+}
+
+.companyProfileRefreshButton:hover:not(:disabled) {
+  border-color: #cdd4e0;
+  background: #fbfcff;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px rgba(28, 40, 66, 0.06);
+}
+
+.companyProfileRefreshButton.refreshing svg {
+  animation: companyProfileSpin 0.9s linear infinite;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.companyProfileContent {
+  width: 100%;
+}
+
+.companyProfileCard {
+  overflow: hidden;
+  border: 1px solid #e1e6ef;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow:
+    0 18px 44px rgba(21, 33, 57, 0.055),
+    0 2px 8px rgba(21, 33, 57, 0.025);
+}
+
+/* =========================================================
+   PROFILE HERO
+========================================================= */
+
+.companyProfileHero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 142px;
+  padding: 26px 30px;
+  border-bottom: 1px solid #eceff5;
+  background:
+    radial-gradient(
+      circle at 14% 25%,
+      rgba(99, 91, 242, 0.12),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(111, 128, 255, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      120deg,
+      #fafaff 0%,
+      #ffffff 58%,
+      #fbfcff 100%
+    );
+}
+
+.companyProfileHero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #4f46e5,
+    #756df4 45%,
+    transparent 100%
+  );
+  opacity: 0.85;
+}
+
+.companyProfileHeroLeft {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 0;
+}
+
+.companyProfileLargeAvatar {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #dde4ff;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #f1f3ff, #e8ebff);
+  color: #554ae9;
+  box-shadow:
+    0 12px 24px rgba(79, 70, 229, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-size: 28px;
+  font-weight: 850;
+}
+
+.companyProfileLargeAvatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.companyProfileIdentity {
+  min-width: 0;
+}
+
+.companyProfileIdentity > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8993a7;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.companyProfileIdentity h3 {
+  margin: 0;
+  overflow: hidden;
+  color: #16233c;
+  font-size: 25px;
+  line-height: 1.16;
+  font-weight: 820;
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.companyProfileIdentity p {
+  margin: 6px 0 0;
+  color: #768197;
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.companyProfileEditButton {
+  position: relative;
+  z-index: 1;
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 0 17px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #5749ec, #4c42dc);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 9px 20px rgba(79, 70, 229, 0.21);
+}
+
+.companyProfileEditButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.25);
+}
+
+/* =========================================================
+   SECURITY NOTICE
+========================================================= */
+
+.companyProfileSecurityNotice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 30px 0;
+  padding: 13px 15px;
+  border: 1px solid #e2e7f8;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #f7f8ff, #fbfcff);
+}
+
+.companyProfileSecurityIcon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dee4ff;
+  border-radius: 9px;
+  background: #eef1ff;
+  color: #5449e7;
+}
+
+.companyProfileSecurityNotice > div:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.companyProfileSecurityNotice strong {
+  color: #28344a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.companyProfileSecurityNotice span {
+  color: #7b869b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   DETAILS SECTION
+========================================================= */
+
+.companyProfileDetails,
+.companyProfileEditForm {
+  padding: 27px 30px 30px;
+}
+
+.companyProfileSectionHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.companyProfileSectionHeading > div > span {
+  display: block;
+  margin-bottom: 4px;
+  color: #98a1b2;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.companyProfileSectionHeading h3 {
+  margin: 0;
+  color: #1a2941;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.companyProfileDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.companyProfileDetailItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  min-height: 75px;
+  padding: 14px 16px;
+  border: 1px solid #e7ebf2;
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.companyProfileDetailItem::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  bottom: 13px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #6257eb;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.companyProfileDetailItem:hover {
+  transform: translateY(-2px);
+  border-color: #dce2ef;
+  background: #fcfdff;
+  box-shadow: 0 10px 22px rgba(31, 43, 67, 0.055);
+}
+
+.companyProfileDetailItem:hover::before {
+  opacity: 1;
+}
+
+.companyProfileDetailIcon {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e0e5ff;
+  border-radius: 10px;
+  background: #f2f3ff;
+  color: #584de8;
+}
+
+.companyProfileDetailItem > div:last-child {
+  min-width: 0;
+}
+
+.companyProfileDetailItem span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8a94a7;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.companyProfileDetailItem strong {
+  display: block;
+  overflow: hidden;
+  color: #26344b;
+  font-size: 13px;
+  font-weight: 780;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.companyProfileLogoDetailItem {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fbfbff 100%
+  );
+}
+
+/* =========================================================
+   COMPANY LOGO UPLOAD
+========================================================= */
+
+.companyProfileLogoUploadSection {
+  margin-bottom: 24px;
+  padding: 18px;
+  border: 1px solid #e5e8f0;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    #fafaff 0%,
+    #ffffff 60%,
+    #fbfcff 100%
+  );
+}
+
+.companyProfileLogoUploadHeader {
+  margin-bottom: 15px;
+}
+
+.companyProfileFormLabel {
+  display: block;
+  margin-bottom: 5px;
+  color: #3e4a60;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.companyProfileLogoUploadHeader p {
+  max-width: 700px;
+  margin: 0;
+  color: #7d879a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.companyProfileLogoUploadArea {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.companyProfileLogoPreview {
+  width: 94px;
+  height: 94px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #dfe4f0;
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      135deg,
+      #f4f5ff,
+      #ecefff
+    );
+  box-shadow:
+    0 8px 20px rgba(38, 45, 78, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.companyProfileLogoPreview img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 18px;
+}
+
+.companyProfileLogoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  color: #5c54df;
+}
+
+.companyProfileLogoPlaceholder svg {
+  opacity: 0.8;
+}
+
+.companyProfileLogoPlaceholder span {
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 850;
+}
+
+.companyProfileLogoUploadContent {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.companyProfileLogoUploadButton {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #d9def0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #4f46d9;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(40, 44, 80, 0.04);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.companyProfileLogoUploadButton:hover {
+  transform: translateY(-1px);
+  border-color: #c7cdf0;
+  background: #fafaff;
+  box-shadow: 0 8px 17px rgba(40, 44, 80, 0.07);
+}
+
+.companyProfileLogoUploadButton svg {
+  flex-shrink: 0;
+}
+
+.companyProfileLogoUploadContent > span {
+  color: #7f899b;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.companyProfileLogoUploadContent small {
+  color: #a0a8b7;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   EDIT FORM
+========================================================= */
+
+.companyProfileFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.companyProfileFormGroup {
+  min-width: 0;
+}
+
+.companyProfileFormGroup:nth-child(3) {
+  grid-column: 1 / -1;
+  max-width: calc(50% - 9px);
+}
+
+.companyProfileFormGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #3e4a60;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.companyProfileInputWrap {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid #dce2eb;
+  border-radius: 11px;
+  background: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.companyProfileInputWrap:focus-within {
+  border-color: #6d64ef;
+  background: #fcfcff;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.095);
+}
+
+.companyProfileInputWrap svg {
+  flex-shrink: 0;
+  color: #8d97a9;
+}
+
+.companyProfileInputWrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #26344b;
+  font: inherit;
+  font-size: 13px;
+}
+
+.companyProfileInputWrap input::placeholder {
+  color: #a1a9b7;
+}
+
+.companyProfileInputWrap input:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.companyProfileFormActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #eceff4;
+}
+
+.companyProfileCancelButton,
+.companyProfileSaveButton {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.companyProfileCancelButton {
+  border: 1px solid #dce2ea;
+  background: #ffffff;
+  color: #4d596d;
+}
+
+.companyProfileCancelButton:hover:not(:disabled) {
+  border-color: #ccd3df;
+  background: #f9fafc;
+}
+
+.companyProfileSaveButton {
+  background: linear-gradient(
+    135deg,
+    #5749ec,
+    #4c42dc
+  );
+  color: #ffffff;
+  box-shadow: 0 9px 19px rgba(79, 70, 229, 0.18);
+}
+
+.companyProfileSaveButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 23px rgba(79, 70, 229, 0.22);
+}
+
+.companyProfileCancelButton:disabled,
+.companyProfileSaveButton:disabled,
+.companyProfileRefreshButton:disabled,
+.companyProfileEditButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.companyProfileButtonSpinner {
+  animation: companyProfileSpin 0.9s linear infinite;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.companyProfileLoading {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.companyProfileSpinner {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 14px;
+  border: 3px solid #e3e7f0;
+  border-top-color: #5749ec;
+  border-radius: 50%;
+  animation: companyProfileSpin 0.8s linear infinite;
+}
+
+.companyProfileLoading h3 {
+  margin: 0;
+  color: #27344a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.companyProfileLoading p {
+  margin: 7px 0 0;
+  color: #818b9d;
+  font-size: 12px;
+}
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes companyProfileSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — LAPTOP
+========================================================= */
+
+@media (max-width: 1440px) {
+  .companyProfileMain {
+    padding: 22px 28px 42px;
+  }
+
+  .companyProfileHeader h2 {
+    font-size: 30px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1023px) {
+  .companyProfileMain {
+    margin-left: 0;
+    padding: 22px 22px 38px;
+  }
+
+  .companyProfileTopbar {
+    margin-bottom: 28px;
+  }
+
+  .companyProfileHeader {
+    align-items: flex-start;
+  }
+
+  .companyProfileDetailsGrid,
+  .companyProfileFormGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .companyProfileFormGroup:nth-child(3) {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .companyProfileLogoUploadArea {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .companyProfileMain {
+    padding: 17px 14px 28px;
+  }
+
+  .companyProfileTopbar {
+    min-height: auto;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 15px;
+  }
+
+  .companyProfileTopbarText > span {
+    font-size: 9px;
+  }
+
+  .companyProfileTopbarText h1 {
+    font-size: 22px;
+  }
+
+  .companyProfileTopbarInfo {
+    display: none;
+  }
+
+  .companyProfileTopbarAvatar {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .companyProfileHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .companyProfileEyebrow {
+    margin-bottom: 7px;
+    font-size: 9px;
+  }
+
+  .companyProfileHeader h2 {
+    font-size: 25px;
+  }
+
+  .companyProfileHeader p {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .companyProfileRefreshButton {
+    width: 100%;
+  }
+
+  .companyProfileCard {
+    border-radius: 17px;
+  }
+
+  .companyProfileHero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding: 21px 18px 20px;
+  }
+
+  .companyProfileHeroLeft {
+    align-items: flex-start;
+  }
+
+  .companyProfileLargeAvatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    font-size: 22px;
+  }
+
+  .companyProfileLargeAvatar img {
+    border-radius: 18px;
+  }
+
+  .companyProfileIdentity h3 {
+    max-width: 100%;
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .companyProfileEditButton {
+    width: 100%;
+  }
+
+  .companyProfileSecurityNotice {
+    align-items: flex-start;
+    margin: 17px 17px 0;
+    padding: 12px;
+  }
+
+  .companyProfileDetails,
+  .companyProfileEditForm {
+    padding: 22px 17px 22px;
+  }
+
+  .companyProfileSectionHeading {
+    margin-bottom: 15px;
+  }
+
+  .companyProfileDetailItem {
+    min-height: 72px;
+    padding: 13px;
+  }
+
+  /* LOGO UPLOAD — MOBILE */
+
+  .companyProfileLogoUploadSection {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .companyProfileLogoUploadArea {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .companyProfileLogoPreview {
+    width: 100px;
+    height: 100px;
+  }
+
+  .companyProfileLogoUploadContent {
+    width: 100%;
+    align-items: center;
+  }
+
+  .companyProfileLogoUploadButton {
+    width: 100%;
+    max-width: 230px;
+  }
+
+  .companyProfileLogoUploadContent > span,
+  .companyProfileLogoUploadContent small {
+    text-align: center;
+  }
+
+  .companyProfileFormActions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .companyProfileCancelButton,
+  .companyProfileSaveButton {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .companyProfileMain {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .companyProfileTopbarText h1 {
+    font-size: 20px;
+  }
+
+  .companyProfileHeader h2 {
+    font-size: 23px;
+  }
+
+  .companyProfileHero {
+    padding: 18px 14px;
+  }
+
+  .companyProfileHeroLeft {
+    gap: 12px;
+  }
+
+  .companyProfileLargeAvatar {
+    width: 57px;
+    height: 57px;
+    border-radius: 16px;
+    font-size: 20px;
+  }
+
+  .companyProfileLargeAvatar img {
+    border-radius: 16px;
+  }
+
+  .companyProfileIdentity h3 {
+    font-size: 18px;
+  }
+
+  .companyProfileSecurityNotice {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .companyProfileDetails,
+  .companyProfileEditForm {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .companyProfileDetailItem {
+    gap: 10px;
+    padding: 11px;
+  }
+
+  .companyProfileDetailIcon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .companyProfileDetailItem strong {
+    font-size: 12px;
+  }
+
+  /* LOGO UPLOAD — SMALL MOBILE */
+
+  .companyProfileLogoUploadSection {
+    padding: 12px;
+  }
+
+  .companyProfileLogoPreview {
+    width: 88px;
+    height: 88px;
+    border-radius: 16px;
+  }
+
+  .companyProfileLogoPreview img {
+    border-radius: 16px;
+    padding: 7px;
+  }
+
+  .companyProfileLogoPlaceholder span {
+    font-size: 20px;
+  }
+
+  .companyProfileLogoUploadButton {
+    max-width: 100%;
+  }
+
+  .companyProfileLogoUploadContent > span {
+    font-size: 9px;
+  }
+
+  .companyProfileLogoUploadContent small {
+    font-size: 8px;
+  }
+}
+
+/* =========================================================
+   UNIFIED JOBHUB ADMIN TOPBAR
+========================================================= */
+
+.companyProfileTopbar {
+  min-height: 72px;
+  padding: 0 6px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf3;
+  margin-bottom: 28px;
+}
+
+.companyProfileTopbarRight {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.companyProfileTopbarNotification {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.companyProfileTopbarNotification:hover {
+  background: #f8f9fc;
+  color: #344054;
+}
+
+.companyProfileTopbarAdmin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+
+.companyProfileTopbarAvatar {
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    #2057bd 0%,
+    #0e3f9c 100%
+  );
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.2);
+}
+
+.companyProfileTopbarAvatar img {
+  object-fit: cover;
+}
+
+.companyProfileTopbarInfo strong {
+  font-size: 13px;
+  color: #172033;
+}
+
+.companyProfileTopbarInfo span {
+  font-size: 11px;
+  color: #8b95a7;
+}
+
+/* =========================================================
+   TOPBAR MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .companyProfileTopbar {
+    padding: 0;
+  }
+
+  .companyProfileTopbarRight {
+    gap: 10px;
+  }
+
+  .companyProfileTopbarAdmin {
+    gap: 8px;
+    padding-left: 13px;
+  }
+
+  .companyProfileTopbarAvatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .companyProfileTopbarInfo {
+    display: none;
+  }
+
+  .companyProfileTopbarNotification {
+    width: 38px;
+    height: 38px;
+  }
+}

@@ -1,0 +1,1164 @@
+
+/* =========================================================
+   JOBHUB COMPANY ADMIN DASHBOARD
+   ========================================================= */
+
+/* =========================
+   PAGE
+========================= */
+
+.companyDashboardPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #f5f7fb;
+  color: #172033;
+  overflow-x: hidden;
+}
+
+.companyDashboardMain {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  width: auto;
+  margin-left: 0;
+  background: #f5f7fb;
+}
+
+/* =========================
+   MOBILE SIDEBAR
+========================= */
+
+.companyDashboardSidebarOverlay {
+  display: none;
+}
+
+.companyDashboardMobileLeft {
+  display: none;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.companyDashboardTopbar {
+  min-height: 76px;
+  width: 100%;
+  padding: 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e8ebf2;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.companyDashboardTopbarRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.companyDashboardNotification {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e7eaf0;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.companyDashboardNotification:hover {
+  background: #f8f9fc;
+  border-color: #d8dce6;
+  color: #344054;
+  transform: translateY(-1px);
+}
+
+.companyDashboardAdmin {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-left: 20px;
+  border-left: 1px solid #e7eaf0;
+}
+
+.companyDashboardAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #173f8a, #2563eb);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
+}
+
+.companyDashboardAdminInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.companyDashboardAdminInfo strong {
+  max-width: 210px;
+  color: #172033;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyDashboardAdminInfo span {
+  color: #98a2b3;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.companyDashboardContent {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 34px;
+}
+
+/* =========================
+   WELCOME
+========================= */
+
+.companyDashboardWelcome {
+  margin-bottom: 26px;
+  padding: 28px 30px;
+  min-height: 142px;
+  border: 1px solid #e3e8f2;
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 94% 8%,
+      rgba(37, 99, 235, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f9fbff 100%
+    );
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.045);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.companyDashboardWelcome::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -55px;
+  bottom: -90px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.companyDashboardWelcome h1 {
+  margin: 0;
+  color: #101828;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.65px;
+}
+
+.companyDashboardWelcome p {
+  margin: 9px 0 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.companyDashboardStats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.companyDashboardStatCard {
+  min-width: 0;
+  min-height: 126px;
+  padding: 22px 20px;
+  border: 1px solid #e4e8f0;
+  border-radius: 18px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 7px 24px rgba(16, 24, 40, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.companyDashboardStatCard:hover {
+  transform: translateY(-3px);
+  border-color: #d7ddea;
+  box-shadow: 0 14px 30px rgba(16, 24, 40, 0.07);
+}
+
+.companyDashboardStatIcon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.companyDashboardStatIcon svg {
+  stroke-width: 2;
+}
+
+.jobsIcon {
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.applicationsIcon {
+  background: #edf9f5;
+  color: #0f9f76;
+}
+
+.reviewIcon {
+  background: #fff5e8;
+  color: #d9822b;
+}
+
+.hiredIcon {
+  background: #edf7ef;
+  color: #2d9149;
+}
+
+.rejectedIcon {
+  background: #fff0f1;
+  color: #d64550;
+}
+
+.companyDashboardStatCard > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.companyDashboardStatCard span {
+  color: #7a8699;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.companyDashboardStatCard strong {
+  color: #111827;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.companyDashboardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(360px, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* =========================
+   PANELS
+========================= */
+
+.companyDashboardPanel {
+  min-width: 0;
+  min-height: 430px;
+  border: 1px solid #e4e8f0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(16, 24, 40, 0.04);
+  overflow: hidden;
+}
+
+.companyDashboardPanelHeader {
+  min-height: 92px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #edf0f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.companyDashboardPanelHeader h2 {
+  margin: 0;
+  color: #101828;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.15px;
+}
+
+.companyDashboardPanelHeader p {
+  margin: 6px 0 0;
+  color: #98a2b3;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.companyDashboardPanelTrendSummary {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid #dcefe8;
+  border-radius: 10px;
+  background: #f2fbf7;
+  color: #148763;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================
+   TREND CONTENT
+========================= */
+
+.companyDashboardTrendContent {
+  padding: 22px 24px 24px;
+}
+
+.companyDashboardChartArea {
+  height: 270px;
+  display: flex;
+  gap: 14px;
+}
+
+.companyDashboardChartScale {
+  width: 26px;
+  height: 228px;
+  padding: 2px 0 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.companyDashboardChartScale span {
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.companyDashboardBars {
+  flex: 1;
+  min-width: 0;
+  height: 228px;
+  padding: 0 4px;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  border-bottom: 1px solid #e9edf4;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 32.8%,
+      #f0f2f6 33%,
+      transparent 33.6%,
+      transparent 65.8%,
+      #f0f2f6 66%,
+      transparent 66.6%,
+      transparent 99.4%,
+      #f0f2f6 100%
+    );
+}
+
+.companyDashboardBarColumn {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.companyDashboardBarTrack {
+  width: 100%;
+  height: 100%;
+  min-width: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.companyDashboardBarFill {
+  width: min(42px, 72%);
+  min-height: 0;
+  border-radius: 9px 9px 4px 4px;
+  background: linear-gradient(
+    180deg,
+    #5b8def 0%,
+    #2563eb 100%
+  );
+  position: relative;
+  transition:
+    height 0.45s ease,
+    transform 0.2s ease;
+}
+
+.companyDashboardBarFill.hasValue {
+  box-shadow: 0 9px 18px rgba(37, 99, 235, 0.14);
+}
+
+.companyDashboardBarFill.hasValue:hover {
+  transform: translateY(-2px);
+}
+
+.companyDashboardBarValue {
+  position: absolute;
+  left: 50%;
+  top: -22px;
+  transform: translateX(-50%);
+  color: #344054;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.companyDashboardBarLabel {
+  color: #7a8699;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+/* =========================
+   ACTIVITY SUMMARY
+========================= */
+
+.companyDashboardActivitySummary {
+  margin-top: 22px;
+  padding: 13px 15px;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  background: #fafbfd;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.companyDashboardActivitySummary > div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.companyDashboardActivitySummary strong {
+  color: #1d2939;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.companyDashboardActivitySummary > div > span:last-child {
+  color: #98a2b3;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.activityDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.appliedDot {
+  background: #2563eb;
+}
+
+.hiredDot {
+  background: #2d9149;
+}
+
+.rejectedDot {
+  background: #d64550;
+}
+
+/* =========================
+   RECENT APPLICATIONS
+========================= */
+
+.companyDashboardRecentCount {
+  min-width: 31px;
+  height: 31px;
+  padding: 0 8px;
+  border-radius: 9px;
+  background: #eef4ff;
+  color: #2563eb;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.companyDashboardRecentApplications {
+  min-height: 338px;
+  padding: 4px 0;
+}
+
+.companyDashboardApplicationList {
+  width: 100%;
+}
+
+.companyDashboardApplicationItem {
+  min-width: 0;
+  padding: 18px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  border-bottom: 1px solid #eef1f5;
+  transition: background 0.2s ease;
+}
+
+.companyDashboardApplicationItem:last-child {
+  border-bottom: none;
+}
+
+.companyDashboardApplicationItem:hover {
+  background: #fafbfd;
+}
+
+.companyDashboardApplicationAvatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.companyDashboardApplicationDetails {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.companyDashboardApplicationDetails > strong {
+  color: #1d2939;
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 750;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyDashboardApplicationDetails > span {
+  margin-top: 3px;
+  color: #667085;
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyDashboardApplicationDetails > small {
+  margin-top: 3px;
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.companyDashboardApplicationMeta {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+.companyDashboardApplicationMeta > span:first-child {
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.25;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.companyDashboardStatusBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 23px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.companyDashboardStatusBadge.applied {
+  background: #eef4ff;
+  color: #2563eb;
+}
+
+.companyDashboardStatusBadge.scheduled {
+  background: #fff5e8;
+  color: #d9822b;
+}
+
+.companyDashboardStatusBadge.hired {
+  background: #edf7ef;
+  color: #2d9149;
+}
+
+.companyDashboardStatusBadge.rejected {
+  background: #fff0f1;
+  color: #d64550;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.companyDashboardEmptyApplications,
+.companyDashboardEmptyChart {
+  min-height: 310px;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.companyDashboardEmptyChart {
+  min-height: 330px;
+}
+
+.companyDashboardEmptyApplicationsIcon,
+.companyDashboardChartIcon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: #f2f5fa;
+  color: #98a2b3;
+}
+
+.companyDashboardEmptyApplications h3,
+.companyDashboardEmptyChart h3 {
+  margin: 17px 0 0;
+  color: #344054;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.companyDashboardEmptyApplications p,
+.companyDashboardEmptyChart p {
+  max-width: 360px;
+  margin: 8px 0 0;
+  color: #98a2b3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.companyDashboardDataLoading {
+  min-height: 310px;
+  display: grid;
+  place-items: center;
+  color: #98a2b3;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================
+   TABLET / SMALL LAPTOP
+========================= */
+
+@media (max-width: 1200px) {
+  .companyDashboardContent {
+    padding: 26px;
+  }
+
+  .companyDashboardStats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .companyDashboardGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .companyDashboardPanel {
+    min-height: 410px;
+  }
+
+  .companyDashboardTrendContent {
+    padding-bottom: 25px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .companyDashboardMain {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .companyDashboardTopbar {
+    min-height: 68px;
+    padding: 0 22px;
+  }
+
+  .companyDashboardMobileLeft {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  .companyDashboardMenuButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e4e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #344054;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+
+  .companyDashboardMobileLogo {
+    color: #1d2939;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+
+  .companyDashboardMobileLogo span {
+    color: #2563eb;
+  }
+
+  .companyDashboardSidebarOverlay {
+    position: fixed;
+    inset: 0;
+    display: block;
+    background: rgba(15, 23, 42, 0.34);
+    z-index: 90;
+  }
+
+  .companyDashboardContent {
+    padding: 22px;
+  }
+
+  .companyDashboardWelcome {
+    min-height: 125px;
+    padding: 24px;
+  }
+
+  .companyDashboardStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .companyDashboardGrid {
+    gap: 16px;
+  }
+
+  .companyDashboardPanel {
+    border-radius: 18px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .companyDashboardTopbar {
+    padding: 0 15px;
+  }
+
+  .companyDashboardNotification {
+    width: 38px;
+    height: 38px;
+  }
+
+  .companyDashboardAdmin {
+    padding-left: 13px;
+    gap: 8px;
+  }
+
+  .companyDashboardAvatar {
+    width: 38px;
+    height: 38px;
+  }
+
+  .companyDashboardAdminInfo {
+    display: none;
+  }
+
+  .companyDashboardContent {
+    padding: 16px;
+  }
+
+  .companyDashboardWelcome {
+    margin-bottom: 16px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .companyDashboardWelcome h1 {
+    font-size: 22px;
+  }
+
+  .companyDashboardWelcome p {
+    font-size: 12px;
+  }
+
+  .companyDashboardStats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .companyDashboardStatCard {
+    min-height: 94px;
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .companyDashboardStatIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .companyDashboardStatCard strong {
+    font-size: 24px;
+  }
+
+  .companyDashboardGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .companyDashboardPanel {
+    min-height: auto;
+    border-radius: 16px;
+  }
+
+  .companyDashboardPanelHeader {
+    min-height: 82px;
+    padding: 18px;
+  }
+
+  .companyDashboardPanelHeader h2 {
+    font-size: 15px;
+  }
+
+  .companyDashboardPanelHeader p {
+    font-size: 11px;
+  }
+
+  .companyDashboardPanelTrendSummary {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .companyDashboardTrendContent {
+    padding: 18px;
+  }
+
+  .companyDashboardChartArea {
+    height: 240px;
+    gap: 9px;
+  }
+
+  .companyDashboardChartScale {
+    height: 200px;
+    width: 20px;
+  }
+
+  .companyDashboardBars {
+    height: 200px;
+    gap: 6px;
+  }
+
+  .companyDashboardBarFill {
+    width: min(29px, 72%);
+    border-radius: 7px 7px 3px 3px;
+  }
+
+  .companyDashboardBarLabel {
+    font-size: 9px;
+  }
+
+  .companyDashboardBarValue {
+    font-size: 9px;
+  }
+
+  .companyDashboardActivitySummary {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .companyDashboardActivitySummary > div {
+    justify-content: flex-start;
+  }
+
+  .companyDashboardRecentApplications {
+    min-height: 0;
+  }
+
+  .companyDashboardApplicationItem {
+    padding: 15px 18px;
+    gap: 10px;
+  }
+
+  .companyDashboardApplicationAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .companyDashboardApplicationDetails > strong {
+    font-size: 12px;
+  }
+
+  .companyDashboardApplicationDetails > span {
+    font-size: 10px;
+  }
+
+  .companyDashboardApplicationDetails > small {
+    font-size: 9px;
+  }
+
+  .companyDashboardApplicationMeta {
+    flex-wrap: wrap;
+  }
+
+  .companyDashboardStatusBadge {
+    font-size: 8px;
+  }
+}
+
+/* =========================
+   VERY LARGE DESKTOP
+========================= */
+
+@media (min-width: 1700px) {
+  .companyDashboardContent {
+    padding: 38px 42px 50px;
+  }
+
+  .companyDashboardStats {
+    gap: 20px;
+  }
+
+  .companyDashboardStatCard {
+    min-height: 138px;
+    padding: 24px;
+  }
+
+  .companyDashboardPanelHeader {
+    padding: 24px 26px;
+  }
+
+  .companyDashboardTrendContent {
+    padding: 24px 26px 26px;
+  }
+
+  .companyDashboardApplicationItem {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+
+/* =========================================================
+   JOBHUB UNIFIED ADMIN THEME — DASHBOARD
+========================================================= */
+
+.companyDashboardPage {
+  background: #f6f8fc;
+  color: #172033;
+}
+
+.companyDashboardMain {
+  background: #f6f8fc;
+}
+
+.companyDashboardTopbar {
+  height: 72px;
+  min-height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5eaf2;
+  box-shadow: 0 1px 0 rgba(16, 24, 40, 0.01);
+}
+
+.companyDashboardTopbarRight {
+  gap: 17px;
+}
+
+.companyDashboardNotification {
+  width: 40px;
+  height: 40px;
+  border-color: transparent;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.companyDashboardAdmin {
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+
+.companyDashboardAvatar {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(145deg, #2057bd 0%, #0e3f9c 100%);
+  color: #ffffff;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.20);
+}
+
+.companyDashboardAdminInfo strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+.companyDashboardAdminInfo span {
+  color: #8b95a7;
+  font-size: 11px;
+}
+
+.companyDashboardContent {
+  max-width: 1540px;
+  padding: 34px 34px 52px;
+}
+
+.companyDashboardWelcome {
+  min-height: 140px;
+  margin-bottom: 24px;
+  padding: 26px 30px;
+  border: 1px solid #e1e7f0;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(99, 102, 241, 0.10), transparent 31%),
+    linear-gradient(120deg, #ffffff 0%, #fbfcff 64%, #f4f6ff 100%);
+  box-shadow: 0 12px 32px rgba(16, 24, 40, 0.04);
+}
+
+.companyDashboardWelcome h1 {
+  color: #12203a;
+  font-size: clamp(28px, 2.1vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.companyDashboardWelcome p {
+  color: #727e93;
+  font-size: 13px;
+}
+
+.companyDashboardStats {
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.companyDashboardStatCard,
+.companyDashboardPanel {
+  border: 1px solid #e2e7ef;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 26px rgba(16, 24, 40, 0.035);
+}
+
+.companyDashboardStatCard {
+  min-height: 124px;
+}
+
+.companyDashboardPanel {
+  min-height: 430px;
+}
+
+.companyDashboardPanelHeader {
+  min-height: 88px;
+  padding: 21px 24px;
+  border-bottom-color: #edf0f5;
+}
+
+.companyDashboardPanelHeader h2 {
+  color: #172033;
+  font-size: 17px;
+}
+
+.companyDashboardPanelHeader p {
+  color: #99a3b4;
+  font-size: 11px;
+}
+

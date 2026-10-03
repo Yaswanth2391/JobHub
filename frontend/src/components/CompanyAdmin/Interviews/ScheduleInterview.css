@@ -1,0 +1,996 @@
+
+/* =========================================================
+   SCHEDULE INTERVIEW
+   ========================================================= */
+
+.scheduleInterviewPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  background: #f6f8fc;
+  color: #172033;
+}
+
+.scheduleInterviewMain {
+  min-height: 100vh;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  margin-left: 0;
+  background: #f6f8fc;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.scheduleInterviewTopbar {
+  width: 100%;
+  min-height: 82px;
+  padding: 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e7ebf2;
+  box-sizing: border-box;
+}
+
+.scheduleTopbarBack {
+  border: 0;
+  background: transparent;
+  color: #315ea8;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.scheduleTopbarBack:hover {
+  color: #17498f;
+  transform: translateX(-2px);
+}
+
+.scheduleTopbarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 190px;
+}
+
+.scheduleAdminAvatar {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #172033;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.scheduleAdminInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scheduleAdminInfo strong {
+  color: #172033;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scheduleAdminInfo span {
+  color: #8792a7;
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.scheduleInterviewContent {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 42px 42px 56px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.scheduleInterviewHeader {
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+.scheduleEyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #6f7c94;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scheduleInterviewHeader h1 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(30px, 2.3vw, 40px);
+  line-height: 1.12;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.scheduleInterviewHeader p {
+  margin: 10px 0 0;
+  color: #7a879d;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CANDIDATE CARD
+   ========================================================= */
+
+.scheduleCandidateCard {
+  width: 100%;
+  padding: 24px 26px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(23, 32, 51, 0.04);
+  box-sizing: border-box;
+}
+
+.scheduleCandidateAvatar {
+  width: 66px;
+  height: 66px;
+  flex: 0 0 66px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf3ff;
+  color: #2864c7;
+  font-size: 24px;
+  font-weight: 750;
+  border: 1px solid #dce8ff;
+}
+
+.scheduleCandidateDetails {
+  min-width: 0;
+  flex: 1;
+}
+
+.scheduleCandidateHeading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.scheduleCandidateHeading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.scheduleCandidateStatus {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #edf8f2;
+  color: #21804d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.scheduleCandidateMeta {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.scheduleCandidateMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: #718097;
+  font-size: 13px;
+}
+
+.scheduleCandidateMeta svg {
+  flex: 0 0 auto;
+  color: #8795aa;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.scheduleInterviewForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scheduleFormCard {
+  width: 100%;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(23, 32, 51, 0.035);
+  box-sizing: border-box;
+}
+
+.scheduleFormCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 21px;
+  margin-bottom: 23px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.scheduleFormSectionIcon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf3ff;
+  color: #2f67c8;
+}
+
+.scheduleFormCardHeader h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.scheduleFormCardHeader p {
+  margin: 5px 0 0;
+  color: #8994a8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FIELDS
+   ========================================================= */
+
+.scheduleFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
+}
+
+.scheduleField {
+  min-width: 0;
+}
+
+.scheduleField label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+  color: #354258;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.scheduleField label span {
+  color: #d44949;
+}
+
+.scheduleInput,
+.scheduleTextarea {
+  width: 100%;
+  border: 1px solid #dce2eb;
+  outline: none;
+  background: #ffffff;
+  color: #253047;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.scheduleInput {
+  height: 48px;
+  border-radius: 9px;
+  padding: 0 14px;
+}
+
+.scheduleInput:focus,
+.scheduleTextarea:focus {
+  border-color: #6e9ae8;
+  box-shadow: 0 0 0 3px rgba(67, 119, 205, 0.11);
+}
+
+.scheduleInput::placeholder,
+.scheduleTextarea::placeholder {
+  color: #a1aabc;
+}
+
+.scheduleInputIconWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.scheduleInputIconWrapper > svg {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+  color: #8491a7;
+  pointer-events: none;
+}
+
+.scheduleInputWithIcon {
+  padding-left: 45px;
+}
+
+.scheduleSelectWrapper {
+  position: relative;
+}
+
+.scheduleSelectWrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 44px;
+}
+
+.scheduleSelectIcon {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  color: #8290a5;
+  pointer-events: none;
+}
+
+.scheduleField small {
+  display: block;
+  margin-top: 7px;
+  color: #929caf;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   INTERVIEWERS
+   ========================================================= */
+
+.scheduleInterviewerInput {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.scheduleAddInterviewerButton {
+  height: 48px;
+  padding: 0 18px;
+  border: 1px solid #d4dce8;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: #ffffff;
+  color: #315ea8;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scheduleAddInterviewerButton:hover {
+  background: #f3f7ff;
+  border-color: #9ebbe9;
+}
+
+.scheduleInterviewerTags {
+  margin-top: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scheduleInterviewerTag {
+  min-height: 32px;
+  padding: 5px 7px 5px 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #dce6f7;
+  border-radius: 8px;
+  background: #f5f8fd;
+  color: #40516c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.scheduleInterviewerTag button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #8793a6;
+  cursor: pointer;
+}
+
+.scheduleInterviewerTag button:hover {
+  background: #e9eef6;
+  color: #bd4c4c;
+}
+
+/* =========================================================
+   MODE
+   ========================================================= */
+
+.scheduleModeOptions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.scheduleModeOption {
+  min-height: 78px;
+  padding: 14px 16px;
+  border: 1px solid #dfe5ee;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  background: #ffffff;
+  color: #28364e;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.scheduleModeOption:hover {
+  border-color: #a8c0e8;
+  background: #f9fbff;
+}
+
+.scheduleModeOption.active {
+  border-color: #6f9fe6;
+  background: #f4f8ff;
+  box-shadow: 0 0 0 2px rgba(67, 119, 205, 0.07);
+}
+
+.scheduleModeIcon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef3fa;
+  color: #58708f;
+}
+
+.scheduleModeOption.active .scheduleModeIcon {
+  background: #e2edff;
+  color: #2e65c4;
+}
+
+.scheduleModeOption strong {
+  display: block;
+  color: #27354d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.scheduleModeOption > div:nth-child(2) span {
+  display: block;
+  margin-top: 3px;
+  color: #8a96a9;
+  font-size: 12px;
+}
+
+.scheduleModeRadio {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  flex: 0 0 18px;
+  border: 1.5px solid #bcc6d5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scheduleModeOption.active .scheduleModeRadio {
+  border-color: #3670d1;
+}
+
+.scheduleModeOption.active .scheduleModeRadio span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3670d1;
+}
+
+.scheduleModeField {
+  margin-top: 22px;
+}
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.scheduleTextarea {
+  min-height: 130px;
+  resize: vertical;
+  border-radius: 9px;
+  padding: 13px 14px;
+  line-height: 1.55;
+}
+
+.scheduleCharacterCount {
+  margin-top: 7px;
+  color: #9aa4b4;
+  font-size: 11px;
+  text-align: right;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.scheduleFormActions {
+  width: 100%;
+  padding: 4px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+}
+
+.scheduleCancelButton,
+.scheduleSubmitButton {
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scheduleCancelButton {
+  border: 1px solid #d9e0ea;
+  background: #ffffff;
+  color: #526078;
+}
+
+.scheduleCancelButton:hover:not(:disabled) {
+  border-color: #c4cedc;
+  background: #f8f9fb;
+}
+
+.scheduleSubmitButton {
+  border: 1px solid #2d65c3;
+  background: #2f67c8;
+  color: #ffffff;
+  box-shadow: 0 5px 12px rgba(47, 103, 200, 0.16);
+}
+
+.scheduleSubmitButton:hover:not(:disabled) {
+  background: #2559b2;
+  border-color: #2559b2;
+  box-shadow: 0 7px 16px rgba(47, 103, 200, 0.21);
+  transform: translateY(-1px);
+}
+
+.scheduleCancelButton:disabled,
+.scheduleSubmitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.scheduleButtonSpinner {
+  animation: scheduleSpin 0.8s linear infinite;
+}
+
+/* =========================================================
+   LOADING / EMPTY
+   ========================================================= */
+
+.scheduleInterviewLoading,
+.scheduleInterviewEmpty {
+  width: min(100%, 620px);
+  min-height: 360px;
+  margin: 70px auto;
+  padding: 42px;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(23, 32, 51, 0.04);
+  box-sizing: border-box;
+}
+
+.scheduleInterviewLoader,
+.scheduleInterviewEmptyIcon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf3ff;
+  color: #326bcf;
+}
+
+.scheduleInterviewLoader svg {
+  animation: scheduleSpin 0.9s linear infinite;
+}
+
+.scheduleInterviewLoading h3,
+.scheduleInterviewEmpty h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+}
+
+.scheduleInterviewLoading p,
+.scheduleInterviewEmpty p {
+  margin: 8px 0 0;
+  color: #8994a8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.scheduleBackButton {
+  margin-top: 22px;
+  min-height: 44px;
+  padding: 0 17px;
+  border: 1px solid #d8e0eb;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #315ea8;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.scheduleBackButton:hover {
+  background: #f5f8fd;
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes scheduleSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1600px) {
+  .scheduleInterviewContent {
+    padding: 46px 52px 64px;
+  }
+
+  .scheduleFormCard {
+    padding: 30px;
+  }
+
+  .scheduleCandidateCard {
+    padding: 26px 30px;
+  }
+}
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .scheduleInterviewMain {
+    flex: 1 1 auto;
+    width: auto;
+    margin-left: 0;
+  }
+
+  .scheduleInterviewContent {
+    padding: 34px 28px 48px;
+  }
+
+  .scheduleFormGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .scheduleInterviewMain {
+    width: 100%;
+    flex: 1 1 auto;
+    margin-left: 0;
+  }
+
+  .scheduleInterviewTopbar {
+    min-height: 70px;
+    padding: 0 18px;
+  }
+
+  .scheduleAdminAvatar {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    font-size: 14px;
+  }
+
+  .scheduleAdminInfo strong {
+    font-size: 13px;
+  }
+
+  .scheduleAdminInfo span {
+    font-size: 11px;
+  }
+
+  .scheduleInterviewContent {
+    padding: 28px 18px 42px;
+  }
+
+  .scheduleInterviewHeader h1 {
+    font-size: 29px;
+  }
+
+  .scheduleCandidateCard {
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .scheduleCandidateAvatar {
+    width: 54px;
+    height: 54px;
+    flex-basis: 54px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
+
+  .scheduleCandidateHeading h2 {
+    font-size: 17px;
+  }
+
+  .scheduleCandidateMeta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .scheduleFormCard {
+    padding: 21px 18px;
+  }
+
+  .scheduleFormCardHeader {
+    gap: 11px;
+  }
+
+  .scheduleFormSectionIcon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .scheduleModeOptions {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduleFormActions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .scheduleCancelButton,
+  .scheduleSubmitButton {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .scheduleInterviewTopbar {
+    padding: 0 14px;
+  }
+
+  .scheduleTopbarBack span {
+    display: none;
+  }
+
+  .scheduleTopbarRight {
+    min-width: 0;
+  }
+
+  .scheduleInterviewContent {
+    padding: 23px 13px 34px;
+  }
+
+  .scheduleInterviewHeader {
+    margin-bottom: 20px;
+  }
+
+  .scheduleInterviewHeader h1 {
+    font-size: 26px;
+  }
+
+  .scheduleInterviewHeader p {
+    font-size: 13px;
+  }
+
+  .scheduleCandidateCard {
+    padding: 17px;
+    gap: 12px;
+  }
+
+  .scheduleCandidateAvatar {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    font-size: 18px;
+  }
+
+  .scheduleCandidateHeading {
+    gap: 7px;
+  }
+
+  .scheduleCandidateHeading h2 {
+    font-size: 15px;
+  }
+
+  .scheduleCandidateMeta span {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .scheduleFormCard {
+    padding: 18px 15px;
+    border-radius: 12px;
+  }
+
+  .scheduleFormCardHeader {
+    padding-bottom: 17px;
+    margin-bottom: 19px;
+  }
+
+  .scheduleInterviewerInput {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduleAddInterviewerButton {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   UNIFIED JOBHUB ADMIN TOPBAR
+========================================================= */
+.scheduleInterviewTopbar {
+  height: 72px;
+  min-height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf3;
+}
+.scheduleTopbarRight {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.scheduleNotification {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.scheduleNotification:hover { background: #f8f9fc; color: #344054; }
+.scheduleAdmin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+.scheduleAdminAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2057bd 0%, #0e3f9c 100%);
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.20);
+}
+.scheduleAdminInfo strong { font-size: 13px; color: #172033; }
+.scheduleAdminInfo span { font-size: 11px; color: #8b95a7; }
+@media (max-width: 768px) {
+  .scheduleInterviewTopbar { padding: 0 18px; }
+  .scheduleTopbarRight { gap: 10px; }
+  .scheduleAdmin { gap: 8px; padding-left: 13px; }
+  .scheduleAdminAvatar { width: 38px; height: 38px; }
+  .scheduleAdminInfo { display: none; }
+  .scheduleNotification { width: 38px; height: 38px; }
+}

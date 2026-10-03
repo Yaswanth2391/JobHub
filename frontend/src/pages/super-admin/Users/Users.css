@@ -1,0 +1,123 @@
+.userTable {
+  min-width: 1100px;
+}
+
+.userNameCell {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 170px;
+}
+
+.userAvatar,
+.userDetailAvatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f3eaff;
+  color: #9333ea;
+  font-weight: 800;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  font-size: 9px;
+}
+
+.userNameCell strong {
+  color: #111c4b;
+  font-size: 10px;
+}
+
+.userDetailBody {
+  padding: 22px;
+}
+
+.userDetailHero {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.userDetailAvatar {
+  width: 55px;
+  height: 55px;
+  font-size: 16px;
+}
+
+.userDetailHero h3 {
+  margin: 0;
+  color: #111c4b;
+  font-size: 17px;
+}
+
+.userDetailHero p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.userDetailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+  margin-top: 18px;
+}
+
+.userDetailGrid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 11px;
+  border: 1px solid #edf2f7;
+  border-radius: 8px;
+}
+
+.userDetailGrid span {
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.userDetailGrid strong {
+  color: #334155;
+  font-size: 11px;
+}
+
+.userDetailResume {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+.userDetailResume div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.userDetailResume strong {
+  color: #334155;
+  font-size: 10px;
+}
+
+.userDetailResume span {
+  color: #94a3b8;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+@media (max-width: 650px) {
+  .userDetailGrid {
+    grid-template-columns: 1fr;
+  }
+}

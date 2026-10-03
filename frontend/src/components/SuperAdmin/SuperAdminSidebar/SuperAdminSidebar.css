@@ -1,0 +1,194 @@
+.superAdminSidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 1200;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 14px 14px;
+  background: #ffffff;
+  border-right: 1px solid #e6edf7;
+  box-shadow: 8px 0 30px rgba(15, 23, 42, 0.03);
+}
+
+.superAdminSidebarHeader {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.superAdminLogoLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.superAdminLogo {
+  width: 108px;
+  height: auto;
+  display: block;
+}
+
+.superAdminSidebarClose {
+  display: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #334155;
+  cursor: pointer;
+}
+
+.superAdminRoleLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px 18px;
+  color: #172554;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.superAdminRoleIcon {
+  width: 27px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.superAdminNavigation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.superAdminNavLink,
+.superAdminUtilityLink {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.superAdminNavLink:hover,
+.superAdminUtilityLink:hover {
+  background: #f3f7ff;
+  color: #1d4ed8;
+}
+
+.superAdminNavLink.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.18);
+}
+
+.superAdminNavLink.active:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.superAdminSidebarBottom {
+  margin-top: auto;
+}
+
+.superAdminSidebarDivider {
+  height: 1px;
+  margin: 8px 6px 10px;
+  background: #e9eef6;
+}
+
+.superAdminUtilityLink {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.superAdminUtilityLink.logout {
+  margin-top: 2px;
+}
+
+.superAdminSidebarBadge {
+  margin-top: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px 12px;
+  border-radius: 11px;
+  background: #e9f2ff;
+  color: #1d4ed8;
+}
+
+.superAdminSidebarBadge > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.superAdminSidebarBadge div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.superAdminSidebarBadge strong {
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.superAdminSidebarBadge span {
+  color: #1e3a8a;
+  font-size: 11px;
+}
+
+.superAdminSidebarBadge small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.superAdminSidebarOverlay {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .superAdminSidebar {
+    transform: translateX(-100%);
+    transition: transform .25s ease;
+    box-shadow: 18px 0 40px rgba(15, 23, 42, 0.12);
+  }
+
+  .superAdminSidebar.isOpen {
+    transform: translateX(0);
+  }
+
+  .superAdminSidebarClose {
+    display: inline-flex;
+  }
+
+  .superAdminSidebarOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: block;
+    border: 0;
+    background: rgba(15, 23, 42, 0.28);
+    backdrop-filter: blur(2px);
+  }
+}

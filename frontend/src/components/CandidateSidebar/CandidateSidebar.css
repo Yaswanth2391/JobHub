@@ -1,0 +1,327 @@
+/* =====================================
+   CANDIDATE SIDEBAR
+===================================== */
+
+.candidateSidebar {
+  width: 165px;
+  min-width: 165px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid #e3e8ef;
+
+  background:
+    rgba(255, 255, 255, 0.86);
+}
+
+
+/* =====================================
+   LOGO
+===================================== */
+
+.candidateSidebarLogo {
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #e8edf3;
+}
+
+
+.candidateSidebarLogo a {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  text-decoration: none;
+
+  color: #264ea8;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+
+.candidateSidebarLogoIcon {
+  font-size: 25px;
+
+  line-height: 1;
+
+  transform: rotate(-12deg);
+
+  color: #2453b7;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.candidateSidebarNavigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding:
+    18px
+    10px;
+}
+
+
+.candidateSidebarLink {
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    0
+    11px;
+
+  border-radius: 6px;
+
+  color: #5f6b7c;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.candidateSidebarLink:hover {
+  background: #f2f6fc;
+
+  color: #315bc2;
+}
+
+
+.candidateSidebarActive {
+  background:
+    linear-gradient(
+      90deg,
+      #e6edff,
+      #edf3ff
+    );
+
+  color: #315bc2;
+
+  font-weight: 700;
+}
+
+
+/* =====================================
+   LOGOUT
+===================================== */
+
+.candidateSidebarBottom {
+  margin-top: auto;
+
+  padding:
+    18px
+    10px;
+
+  border-top:
+    1px solid #edf0f4;
+}
+
+
+.candidateSidebarLogout {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    0
+    11px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.candidateSidebarLogout:hover {
+  background: #fff1f1;
+
+  color: #d14343;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+  .candidateSidebar {
+    width: 70px;
+    min-width: 70px;
+  }
+
+
+  .candidateSidebarLogo {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .candidateSidebarLogo a span:last-child {
+    display: none;
+  }
+
+
+  .candidateSidebarNavigation {
+    padding:
+      18px
+      9px;
+  }
+
+
+  .candidateSidebarLink {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .candidateSidebarLink span {
+    display: none;
+  }
+
+
+  .candidateSidebarLogout {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+
+  .candidateSidebarLogout span {
+    display: none;
+  }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+  .candidateSidebar {
+    display: none;
+  }
+
+}
+
+/* =====================================
+   PROFILE PREVIEW
+===================================== */
+
+.candidateSidebarProfile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: auto 10px 10px;
+  padding: 10px 9px;
+  border: 1px solid #edf1f6;
+  border-radius: 10px;
+  background: #f9fbfe;
+}
+
+.candidateSidebarAvatar {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e8efff;
+  color: #315fc7;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.candidateSidebarAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.candidateSidebarProfileInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.candidateSidebarProfileInfo strong,
+.candidateSidebarProfileInfo span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.candidateSidebarProfileInfo strong {
+  color: #344054;
+  font-size: 10px;
+}
+
+.candidateSidebarProfileInfo span {
+  color: #98a2b3;
+  font-size: 8px;
+}
+
+@media (max-width: 900px) {
+  .candidateSidebarProfile {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  .candidateSidebarProfileInfo {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .candidateSidebarProfile {
+    display: none;
+  }
+}

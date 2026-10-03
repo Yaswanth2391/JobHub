@@ -1,0 +1,1298 @@
+
+/* =========================================================
+   HIRED PAGE
+   ========================================================= */
+
+.hiredPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  background: #f6f8fb;
+  color: #172033;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.hiredMain {
+  min-height: 100vh;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  background: #f6f8fb;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.hiredTopbar {
+  width: 100%;
+  min-height: 76px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-bottom: 1px solid #e7ebf2;
+}
+
+.hiredTopbarLabel {
+  display: block;
+  margin-bottom: 3px;
+  color: #8a94a7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hiredTopbar h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.hiredAdmin {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.hiredAdminAvatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #172033;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hiredAdminInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hiredAdminInfo strong {
+  color: #172033;
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hiredAdminInfo span {
+  color: #8a94a7;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.hiredContent {
+  width: 100%;
+  padding: 34px 32px 50px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.hiredHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+
+.hiredEyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #68748a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hiredHeader h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 29px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.hiredHeader p {
+  margin: 8px 0 0;
+  color: #7d8799;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.hiredRefreshButton {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid #dce2e9;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #46536a;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hiredRefreshButton:hover {
+  background: #f4f6f8;
+  border-color: #cbd3de;
+  color: #26344a;
+}
+
+.hiredRefreshButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hiredRefreshButton.refreshing svg {
+  animation: hiredRefreshSpin 0.9s linear infinite;
+}
+
+@keyframes hiredRefreshSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.hiredStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.hiredStatCard {
+  min-height: 88px;
+  padding: 17px 19px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(28, 39, 61, 0.03);
+  box-sizing: border-box;
+}
+
+.hiredStatIcon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.hiredStatIcon.total {
+  background: #edf3ff;
+  color: #356ecb;
+}
+
+.hiredStatIcon.role {
+  background: #f1eff8;
+  color: #68577f;
+}
+
+.hiredStatIcon.recent {
+  background: #edf6f1;
+  color: #2d7751;
+}
+
+.hiredStatCard > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hiredStatCard span {
+  color: #8992a3;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.hiredStatCard strong {
+  color: #202b40;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+.hiredStatCard .hiredStatDate {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.hiredToolbar {
+  min-height: 64px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.hiredToolbarTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hiredToolbarTitle strong {
+  color: #334057;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hiredToolbarTitle span {
+  min-width: 23px;
+  height: 21px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #eef1f5;
+  color: #69768b;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hiredSearch {
+  width: min(330px, 100%);
+  height: 39px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hiredSearch svg {
+  position: absolute;
+  left: 12px;
+  color: #929aaa;
+  pointer-events: none;
+}
+
+.hiredSearch input {
+  width: 100%;
+  height: 100%;
+  padding: 0 12px 0 37px;
+  border: 1px solid #dfe4eb;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #28354a;
+  font-family: inherit;
+  font-size: 12px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hiredSearch input::placeholder {
+  color: #a3aab7;
+}
+
+.hiredSearch input:focus {
+  border-color: #6b7b93;
+  box-shadow: 0 0 0 3px rgba(104, 117, 138, 0.08);
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.hiredTableCard {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(28, 39, 61, 0.03);
+}
+
+.hiredTableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.hiredTable {
+  width: 100%;
+  min-width: 1120px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.hiredTable thead th {
+  height: 51px;
+  padding: 0 15px;
+  border-bottom: 1px solid #e8ecf1;
+  background: #fafbfc;
+  color: #788397;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.055em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hiredTable tbody td {
+  min-height: 76px;
+  padding: 13px 15px;
+  border-bottom: 1px solid #edf0f4;
+  vertical-align: middle;
+}
+
+.hiredTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.hiredTable tbody tr {
+  transition: background 0.18s ease;
+}
+
+.hiredTable tbody tr:hover {
+  background: #fbfcfd;
+}
+
+/* =========================================================
+   CANDIDATE
+   ========================================================= */
+
+.hiredCandidate {
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hiredCandidateAvatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eef2f6;
+  color: #334157;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.hiredCandidateInfo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hiredCandidateInfo strong {
+  overflow: hidden;
+  color: #263249;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hiredCandidateInfo span {
+  max-width: 190px;
+  overflow: hidden;
+  color: #9099a9;
+  font-size: 10px;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   POSITION
+   ========================================================= */
+
+.hiredPosition {
+  min-width: 165px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hiredPosition strong {
+  color: #354158;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.hiredPosition span {
+  color: #949cac;
+  font-size: 10px;
+}
+
+/* =========================================================
+   ATS SCORE
+   ========================================================= */
+
+.hiredScore {
+  min-width: 45px;
+  min-height: 27px;
+  padding: 5px 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d8ebdf;
+  border-radius: 7px;
+  background: #edf8f1;
+  color: #28724b;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   INTERVIEW
+   ========================================================= */
+
+.hiredInterview {
+  min-width: 135px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hiredInterview strong {
+  color: #46536a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hiredInterview span {
+  color: #949cac;
+  font-size: 10px;
+}
+
+/* =========================================================
+   HIRED DATE
+   ========================================================= */
+
+.hiredDate {
+  color: #5e6a7e;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.hiredContact {
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hiredContact span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b778a;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.hiredContact svg {
+  color: #8d98a8;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   ACTION
+   ========================================================= */
+
+.hiredViewButton {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e0e5eb;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #647086;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hiredViewButton:hover {
+  background: #f2f5f8;
+  border-color: #cfd6df;
+  color: #344158;
+}
+
+.hiredViewButton:active {
+  transform: translateY(1px);
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.hiredPagination {
+  min-height: 59px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #edf0f4;
+}
+
+.hiredPagination > span {
+  color: #8992a3;
+  font-size: 10px;
+}
+
+.hiredPaginationButtons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hiredPaginationButtons > span {
+  min-width: 48px;
+  color: #667287;
+  font-size: 10px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.hiredPaginationButtons button {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe4eb;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #667287;
+  cursor: pointer;
+}
+
+.hiredPaginationButtons button:hover:not(:disabled) {
+  background: #f3f5f8;
+  border-color: #ccd4de;
+}
+
+.hiredPaginationButtons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.hiredEmpty {
+  min-height: 320px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hiredEmptyIcon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe5ec;
+  border-radius: 14px;
+  background: #f8fafb;
+  color: #748196;
+}
+
+.hiredEmpty h3 {
+  margin: 0;
+  color: #354158;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.hiredEmpty p {
+  max-width: 400px;
+  margin: 7px 0 15px;
+  color: #919aaa;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.hiredClearSearch {
+  min-height: 35px;
+  padding: 0 13px;
+  border: 1px solid #dce2e9;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #526076;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hiredClearSearch:hover {
+  background: #f4f6f8;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.hiredLoading {
+  min-height: calc(100vh - 76px);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.hiredLoadingIcon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e6ed;
+  border-radius: 15px;
+  background: #ffffff;
+  color: #566378;
+  box-shadow: 0 6px 24px rgba(28, 39, 61, 0.04);
+}
+
+.hiredLoadingIcon svg {
+  animation: hiredLoadingSpin 0.9s linear infinite;
+}
+
+.hiredLoading h2 {
+  margin: 0;
+  color: #354158;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.hiredLoading p {
+  margin: 7px 0 0;
+  color: #919aaa;
+  font-size: 11px;
+}
+
+@keyframes hiredLoadingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   DETAILS MODAL
+   ========================================================= */
+
+.hiredDetailsOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 24, 39, 0.57);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.hiredDetailsModal {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e2e7ee;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.2),
+    0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.hiredDetailsHeader {
+  min-height: 78px;
+  padding: 17px 21px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #edf0f4;
+  box-sizing: border-box;
+}
+
+.hiredDetailsHeader > div:first-child {
+  min-width: 0;
+}
+
+.hiredDetailsHeader span {
+  display: block;
+  margin-bottom: 4px;
+  color: #8b94a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hiredDetailsHeader h2 {
+  margin: 0;
+  overflow: hidden;
+  color: #1d293c;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hiredDetailsClose {
+  width: 35px;
+  height: 35px;
+  min-width: 35px;
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #68758a;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hiredDetailsClose:hover {
+  background: #f3f5f7;
+  border-color: #ccd4de;
+  color: #27344a;
+}
+
+/* =========================================================
+   MODAL BODY
+   ========================================================= */
+
+.hiredDetailsBody {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 22px;
+}
+
+.hiredProfileCard {
+  margin-bottom: 18px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e7ebf0;
+  border-radius: 11px;
+  background: #fafbfc;
+}
+
+.hiredDetailsAvatar {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf0f8;
+  color: #315ea8;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.hiredProfileCard > div:last-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hiredProfileCard strong {
+  color: #27344a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hiredProfileCard span {
+  overflow: hidden;
+  color: #8b94a5;
+  font-size: 11px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MODAL DETAILS GRID
+   ========================================================= */
+
+.hiredDetailsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-bottom: 19px;
+}
+
+.hiredDetailItem {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #e7ebf0;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.hiredDetailItem span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: #8a94a6;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.hiredDetailItem strong {
+  display: block;
+  overflow: hidden;
+  color: #3d495e;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MODAL SECTIONS
+   ========================================================= */
+
+.hiredDetailsSection {
+  margin-top: 17px;
+}
+
+.hiredDetailsSection h3 {
+  margin: 0 0 9px;
+  color: #435067;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.hiredInfoBox {
+  padding: 12px 13px;
+  border: 1px solid #e0e6ed;
+  border-radius: 9px;
+  background: #f9fafb;
+}
+
+.hiredInfoBox p {
+  margin: 0 0 7px;
+  color: #68758a;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.hiredInfoBox p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   MODAL FOOTER
+   ========================================================= */
+
+.hiredDetailsFooter {
+  min-height: 67px;
+  padding: 12px 21px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid #edf0f4;
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.hiredDetailsFooter button {
+  min-height: 37px;
+  padding: 0 14px;
+  border: 1px solid #dce2e9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #5d697d;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hiredDetailsFooter button:hover {
+  background: #f4f6f8;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1199px) {
+  .hiredContent {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .hiredTable {
+    min-width: 1040px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hiredContent {
+    padding: 28px 22px 40px;
+  }
+
+  .hiredHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hiredStats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hiredToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hiredSearch {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hiredContent {
+    padding: 24px 16px 32px;
+  }
+
+  .hiredTopbar {
+    min-height: 68px;
+    padding: 0 16px;
+  }
+
+  .hiredAdminInfo {
+    display: none;
+  }
+
+  .hiredAdminAvatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .hiredHeader h2 {
+    font-size: 24px;
+  }
+
+  .hiredStats {
+    gap: 8px;
+  }
+
+  .hiredStatCard {
+    min-height: 78px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .hiredStatIcon {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+
+  .hiredStatCard span {
+    font-size: 9px;
+  }
+
+  .hiredStatCard strong {
+    font-size: 19px;
+  }
+
+  .hiredTable {
+    min-width: 1000px;
+  }
+
+  .hiredDetailsOverlay {
+    padding: 14px;
+  }
+
+  .hiredDetailsModal {
+    max-height: calc(100vh - 28px);
+    border-radius: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hiredContent {
+    padding: 21px 12px 26px;
+  }
+
+  .hiredTopbar {
+    padding: 0 12px;
+  }
+
+  .hiredTopbarLabel {
+    font-size: 9px;
+  }
+
+  .hiredTopbar h1 {
+    font-size: 16px;
+  }
+
+  .hiredHeader {
+    padding-bottom: 19px;
+  }
+
+  .hiredEyebrow {
+    font-size: 9px;
+  }
+
+  .hiredHeader h2 {
+    font-size: 21px;
+  }
+
+  .hiredHeader p {
+    font-size: 11px;
+  }
+
+  .hiredStats {
+    grid-template-columns: 1fr;
+  }
+
+  .hiredStatCard {
+    min-height: 67px;
+  }
+
+  .hiredStatIcon {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+  }
+
+  .hiredStatCard strong {
+    font-size: 20px;
+  }
+
+  .hiredToolbar {
+    padding: 9px;
+  }
+
+  .hiredSearch {
+    height: 37px;
+  }
+
+  .hiredSearch input {
+    font-size: 11px;
+  }
+
+  .hiredTable {
+    min-width: 920px;
+  }
+
+  .hiredPagination {
+    min-height: 53px;
+    padding: 0 10px;
+  }
+
+  .hiredDetailsOverlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .hiredDetailsModal {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .hiredDetailsHeader {
+    min-height: 67px;
+    padding: 14px 16px;
+  }
+
+  .hiredDetailsHeader h2 {
+    font-size: 17px;
+  }
+
+  .hiredDetailsBody {
+    padding: 16px;
+  }
+
+  .hiredDetailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hiredDetailsFooter {
+    padding: 11px 16px;
+  }
+
+  .hiredDetailsFooter button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hiredContent {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .hiredTopbar {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .hiredHeader h2 {
+    font-size: 19px;
+  }
+
+  .hiredTable {
+    min-width: 880px;
+  }
+}
+
+/* =========================================================
+   UNIFIED JOBHUB ADMIN TOPBAR
+========================================================= */
+.hiredTopbar {
+  height: 72px;
+  min-height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e9edf3;
+}
+.hiredAdminRight {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.hiredNotification {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #667085;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.hiredNotification:hover { background: #f8f9fc; color: #344054; }
+.hiredAdmin {
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 1px solid #e9edf3;
+}
+.hiredAdminAvatar {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2057bd 0%, #0e3f9c 100%);
+  color: #ffffff;
+  font-size: 16px;
+  box-shadow: 0 7px 16px rgba(30, 85, 190, 0.20);
+}
+.hiredAdminInfo strong { font-size: 13px; color: #172033; }
+.hiredAdminInfo span { font-size: 11px; color: #8b95a7; }
+@media (max-width: 768px) {
+  .hiredTopbar { padding: 0 18px; }
+  .hiredAdminRight { gap: 10px; }
+  .hiredAdmin { gap: 8px; padding-left: 13px; }
+  .hiredAdminAvatar { width: 38px; height: 38px; min-width: 38px; }
+  .hiredAdminInfo { display: none; }
+  .hiredNotification { width: 38px; height: 38px; }
+}

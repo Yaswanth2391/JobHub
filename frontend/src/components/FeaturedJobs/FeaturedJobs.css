@@ -1,0 +1,310 @@
+/* =========================================
+   FEATURED JOBS SECTION
+========================================= */
+
+.featuredJobs {
+  width: 100%;
+
+  padding: 24px 0 55px;
+
+  background: #ffffff;
+}
+
+
+.featuredJobsContainer {
+  width: 100%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.featuredJobsHeader {
+  margin-bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.featuredJobsHeader h2 {
+  margin: 0;
+
+  color: #2d3b55;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+.viewAllJobsButton {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #3c63bb;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   JOB GRID
+========================================= */
+
+.featuredJobsGrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   LOGIN REQUIRED MODAL
+========================================= */
+
+.loginRequiredOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(21, 31, 51, 0.5);
+
+  backdrop-filter:
+    blur(4px);
+}
+
+
+.loginRequiredOverlay.showLoginModal {
+  display: flex;
+}
+
+
+.loginRequiredModal {
+  position: relative;
+
+  width: min(100%, 420px);
+
+  padding: 38px 32px 32px;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 70px
+    rgba(15, 23, 42, 0.3);
+
+  animation:
+    modalAppear 0.25s ease;
+}
+
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.closeLoginModal {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f4f6fa;
+
+  color: #667085;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   MODAL ICON
+========================================= */
+
+.loginRequiredIcon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf3ff;
+
+  color: #3d63bd;
+}
+
+
+/* =========================================
+   MODAL CONTENT
+========================================= */
+
+.loginRequiredModal h2 {
+  margin: 0;
+
+  color: #25324a;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+.loginRequiredModal p {
+  margin: 12px 0 25px;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   MODAL BUTTONS
+========================================= */
+
+.loginRequiredActions {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 12px;
+}
+
+
+.loginModalButton,
+.registerModalButton {
+  min-height: 44px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.loginModalButton {
+  border: none;
+
+  background: #345ebd;
+
+  color: #ffffff;
+}
+
+
+.registerModalButton {
+  border: 1px solid #d7dfec;
+
+  background: #ffffff;
+
+  color: #345ebd;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .featuredJobsGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .featuredJobs {
+    padding:
+      20px
+      0
+      40px;
+  }
+
+  .featuredJobsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .featuredJobsHeader h2 {
+    font-size: 16px;
+  }
+
+  .loginRequiredModal {
+    padding:
+      35px
+      22px
+      24px;
+  }
+
+  .loginRequiredActions {
+    grid-template-columns: 1fr;
+  }
+}

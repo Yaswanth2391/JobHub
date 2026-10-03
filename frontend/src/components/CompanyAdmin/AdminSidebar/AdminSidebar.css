@@ -1,0 +1,404 @@
+/* =========================================
+   COMPANY ADMIN SIDEBAR
+========================================= */
+
+.adminSidebar {
+  width: 245px;
+
+  min-width: 245px;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-right: 1px solid #e8edf5;
+
+  background: #ffffff;
+
+  z-index: 100;
+}
+
+/* =========================================
+   SIDEBAR HEADER
+========================================= */
+
+.adminSidebarHeader {
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 22px 0 28px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.adminSidebarLogo {
+  display: flex;
+
+  align-items: center;
+
+  color: #1f3f83;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.adminSidebarLogoJ {
+  color: #2f67d8;
+}
+
+/* =========================================
+   MOBILE CLOSE BUTTON
+========================================= */
+
+.adminSidebarCloseButton {
+  display: none;
+
+  width: 40px;
+
+  height: 40px;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #667085;
+
+  cursor: pointer;
+}
+
+.adminSidebarCloseButton:hover {
+  background: #f3f6fb;
+
+  color: #315fc4;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.adminSidebarNavigation {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 8px 14px;
+}
+
+.adminSidebarItem {
+  width: 100%;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.adminSidebarItem:hover {
+  background: #f4f7fc;
+
+  color: #315fc4;
+}
+
+.adminSidebarItem.active {
+  background: #eaf0ff;
+
+  color: #315fc4;
+
+  font-weight: 600;
+}
+
+.adminSidebarItem svg {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.adminSidebarLogout {
+  margin-top: auto;
+
+  padding: 18px 14px;
+
+  border-top: 1px solid #edf1f6;
+}
+
+.adminSidebarLogout button {
+  width: 100%;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.adminSidebarLogout button:hover {
+  background: #fff1f1;
+
+  color: #d92d20;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .adminSidebar {
+    width: 220px;
+
+    min-width: 220px;
+  }
+}
+
+/* =========================================
+   MOBILE SIDEBAR DRAWER
+========================================= */
+
+@media (max-width: 768px) {
+  .adminSidebar {
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 280px;
+
+    min-width: 280px;
+
+    height: 100vh;
+
+    min-height: 100vh;
+
+    border-right: 1px solid #e8edf5;
+
+    box-shadow:
+      8px 0 30px
+      rgba(16, 24, 40, 0.12);
+
+    transform:
+      translateX(-100%);
+
+    transition:
+      transform 0.3s ease;
+
+    z-index: 100;
+  }
+
+  .adminSidebar.adminSidebarOpen {
+    transform:
+      translateX(0);
+  }
+
+  .adminSidebarHeader {
+    height: 68px;
+
+    padding:
+      0 14px
+      0 22px;
+
+    border-bottom:
+      1px solid #edf1f6;
+  }
+
+  .adminSidebarCloseButton {
+    display: flex;
+  }
+
+  .adminSidebarNavigation {
+    padding-top: 14px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .adminSidebar {
+    width: 260px;
+
+    min-width: 260px;
+  }
+}
+
+/* =========================================================
+   JOBHUB UNIFIED ADMIN THEME — SIDEBAR
+   Reference: supplied JobHub admin screenshots
+========================================================= */
+
+.adminSidebar {
+  width: 245px;
+  min-width: 245px;
+  background: #ffffff;
+  border-right: 1px solid #e5eaf2;
+}
+
+.adminSidebarHeader {
+  height: 72px;
+  padding: 0 22px 0 28px;
+  border-bottom: 0;
+}
+
+.adminSidebarLogo {
+  color: #173b7a;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.adminSidebarLogoJ {
+  color: #2563eb;
+}
+
+.adminSidebarNavigation {
+  gap: 5px;
+  padding: 12px 14px;
+}
+
+.adminSidebarItem,
+.adminSidebarLogout button {
+  height: 45px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.adminSidebarItem {
+  color: #667085;
+}
+
+.adminSidebarItem:hover {
+  background: #f4f7fd;
+  color: #2563eb;
+}
+
+.adminSidebarItem.active {
+  background: #eaf0ff;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.adminSidebarLogout {
+  padding: 16px 14px 18px;
+  border-top-color: #edf1f6;
+}
+
+.adminSidebarLogout button:hover {
+  background: #fff3f3;
+  color: #d64550;
+}
+
+
+/* =========================================================
+   JOBHUB SIDEBAR LOGO
+========================================================= */
+
+.adminSidebarLogo {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.adminSidebarBrandLogo {
+  width: 118px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .adminSidebarBrandLogo {
+    width: 118px;
+  }
+}
+
+/* =========================================================
+   JOBHUB SIDEBAR LOGO
+========================================================= */
+
+.adminSidebarLogo {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.adminSidebarBrandLogo {
+  width: 118px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .adminSidebarBrandLogo {
+    width: 118px;
+  }
+}

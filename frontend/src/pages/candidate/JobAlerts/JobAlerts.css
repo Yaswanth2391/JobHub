@@ -1,0 +1,942 @@
+/* =========================================================
+   JOBHUB CANDIDATE - JOB ALERTS
+   ========================================================= */
+
+.candidateJobAlertsPage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #f7f9fc;
+  color: #344054;
+  overflow-x: hidden;
+}
+
+.candidateJobAlertsMain {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  min-height: 100vh;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.candidateJobAlertsTopHeader {
+  height: 66px;
+  padding: 0 26px;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e9edf3;
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+}
+
+.dashboardHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.headerNotificationButton {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #667085;
+  cursor: pointer;
+}
+
+.headerNotificationButton:hover {
+  color: #315bd0;
+}
+
+.headerCandidateInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerCandidateAvatar {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e7eefc;
+  color: #315bd0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.headerCandidateText {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.headerCandidateText strong {
+  color: #344054;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.headerCandidateText span {
+  color: #98a2b3;
+  font-size: 8px;
+  line-height: 1.2;
+}
+
+.mobileSidebarButton {
+  width: 38px;
+  height: 38px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #344054;
+  cursor: pointer;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.candidateJobAlertsContent {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 20px 28px 32px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.candidateJobAlertsHero {
+  min-height: 170px;
+  padding: 28px 30px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border: 1px solid #e1e7f0;
+  border-radius: 18px;
+  background:
+    radial-gradient(
+      circle at 91% 10%,
+      rgba(86, 91, 214, 0.12),
+      transparent 31%
+    ),
+    linear-gradient(
+      120deg,
+      #ffffff 0%,
+      #fbfcff 66%,
+      #f4f6ff 100%
+    );
+  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.035);
+  box-sizing: border-box;
+}
+
+.candidateJobAlertsEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid #dddff8;
+  border-radius: 999px;
+  background: #f5f5ff;
+  color: #5f58c8;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.candidateJobAlertsHero h1 {
+  margin: 10px 0 0;
+  color: #24344d;
+  font-size: 27px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.45px;
+}
+
+.candidateJobAlertsHero p {
+  max-width: 690px;
+  margin: 8px 0 0;
+  color: #7c8799;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.candidateJobAlertsHeroStats {
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #e7eaf1;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.88);
+  overflow: hidden;
+}
+
+.candidateJobAlertsHeroStats > div {
+  min-width: 108px;
+  padding: 15px 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.candidateJobAlertsHeroStats > div + div {
+  border-left: 1px solid #edf0f4;
+}
+
+.candidateJobAlertsHeroStats strong {
+  color: #315bd0;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.candidateJobAlertsHeroStats span {
+  color: #98a2b3;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.candidateJobAlertsToolbar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.candidateJobAlertsSearch {
+  width: min(470px, 100%);
+  height: 40px;
+  padding: 0 10px 0 13px;
+  border: 1px solid #e1e6ee;
+  border-radius: 10px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.candidateJobAlertsSearch:focus-within {
+  border-color: #9cb2ef;
+  box-shadow: 0 0 0 3px rgba(49, 91, 208, 0.07);
+}
+
+.candidateJobAlertsSearch > svg {
+  flex-shrink: 0;
+  color: #98a2b3;
+}
+
+.candidateJobAlertsSearch input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #344054;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.candidateJobAlertsSearch input::placeholder {
+  color: #adb5c1;
+}
+
+.candidateJobAlertsSearch button {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #98a2b3;
+  cursor: pointer;
+}
+
+.candidateJobAlertsCreateButton {
+  min-height: 40px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none;
+  border-radius: 10px;
+  background: #315bd0;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(49, 91, 208, 0.16);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.candidateJobAlertsCreateButton:hover {
+  background: #274eb9;
+  transform: translateY(-1px);
+  box-shadow: 0 9px 19px rgba(49, 91, 208, 0.2);
+}
+
+/* =========================================================
+   ALERT SECTION
+   ========================================================= */
+
+.candidateJobAlertsListSection {
+  padding: 20px;
+  border: 1px solid #e3e8ef;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 0 7px 22px rgba(16, 24, 40, 0.028);
+}
+
+.candidateJobAlertsSectionHeader {
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.candidateJobAlertsSectionHeader h2 {
+  margin: 0;
+  color: #344054;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+.candidateJobAlertsSectionHeader p {
+  margin: 4px 0 0;
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.candidateJobAlertsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* =========================================================
+   ALERT CARD
+   ========================================================= */
+
+.candidateJobAlertCard {
+  min-width: 0;
+  border: 1px solid #e4e8ef;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.candidateJobAlertCard:hover {
+  border-color: #d5dcef;
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.05);
+  transform: translateY(-2px);
+}
+
+.candidateJobAlertCard.active {
+  border-top: 3px solid #315bd0;
+}
+
+.candidateJobAlertCard.paused {
+  border-top: 3px solid #c7ccd5;
+}
+
+.candidateJobAlertCardTop {
+  padding: 16px 16px 5px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.candidateJobAlertIcon {
+  width: 39px;
+  height: 39px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: #eaf0ff;
+  color: #315bd0;
+}
+
+.candidateJobAlertCardActions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.candidateJobAlertToggle {
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+  border: none;
+  border-radius: 999px;
+  background: #d5dae3;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.candidateJobAlertToggle span {
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.16);
+  transition: transform 0.2s ease;
+}
+
+.candidateJobAlertToggle.on {
+  background: #315bd0;
+}
+
+.candidateJobAlertToggle.on span {
+  transform: translateX(16px);
+}
+
+.candidateJobAlertIconButton {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #7e8796;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.candidateJobAlertIconButton:hover {
+  background: #f1f4fa;
+  color: #315bd0;
+}
+
+.candidateJobAlertIconButton.danger:hover {
+  background: #fff1f0;
+  color: #d92d20;
+}
+
+.candidateJobAlertCardBody {
+  padding: 4px 16px 16px;
+}
+
+.candidateJobAlertStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 7px;
+  color: #2e9b58;
+  font-size: 8px;
+  line-height: 1;
+  font-weight: 750;
+}
+
+.candidateJobAlertCard.paused .candidateJobAlertStatus {
+  color: #98a2b3;
+}
+
+.candidateJobAlertCardBody h3 {
+  margin: 0 0 13px;
+  color: #344054;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 750;
+}
+
+.candidateJobAlertDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.candidateJobAlertDetails > div {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7f8999;
+}
+
+.candidateJobAlertDetails svg {
+  flex-shrink: 0;
+  color: #9ba4b2;
+}
+
+.candidateJobAlertDetails span {
+  min-width: 0;
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.candidateJobAlertCardFooter {
+  padding: 10px 16px;
+  border-top: 1px solid #edf0f4;
+  background: #fbfcfe;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.candidateJobAlertCardFooter span {
+  color: #98a2b3;
+  font-size: 9px;
+}
+
+.candidateJobAlertCardFooter strong {
+  color: #5f6b7d;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.candidateJobAlertsEmpty {
+  min-height: 265px;
+  padding: 30px;
+  border: 1px dashed #dfe4ec;
+  border-radius: 13px;
+  background: #fbfcfe;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.candidateJobAlertsEmptyIcon {
+  width: 53px;
+  height: 53px;
+  margin-bottom: 12px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: #eef3ff;
+  color: #315bd0;
+}
+
+.candidateJobAlertsEmpty h3 {
+  margin: 0;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.candidateJobAlertsEmpty p {
+  max-width: 390px;
+  margin: 6px 0 14px;
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.candidateJobAlertModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(24, 32, 49, 0.42);
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+}
+
+.candidateJobAlertModal {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  border: 1px solid #e0e5ed;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(16, 24, 40, 0.18);
+}
+
+.candidateJobAlertModalHeader {
+  padding: 22px 22px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.candidateJobAlertModalHeader > div > span {
+  color: #6d68bf;
+  font-size: 8px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.candidateJobAlertModalHeader h2 {
+  margin: 6px 0 0;
+  color: #24344d;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.candidateJobAlertModalHeader p {
+  margin: 5px 0 0;
+  color: #98a2b3;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.candidateJobAlertModalClose {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: #f5f6f9;
+  color: #667085;
+  cursor: pointer;
+}
+
+.candidateJobAlertModalClose:hover {
+  background: #eef1f6;
+}
+
+.candidateJobAlertForm {
+  padding: 20px 22px 22px;
+}
+
+.candidateJobAlertForm label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.candidateJobAlertForm label > span {
+  display: block;
+  margin-bottom: 6px;
+  color: #667085;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.candidateJobAlertForm input:not([type="checkbox"]),
+.candidateJobAlertForm select {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 11px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.candidateJobAlertForm input:not([type="checkbox"]):focus,
+.candidateJobAlertForm select:focus {
+  border-color: #9cb2ef;
+  box-shadow: 0 0 0 3px rgba(49, 91, 208, 0.07);
+}
+
+.candidateJobAlertInputWithIcon {
+  position: relative;
+}
+
+.candidateJobAlertInputWithIcon > svg {
+  position: absolute;
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #98a2b3;
+  pointer-events: none;
+}
+
+.candidateJobAlertInputWithIcon input {
+  padding-left: 34px !important;
+}
+
+.candidateJobAlertFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.candidateJobAlertSelect {
+  position: relative;
+}
+
+.candidateJobAlertSelect select {
+  padding-right: 35px;
+  appearance: none;
+}
+
+.candidateJobAlertSelect > svg {
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #98a2b3;
+  pointer-events: none;
+}
+
+.candidateJobAlertCheckbox {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0 14px !important;
+  cursor: pointer;
+}
+
+.candidateJobAlertCheckbox input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #315bd0;
+}
+
+.candidateJobAlertCheckbox span {
+  margin: 0 !important;
+  color: #667085 !important;
+  font-size: 10px !important;
+  font-weight: 650 !important;
+}
+
+.candidateJobAlertFormError {
+  margin-bottom: 14px;
+  padding: 9px 11px;
+  border: 1px solid #f3d1ce;
+  border-radius: 9px;
+  background: #fff6f5;
+  color: #c24136;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.candidateJobAlertModalFooter {
+  padding-top: 15px;
+  border-top: 1px solid #edf0f4;
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.candidateJobAlertCancelButton {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #667085;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.candidateJobAlertCancelButton:hover {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .candidateJobAlertsMain {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .candidateJobAlertsTopHeader {
+    padding: 0 20px;
+  }
+
+  .mobileSidebarButton {
+    display: flex;
+  }
+
+  .candidateJobAlertsMobileOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    background: rgba(16, 24, 40, 0.34);
+  }
+
+  .candidateJobAlertsContent {
+    padding: 18px 20px 28px;
+  }
+
+  .candidateJobAlertsHero {
+    padding: 24px;
+    align-items: flex-start;
+  }
+
+  .candidateJobAlertsHeroStats {
+    margin-top: 4px;
+  }
+
+  .candidateJobAlertsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .candidateJobAlertsTopHeader {
+    padding: 0 15px;
+  }
+
+  .dashboardHeaderRight {
+    gap: 10px;
+  }
+
+  .headerCandidateText {
+    display: none;
+  }
+
+  .candidateJobAlertsContent {
+    padding: 14px;
+  }
+
+  .candidateJobAlertsHero {
+    min-height: auto;
+    padding: 20px;
+    margin-bottom: 14px;
+    flex-direction: column;
+    border-radius: 15px;
+  }
+
+  .candidateJobAlertsHero h1 {
+    font-size: 23px;
+  }
+
+  .candidateJobAlertsHero p {
+    font-size: 10px;
+  }
+
+  .candidateJobAlertsHeroStats {
+    width: 100%;
+  }
+
+  .candidateJobAlertsHeroStats > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .candidateJobAlertsToolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .candidateJobAlertsSearch {
+    width: 100%;
+  }
+
+  .candidateJobAlertsCreateButton {
+    width: 100%;
+  }
+
+  .candidateJobAlertsListSection {
+    padding: 15px;
+    border-radius: 13px;
+  }
+
+  .candidateJobAlertsGrid {
+    gap: 11px;
+  }
+
+  .candidateJobAlertModalOverlay {
+    padding: 12px;
+  }
+
+  .candidateJobAlertModal {
+    max-height: calc(100vh - 24px);
+    border-radius: 14px;
+  }
+
+  .candidateJobAlertModalHeader {
+    padding: 18px;
+  }
+
+  .candidateJobAlertForm {
+    padding: 17px 18px 18px;
+  }
+
+  .candidateJobAlertFormGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .candidateJobAlertModalFooter {
+    flex-direction: column-reverse;
+  }
+
+  .candidateJobAlertCancelButton,
+  .candidateJobAlertModalFooter
+    .candidateJobAlertsCreateButton {
+    width: 100%;
+  }
+}

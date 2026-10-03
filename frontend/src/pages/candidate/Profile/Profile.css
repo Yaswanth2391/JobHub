@@ -1,0 +1,1624 @@
+/* =====================================
+   ROOT
+===================================== */
+
+.candidateProfilePage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #f6f8fc;
+}
+
+.candidateProfileMain {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  background: #f6f8fc;
+}
+
+/* =====================================
+   TOPBAR
+===================================== */
+
+.candidateProfileTopbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e6eaf0;
+}
+
+.profileTopbarRight {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.profileNotificationButton {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f5f7fb;
+  color: #475467;
+
+  cursor: pointer;
+}
+
+.profileUserMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileSmallAvatar {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8efff;
+  color: #315bc7;
+
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.profileTopUserInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileTopUserInfo strong {
+  color: #344054;
+  font-size: 13px;
+}
+
+.profileTopUserInfo span {
+  color: #98a2b3;
+  font-size: 11px;
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.candidateProfileContent {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 28px 30px 40px;
+
+  box-sizing: border-box;
+}
+
+/* =====================================
+   ALERTS
+===================================== */
+
+.profileSuccessMessage,
+.profileErrorMessage {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+}
+
+.profileSuccessMessage {
+  background: #ecfdf3;
+  border: 1px solid #abefc6;
+  color: #067647;
+}
+
+.profileErrorMessage {
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+  color: #b42318;
+}
+
+/* =====================================
+   PAGE TITLE
+===================================== */
+
+.profilePageTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.profilePageTitleRow h1 {
+  margin: 0;
+
+  color: #1d2939;
+
+  font-size: 28px;
+  font-weight: 750;
+}
+
+.editProfileButton,
+.addProfileItemButton,
+.emptyStateButton,
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+
+  background: #315bc7;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.editProfileButton {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+.editProfileButton:hover,
+.addProfileItemButton:hover,
+.emptyStateButton:hover,
+.primaryButton:hover {
+  background: #264ba9;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================
+   OVERVIEW
+===================================== */
+
+.profileOverviewGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(320px, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 18px;
+}
+
+.profileInfoCard,
+.profileCompletionCard,
+.personalInformationCard,
+.skillsProfileCard,
+.profileSectionCard,
+.resumeCard {
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 14px;
+
+  box-shadow: 0 4px 15px rgba(16, 24, 40, 0.04);
+}
+
+/* =====================================
+   PROFILE INFO
+===================================== */
+
+.profileInfoCard {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 24px;
+}
+
+.profileLargeAvatar {
+  width: 76px;
+  height: 76px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8efff;
+
+  color: #315bc7;
+
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.profileCandidateInfo {
+  min-width: 0;
+}
+
+.profileCandidateInfo h2 {
+  margin: 0 0 10px;
+
+  color: #344054;
+
+  font-size: 18px;
+}
+
+.profileInfoLine {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 7px;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.profileDescription {
+  margin: 13px 0 0;
+
+  max-width: 650px;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =====================================
+   COMPLETION
+===================================== */
+
+.profileCompletionCard {
+  padding: 24px;
+}
+
+.completionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.completionHeader h2 {
+  margin: 0;
+
+  color: #344054;
+
+  font-size: 16px;
+}
+
+.completionHeader span {
+  color: #315bc7;
+
+  font-weight: 750;
+}
+
+.completionProgress {
+  width: 100%;
+  height: 10px;
+
+  overflow: hidden;
+
+  border-radius: 100px;
+
+  background: #e9edf3;
+}
+
+.completionProgressFill {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #3a9c6d;
+
+  transition: width 0.3s ease;
+}
+
+.profileCompletionCard p {
+  margin: 15px 0 0;
+
+  color: #667085;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =====================================
+   TABS
+===================================== */
+
+.profileTabs {
+  display: flex;
+
+  gap: 10px;
+
+  overflow-x: auto;
+
+  border-bottom: 1px solid #dfe5ee;
+
+  scrollbar-width: none;
+}
+
+.profileTabs::-webkit-scrollbar {
+  display: none;
+}
+
+.profileTab {
+  position: relative;
+
+  flex-shrink: 0;
+
+  height: 54px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #667085;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.profileTab:hover {
+  color: #315bc7;
+}
+
+.activeProfileTab {
+  color: #315bc7;
+}
+
+.activeProfileTab::after {
+  content: "";
+
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: -1px;
+
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: #315bc7;
+}
+
+/* =====================================
+   PERSONAL INFO
+===================================== */
+
+.profileLowerGrid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(350px, 1fr);
+
+  gap: 20px;
+
+  margin-top: 22px;
+}
+
+.personalInformationCard,
+.skillsProfileCard {
+  padding: 24px;
+}
+
+.personalInformationCard h2,
+.skillsHeader h2 {
+  margin: 0;
+
+  color: #344054;
+
+  font-size: 17px;
+}
+
+.personalInformationList {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.personalInformationRow {
+  display: grid;
+
+  grid-template-columns: 140px 1fr;
+
+  gap: 15px;
+}
+
+.personalInformationRow span {
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.personalInformationRow strong {
+  color: #344054;
+
+  font-size: 13px;
+}
+
+.skillsHeader {
+  margin-bottom: 18px;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.profileSkillTag {
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  background: #edf3ff;
+
+  color: #315bc7;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.addSkillButton {
+  padding: 8px 14px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border: 1px dashed #7d9be0;
+
+  border-radius: 8px;
+
+  background: #f8faff;
+
+  color: #315bc7;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+.skillsFullCard {
+  margin-top: 22px;
+}
+
+.emptySkillsText {
+  margin: 0;
+
+  color: #98a2b3;
+}
+
+/* =====================================
+   EDUCATION / EXPERIENCE
+===================================== */
+
+.profileSectionCard,
+.resumeCard {
+  margin-top: 22px;
+
+  padding: 24px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid #eaecf0;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 6px;
+
+  color: #344054;
+
+  font-size: 20px;
+}
+
+.sectionHeader p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.addProfileItemButton {
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+/* =====================================
+   ITEM LIST
+===================================== */
+
+.profileItemList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-top: 20px;
+}
+
+.profileItemCard {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding: 20px;
+
+  border: 1px solid #e4e7ec;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition: 0.2s ease;
+}
+
+.profileItemCard:hover {
+  border-color: #bfd0f5;
+
+  box-shadow: 0 8px 24px rgba(49, 91, 199, 0.08);
+}
+
+.profileItemIcon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #edf3ff;
+
+  color: #315bc7;
+}
+
+.profileItemContent {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.profileItemContent h3 {
+  margin: 0 0 5px;
+
+  color: #1d2939;
+
+  font-size: 16px;
+}
+
+.profileItemContent h4 {
+  margin: 0 0 8px;
+
+  color: #315bc7;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.profileItemContent p {
+  margin: 5px 0;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.profileInstitution {
+  color: #475467 !important;
+
+  font-weight: 600;
+}
+
+.educationDetailsGrid {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 14px;
+}
+
+.educationDetailsGrid span {
+  padding: 7px 11px;
+
+  border-radius: 7px;
+
+  background: #f5f7fb;
+
+  color: #667085;
+
+  font-size: 12px;
+}
+
+.educationDetailsGrid strong {
+  color: #344054;
+}
+
+.profileItemDescription {
+  margin-top: 14px !important;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #eaecf0;
+
+  line-height: 1.6;
+}
+
+/* =====================================
+   ACTION BUTTONS
+===================================== */
+
+.profileItemActions {
+  display: flex;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+.itemEditButton,
+.itemDeleteButton {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.itemEditButton {
+  border: 1px solid #dbe5fb;
+
+  background: #f5f8ff;
+
+  color: #315bc7;
+}
+
+.itemDeleteButton {
+  border: 1px solid #fee4e2;
+
+  background: #fff7f6;
+
+  color: #d92d20;
+}
+
+.itemEditButton:hover {
+  background: #e9f0ff;
+}
+
+.itemDeleteButton:hover {
+  background: #ffebe9;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.emptyProfileState {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+  border: 1px dashed #cdd7e6;
+
+  border-radius: 12px;
+
+  color: #98a2b3;
+
+  text-align: center;
+}
+
+.emptyProfileState h3 {
+  margin: 5px 0 0;
+
+  color: #475467;
+
+  font-size: 17px;
+}
+
+.emptyProfileState p {
+  margin: 0;
+
+  max-width: 400px;
+
+  font-size: 13px;
+}
+
+.emptyStateButton {
+  height: 40px;
+
+  padding: 0 17px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  margin-top: 6px;
+}
+
+/* =====================================
+   RESUME
+===================================== */
+
+.resumeCard h2 {
+  margin: 0 0 20px;
+
+  color: #344054;
+
+  font-size: 19px;
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.resumeContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.resumeLeft {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  min-width: 0;
+}
+
+.resumeIcon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #fff1f1;
+
+  color: #e23b3b;
+}
+
+.resumeDetails {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.resumeDetails strong {
+  overflow: hidden;
+
+  color: #344054;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resumeDetails span {
+  color: #98a2b3;
+
+  font-size: 12px;
+}
+
+.resumeActions {
+  display: flex;
+
+  gap: 10px;
+}
+
+.resumeViewButton,
+.resumeUpdateButton {
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 16px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.resumeViewButton {
+  border: 1px solid #d0d5dd;
+
+  background: #ffffff;
+
+  color: #344054;
+}
+
+.resumeUpdateButton {
+  border: none;
+
+  background: #315bc7;
+
+  color: #ffffff;
+}
+
+.emptyResumeState {
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #98a2b3;
+
+  text-align: center;
+}
+
+.emptyResumeState h3 {
+  margin: 0;
+
+  color: #475467;
+}
+
+.emptyResumeState p {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+}
+
+/* =====================================
+   LOADING / ERROR
+===================================== */
+
+.candidateProfileLoading,
+.candidateProfileError {
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  font-size: 16px;
+}
+
+.candidateProfileLoading {
+  color: #667085;
+}
+
+.candidateProfileError {
+  color: #d92d20;
+}
+
+/* =====================================
+   MODAL OVERLAY
+===================================== */
+
+.modalOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.58);
+
+  backdrop-filter: blur(4px);
+
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+/* =====================================
+   MODAL
+===================================== */
+
+.profileModal {
+  width: 100%;
+  max-width: 680px;
+
+  max-height: calc(100vh - 48px);
+
+  overflow-y: auto;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+.educationModal {
+  max-width: 760px;
+}
+
+/* =====================================
+   MODAL HEADER
+===================================== */
+
+.modalHeader {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px 28px 20px;
+
+  border-bottom: 1px solid #eaecf0;
+
+  background: #ffffff;
+}
+
+.modalHeader h2 {
+  margin: 0;
+
+  color: #1d2939;
+
+  font-size: 22px;
+}
+
+.modalHeader p {
+  margin: 6px 0 0;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.modalCloseButton {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #f5f7fa;
+
+  color: #667085;
+
+  cursor: pointer;
+}
+
+.modalCloseButton:hover {
+  background: #eaecf0;
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+.modalForm {
+  padding: 26px 28px 28px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  color: #344054;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  color: #1d2939;
+
+  background: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #315bc7;
+
+  box-shadow: 0 0 0 3px rgba(49, 91, 199, 0.1);
+}
+
+.formGroup input:disabled {
+  background: #f2f4f7;
+
+  cursor: not-allowed;
+}
+
+.formGroup textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+.formGrid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin: -3px 0 20px;
+
+  color: #475467;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.checkboxRow input {
+  width: 17px;
+  height: 17px;
+
+  accent-color: #315bc7;
+}
+
+.scoreGrid {
+  margin-top: 5px;
+}
+
+/* =====================================
+   MODAL ACTIONS
+===================================== */
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eaecf0;
+}
+
+.secondaryButton,
+.primaryButton {
+  min-width: 130px;
+  height: 43px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.secondaryButton {
+  border: 1px solid #d0d5dd;
+
+  background: #ffffff;
+
+  color: #344054;
+}
+
+.secondaryButton:hover {
+  background: #f9fafb;
+}
+
+.primaryButton {
+  border: none;
+}
+
+.primaryButton:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =====================================
+   LAPTOP / TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+  .profileOverviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileLowerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .candidateProfileContent {
+    padding: 24px 22px 35px;
+  }
+
+  .profileTopUserInfo {
+    display: none;
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 850px) {
+  .candidateProfileContent {
+    padding: 20px 18px 30px;
+  }
+
+  .profileItemCard {
+    gap: 14px;
+  }
+
+  .profileModal {
+    max-width: 700px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+  .candidateProfileTopbar {
+    height: 62px;
+
+    padding: 0 15px;
+  }
+
+  .candidateProfileContent {
+    padding: 18px 13px 28px;
+  }
+
+  .profilePageTitleRow {
+    align-items: flex-start;
+  }
+
+  .profilePageTitleRow h1 {
+    font-size: 23px;
+  }
+
+  .editProfileButton {
+    height: 39px;
+
+    padding: 0 13px;
+
+    font-size: 12px;
+  }
+
+  .profileInfoCard {
+    align-items: flex-start;
+
+    padding: 18px;
+
+    gap: 15px;
+  }
+
+  .profileLargeAvatar {
+    width: 62px;
+    height: 62px;
+
+    font-size: 21px;
+  }
+
+  .profileCandidateInfo h2 {
+    font-size: 16px;
+  }
+
+  .profileInfoLine {
+    font-size: 12px;
+  }
+
+  .profileDescription {
+    font-size: 12px;
+  }
+
+  .profileCompletionCard,
+  .personalInformationCard,
+  .skillsProfileCard,
+  .profileSectionCard,
+  .resumeCard {
+    padding: 18px;
+  }
+
+  .profileTabs {
+    margin-left: -13px;
+    margin-right: -13px;
+
+    padding: 0 13px;
+  }
+
+  .profileTab {
+    height: 50px;
+
+    padding: 0 16px;
+
+    font-size: 12px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .addProfileItemButton {
+    width: 100%;
+  }
+
+  .profileItemCard {
+    flex-wrap: wrap;
+  }
+
+  .profileItemContent {
+    width: calc(100% - 65px);
+  }
+
+  .profileItemActions {
+    width: 100%;
+
+    margin-top: 5px;
+  }
+
+  .itemEditButton,
+  .itemDeleteButton {
+    flex: 1;
+  }
+
+  .profileItemIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .personalInformationRow {
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+  }
+
+  .resumeContent {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .resumeActions {
+    width: 100%;
+  }
+
+  .resumeViewButton,
+  .resumeUpdateButton {
+    flex: 1;
+  }
+
+  .modalOverlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .profileModal,
+  .educationModal {
+    width: 100%;
+
+    max-width: none;
+
+    max-height: 92vh;
+
+    border-radius: 20px 20px 0 0;
+  }
+
+  .modalHeader {
+    padding: 20px 18px 17px;
+  }
+
+  .modalHeader h2 {
+    font-size: 20px;
+  }
+
+  .modalForm {
+    padding: 22px 18px 24px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .modalActions {
+    position: sticky;
+
+    bottom: 0;
+
+    padding-bottom: 2px;
+
+    background: #ffffff;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 450px) {
+  .profilePageTitleRow {
+    gap: 12px;
+  }
+
+  .profilePageTitleRow h1 {
+    font-size: 21px;
+  }
+
+  .editProfileButton {
+    padding: 0 10px;
+  }
+
+  .profileInfoCard {
+    flex-direction: column;
+  }
+
+  .profileItemCard {
+    flex-direction: column;
+  }
+
+  .profileItemContent {
+    width: 100%;
+  }
+
+  .profileItemActions {
+    width: 100%;
+  }
+
+  .educationDetailsGrid {
+    flex-direction: column;
+  }
+
+  .educationDetailsGrid span {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+  .modalActions {
+    flex-direction: column-reverse;
+  }
+
+  .secondaryButton,
+  .primaryButton {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   PROFILE PICTURE
+===================================== */
+
+.profileAvatarUploadWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profileLargeAvatar,
+.profileSmallAvatar {
+  overflow: hidden;
+}
+
+.profileLargeAvatar img,
+.profileSmallAvatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profileAvatarCameraButton {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  background: #315fc7;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(49, 95, 199, 0.2);
+}
+
+.profileAvatarCameraButton:hover {
+  background: #244fae;
+}
+
+.profileAvatarCameraButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.profilePictureTextButton {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #315fc7;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.profilePictureTextButton:hover {
+  color: #244fae;
+}
+
+.profilePictureTextButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (max-width: 600px) {
+  .profileAvatarCameraButton {
+    width: 28px;
+    height: 28px;
+  }
+}
